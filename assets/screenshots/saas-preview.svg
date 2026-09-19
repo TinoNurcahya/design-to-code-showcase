@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="saasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#saasBg)"/>
+
+  <!-- Subtle grid lines -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Mock Navbar -->
+  <rect x="40" y="30" width="720" height="48" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="64" y="47" width="80" height="14" rx="4" fill="#38bdf8" fill-opacity="0.8"/>
+  <rect x="220" y="49" width="48" height="10" rx="3" fill="#64748b"/>
+  <rect x="290" y="49" width="56" height="10" rx="3" fill="#64748b"/>
+  <rect x="368" y="49" width="50" height="10" rx="3" fill="#64748b"/>
+  <rect x="660" y="42" width="76" height="24" rx="6" fill="url(#accentGrad)"/>
+
+  <!-- Hero Content Mock -->
+  <rect x="240" y="115" width="320" height="24" rx="6" fill="#f8fafc" fill-opacity="0.9"/>
+  <rect x="180" y="148" width="440" height="14" rx="4" fill="#94a3b8" fill-opacity="0.7"/>
+  <rect x="280" y="170" width="240" height="12" rx="4" fill="#64748b" fill-opacity="0.6"/>
+
+  <rect x="340" y="200" width="120" height="32" rx="6" fill="url(#accentGrad)"/>
+
+  <!-- Dashboard Cards Mock -->
+  <rect x="60" y="255" width="200" height="145" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <rect x="80" y="275" width="60" height="10" rx="3" fill="#94a3b8"/>
+  <rect x="80" y="295" width="100" height="22" rx="4" fill="#f8fafc"/>
+  <path d="M 80 370 Q 120 330, 160 350 T 240 320" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+
+  <rect x="280" y="255" width="240" height="145" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <rect x="300" y="275" width="70" height="10" rx="3" fill="#94a3b8"/>
+  <rect x="300" y="295" width="120" height="22" rx="4" fill="#f8fafc"/>
+  <rect x="300" y="335" width="200" height="8" rx="4" fill="#334155"/>
+  <rect x="300" y="335" width="140" height="8" rx="4" fill="#818cf8"/>
+  <rect x="300" y="355" width="200" height="8" rx="4" fill="#334155"/>
+  <rect x="300" y="355" width="90" height="8" rx="4" fill="#38bdf8"/>
+
+  <rect x="540" y="255" width="200" height="145" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <rect x="560" y="275" width="65" height="10" rx="3" fill="#94a3b8"/>
+  <rect x="560" y="295" width="90" height="22" rx="4" fill="#f8fafc"/>
+  <circle cx="640" cy="355" r="28" fill="none" stroke="#334155" stroke-width="7"/>
+  <circle cx="640" cy="355" r="28" fill="none" stroke="#38bdf8" stroke-width="7" stroke-dasharray="120 180" stroke-linecap="round"/>
+
+  <!-- Badge Overlay -->
+  <rect x="295" y="398" width="210" height="32" rx="16" fill="#0f172a" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1"/>
+  <text x="400" y="419" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="middle" letter-spacing="1">PROJECT IN DEVELOPMENT</text>
+</svg>
