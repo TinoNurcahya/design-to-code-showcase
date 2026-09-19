@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="./css/style.css">
+  <!-- Main Stylesheet (versioned for cache-busting) -->
+  <link rel="stylesheet" href="./css/style.css?v=2.5">
 </head>
 <body>
   <!-- Accessibility Skip Link -->
@@ -50,6 +50,11 @@
 
       <!-- Header Actions -->
       <div class="header-actions">
+        <div class="header-status-pill" aria-label="Freelance availability status">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>Available for Projects</span>
+        </div>
+
         <a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -90,7 +95,7 @@
         <div class="hero-content">
           <div class="hero-eyebrow">
             <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            <span>Frontend Implementation Showcase</span>
+            <span>Design-to-Code Specialist • Upwork &amp; Contracts</span>
           </div>
 
           <h1 class="hero-title">
@@ -98,12 +103,12 @@
           </h1>
 
           <p class="hero-desc">
-            A curated collection of responsive design-to-code implementations built from Figma, PSD, and visual references.
+            Specialized frontend developer translating Figma, PSD, and visual designs into clean, responsive, production-ready code with zero framework bloat.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">
-              Explore Projects
+              Explore Projects (3 Demos)
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <polyline points="19 12 12 19 5 12"></polyline>
@@ -119,15 +124,38 @@
             </a>
           </div>
 
+          <!-- Proof / Stat Matrix Strip -->
+          <div class="hero-stats-strip">
+            <div class="stat-item">
+              <span class="stat-number">03</span>
+              <span class="stat-label">Production Demos</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Responsive 320px+</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">&lt; 1s</span>
+              <span class="stat-label">Fast Zero-Bloat Load</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">Multi-Stack</span>
+              <span class="stat-label">Vanilla · Tailwind · GSAP</span>
+            </div>
+          </div>
+
           <!-- Spec / Skill Pills -->
           <div class="hero-pills">
-            <span class="pills-label">Core Focus:</span>
+            <span class="pills-label">Core Capabilities:</span>
             <span class="pill"><span class="pill-dot"></span>Figma → Code</span>
             <span class="pill"><span class="pill-dot"></span>PSD → Code</span>
-            <span class="pill"><span class="pill-dot"></span>Pixel-Accurate UI</span>
-            <span class="pill"><span class="pill-dot"></span>Responsive 320px+</span>
-            <span class="pill"><span class="pill-dot"></span>Accessible Frontend</span>
-            <span class="pill"><span class="pill-dot"></span>Maintainable Code</span>
+            <span class="pill"><span class="pill-dot"></span>Tailwind CSS v4</span>
+            <span class="pill"><span class="pill-dot"></span>GSAP &amp; Lenis Motion</span>
+            <span class="pill"><span class="pill-dot"></span>Semantic HTML5</span>
+            <span class="pill"><span class="pill-dot"></span>Component CSS</span>
           </div>
         </div>
       </div>
@@ -142,7 +170,7 @@
               <span class="section-tag">Showcase Hub</span>
               <h2 class="section-title">Design-to-Code Projects</h2>
               <p class="section-subtitle">
-                Selected frontend implementations focused on visual accuracy, responsive behavior, and maintainable code.
+                Selected frontend implementations demonstrating visual accuracy, responsive behavior, modern tooling, and maintainable code across distinct domains.
               </p>
             </div>
           </div>
@@ -151,14 +179,20 @@
         <div class="projects-grid">
           
           <!-- Project 01: Restaurant (Complete) -->
-          <article class="project-card" data-status="complete" id="project-restaurant">
+          <article class="project-card" data-category="vanilla" id="project-restaurant">
             <div class="card-preview">
               <div class="browser-header">
                 <div class="browser-dots" aria-hidden="true">
-                  <span></span><span></span><span></span>
+                  <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
                 </div>
-                <div class="browser-url">demo.daily-table.local</div>
-                <div style="width: 32px;" aria-hidden="true"></div>
+                <div class="browser-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>demo.daily-table.local</span>
+                </div>
+                <div class="browser-status-chip">
+                  <span class="status-dot"></span>
+                  <span>Live Demo</span>
+                </div>
               </div>
 
               <div class="preview-media-wrap">
@@ -179,28 +213,29 @@
             <div class="card-body">
               <div class="card-top-meta">
                 <span class="card-number">PROJECT 01</span>
-                <span class="card-source-badge">Visual Reference → HTML / CSS / JavaScript</span>
+                <span class="card-source-badge">Visual Reference → Modular CSS &amp; JS</span>
               </div>
 
               <div class="card-title-group">
                 <h3 class="card-title">The Daily Table</h3>
-                <span class="card-subtitle">Restaurant &amp; Café</span>
+                <span class="card-subtitle">Gourmet Restaurant &amp; Café Experience</span>
               </div>
               
               <p class="card-desc">
-                Responsive restaurant interface recreated from a visual reference with careful attention to layout, spacing, typography, and mobile behavior.
+                High-fidelity culinary interface recreated from visual design with artisanal typography, responsive multi-category menu, reservation system, and testimonial carousel.
               </p>
 
               <ul class="card-features">
-                <li>Pixel-accurate visual implementation</li>
-                <li>Responsive menu and layouts</li>
-                <li>Optimized frontend assets</li>
+                <li><span class="feature-check">✓</span> Handcrafted semantic HTML5 &amp; modular CSS3</li>
+                <li><span class="feature-check">✓</span> Responsive menu filtering, reservations &amp; lightbox</li>
+                <li><span class="feature-check">✓</span> 100% pure vanilla code, zero external runtime</li>
               </ul>
 
               <div class="card-tags">
                 <span class="tag">HTML5</span>
                 <span class="tag">CSS3</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">Modular CSS</span>
               </div>
 
               <div class="card-actions">
@@ -215,14 +250,20 @@
           </article>
 
           <!-- Project 02: SaaS Landing Page (Complete) -->
-          <article class="project-card" data-status="complete" id="project-saas">
+          <article class="project-card" data-category="tailwind" id="project-saas">
             <div class="card-preview">
               <div class="browser-header">
                 <div class="browser-dots" aria-hidden="true">
-                  <span></span><span></span><span></span>
+                  <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
                 </div>
-                <div class="browser-url">app.cloudscale.io</div>
-                <div style="width: 32px;" aria-hidden="true"></div>
+                <div class="browser-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>app.cloudscale.io</span>
+                </div>
+                <div class="browser-status-chip">
+                  <span class="status-dot"></span>
+                  <span>Live Demo</span>
+                </div>
               </div>
 
               <div class="preview-media-wrap">
@@ -231,11 +272,11 @@
                   Completed
                 </span>
                 <img 
-                  src="./assets/screenshots/saas-preview.svg" 
-                  alt="CloudScale SaaS dashboard preview mockup" 
+                  src="./assets/screenshots/saas-preview.webp" 
+                  alt="CloudScale SaaS analytics dashboard preview" 
                   loading="lazy"
                   width="800"
-                  height="450"
+                  height="500"
                 >
               </div>
             </div>
@@ -243,28 +284,29 @@
             <div class="card-body">
               <div class="card-top-meta">
                 <span class="card-number">PROJECT 02</span>
-                <span class="card-source-badge">UI Concept → Tailwind / JavaScript</span>
+                <span class="card-source-badge">UI Concept → Tailwind CSS v4 &amp; JS</span>
               </div>
 
               <div class="card-title-group">
                 <h3 class="card-title">CloudScale</h3>
-                <span class="card-subtitle">SaaS Analytics Platform</span>
+                <span class="card-subtitle">Enterprise SaaS Analytics Platform</span>
               </div>
               
               <p class="card-desc">
-                Enterprise analytics landing page with interactive dashboard states, pricing controls, responsive UI, and theme support.
+                Enterprise analytics landing page with live interactive metric counters, dynamic monthly/annual billing calculation, feature matrix, and instant dark/light themes.
               </p>
 
               <ul class="card-features">
-                <li>Interactive dashboard states</li>
-                <li>Monthly / annual pricing</li>
-                <li>Dark / light theme</li>
+                <li><span class="feature-check">✓</span> Tailwind CSS v4 utility architecture &amp; custom theme</li>
+                <li><span class="feature-check">✓</span> Dynamic pricing toggle &amp; interactive workspace previews</li>
+                <li><span class="feature-check">✓</span> Seamless Dark/Light mode theme system with localStorage</li>
               </ul>
 
               <div class="card-tags">
                 <span class="tag">HTML5</span>
-                <span class="tag">Tailwind CSS</span>
+                <span class="tag">Tailwind CSS v4</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">Dark Mode</span>
               </div>
 
               <div class="card-actions">
@@ -279,14 +321,20 @@
           </article>
 
           <!-- Project 03: Luxury / Editorial (Complete) -->
-          <article class="project-card" data-status="complete" id="project-luxury">
+          <article class="project-card" data-category="motion" id="project-luxury">
             <div class="card-preview">
               <div class="browser-header">
                 <div class="browser-dots" aria-hidden="true">
-                  <span></span><span></span><span></span>
+                  <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
                 </div>
-                <div class="browser-url">atelier.editorial.local</div>
-                <div style="width: 32px;" aria-hidden="true"></div>
+                <div class="browser-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>atelier.editorial.local</span>
+                </div>
+                <div class="browser-status-chip">
+                  <span class="status-dot"></span>
+                  <span>Live Demo</span>
+                </div>
               </div>
 
               <div class="preview-media-wrap">
@@ -296,10 +344,10 @@
                 </span>
                 <img 
                   src="./assets/screenshots/luxury-preview.webp" 
-                  alt="Atelier &amp; Co luxury editorial catalog mockup" 
+                  alt="Atelier &amp; Co luxury editorial catalog preview" 
                   loading="lazy"
                   width="800"
-                  height="450"
+                  height="500"
                 >
               </div>
             </div>
@@ -307,7 +355,7 @@
             <div class="card-body">
               <div class="card-top-meta">
                 <span class="card-number">PROJECT 03</span>
-                <span class="card-source-badge">Editorial UI → HTML / CSS / Motion</span>
+                <span class="card-source-badge">Editorial Design → GSAP &amp; Lenis Motion</span>
               </div>
 
               <div class="card-title-group">
@@ -316,21 +364,20 @@
               </div>
               
               <p class="card-desc">
-                Luxury editorial catalog focused on refined typography, asymmetric composition, imagery, and subtle cinematic interactions.
+                High-end fashion editorial catalog featuring bespoke typographic rhythm, asymmetric gallery compositions, smooth inertial scrolling via Lenis, and cinematic GSAP ScrollTrigger effects.
               </p>
 
               <ul class="card-features">
-                <li>Editorial responsive layout</li>
-                <li>GSAP micro-interactions</li>
-                <li>Smooth scrolling with Lenis</li>
+                <li><span class="feature-check">✓</span> Bespoke editorial typography &amp; asymmetric CSS Grid</li>
+                <li><span class="feature-check">✓</span> GSAP ScrollTrigger timeline reveals &amp; pinned sections</li>
+                <li><span class="feature-check">✓</span> Ultra-fluid Lenis inertial smooth scroll experience</li>
               </ul>
 
               <div class="card-tags">
                 <span class="tag">HTML5</span>
                 <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">GSAP</span>
-                <span class="tag">Lenis</span>
+                <span class="tag">GSAP Motion</span>
+                <span class="tag">Lenis Scroll</span>
               </div>
 
               <div class="card-actions">
@@ -548,7 +595,7 @@
     </div>
   </footer>
 
-  <!-- Main JavaScript -->
-  <script src="./js/script.js"></script>
+  <!-- Main JavaScript (versioned for cache-busting) -->
+  <script src="./js/script.js?v=2.5"></script>
 </body>
 </html>
