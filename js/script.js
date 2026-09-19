@@ -114,6 +114,9 @@ function initCardAnimations() {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
+        setTimeout(() => {
+          if (entry.target) entry.target.style.transform = '';
+        }, 500);
         observer.unobserve(entry.target);
       }
     });
