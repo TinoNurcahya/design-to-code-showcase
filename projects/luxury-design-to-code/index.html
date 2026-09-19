@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier & Co. — Luxury Editorial Catalog</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Luxury editorial catalog website featuring refined typography, asymmetric layouts, curated product collections, immersive imagery, smooth scrolling, and subtle cinematic interactions.">
+  <meta name="keywords" content="luxury fashion, editorial catalog, design to code, awwwards style, minimal fashion, figma to html">
+  <meta name="author" content="Atelier & Co.">
+  <meta name="theme-color" content="#fbf9f5">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Atelier & Co. — Luxury Editorial Catalog">
+  <meta property="og:description" content="Objects of quiet permanence. A study in material, proportion, and form.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/images/hero-campaign.webp">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor Follower -->
+  <div id="cursor-follower" aria-hidden="true">
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Atelier and Co. Home">
+        <span class="brand-logo-mark">A</span>
+        Atelier &amp; Co.
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#collection" class="nav-link">Collection</a>
+        <a href="#editorial" class="nav-link">Editorial</a>
+        <a href="#studies" class="nav-link">Studies</a>
+        <a href="#materials" class="nav-link">Materials</a>
+        <a href="#lookbook" class="nav-link">Lookbook</a>
+        <a href="#journal" class="nav-link">Journal</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <button type="button" class="header-action-btn" aria-label="Search Catalog">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search</span>
+        </button>
+        <button type="button" class="header-action-btn" aria-label="Shopping Bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Bag (0)</span>
+        </button>
+      </div>
+
+      <!-- Mobile Toggle Button -->
+      <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="#collection" class="mobile-nav-link">Collection</a>
+      <a href="#editorial" class="mobile-nav-link">Editorial</a>
+      <a href="#studies" class="mobile-nav-link">Studies</a>
+      <a href="#materials" class="mobile-nav-link">Materials</a>
+      <a href="#lookbook" class="mobile-nav-link">Lookbook</a>
+      <a href="#journal" class="mobile-nav-link">Journal</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <p>Autumn / Winter 2026 • Edition 026</p>
+      <a href="../../index.html" class="footer-return-link">← Return to Showcase Hub</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- 02. Campaign Hero Section -->
+    <section id="hero" class="hero-section catalog-container" aria-label="Campaign Hero">
+      <div class="hero-meta-bar">
+        <span class="hero-meta-left">Autumn / Winter 2026 • Edition 026</span>
+        <span class="hero-meta-right">Copenhagen / Milan</span>
+      </div>
+
+      <div class="hero-editorial-grid">
+        <div class="hero-content">
+          <div class="hero-tagline">
+            <span class="editorial-tag">New Campaign</span>
+          </div>
+          <h1 class="editorial-h1 hero-title">
+            Objects of Quiet Permanence.
+          </h1>
+          <p class="hero-description">
+            A study in material, proportion, and form. Designed to outlast the season, shaped by hands that understand tactile longevity.
+          </p>
+          <div class="hero-ctas">
+            <a href="#collection" class="editorial-btn-primary">
+              <span>Discover Collection</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+            <a href="#editorial" class="editorial-btn-link">View Editorial Feature →</a>
+          </div>
+        </div>
+
+        <div class="hero-image-frame" data-cursor="DISCOVER">
+          <img src="./assets/images/hero-campaign.webp" alt="Atelier &amp; Co. Autumn Winter Editorial Campaign" width="800" height="1000" fetchpriority="high">
+          <div class="hero-image-caption">Plate 01 / Studio Study</div>
+        </div>
+      </div>
+
+      <div class="hero-footer-bar">
+        <div class="hero-specs-list">
+          <span>01 / Pure Fibers</span>
+          <span>02 / Proportion &amp; Line</span>
+          <span>03 / Timeless Form</span>
+        </div>
+        <a href="#statement" class="hero-scroll-indicator" aria-label="Scroll to introduction statement">
+          <span>Scroll</span>
+          <span class="scroll-arrow">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 03. Intro Editorial Statement -->
+    <section id="statement" class="statement-section catalog-container" aria-label="Atelier Philosophy">
+      <div class="statement-grid">
+        <div class="statement-left">
+          <span class="editorial-tag">Atelier Notes — 01</span>
+          <p>
+            Atelier &amp; Co. explores a slower approach to garments and objects — where material weight, construction honesty, and silhouette discipline matter far more than seasonal excess.
+          </p>
+          <p>
+            Every piece in Edition 026 was developed through iterative prototyping with master weavers in Biella and leather artisans in Tuscany, seeking proportion that feels both ancient and contemporary.
+          </p>
+        </div>
+        <div class="statement-right">
+          <blockquote class="statement-pullquote">
+            “Designed to outlast the season, shaped by hands that understand longevity.”
+          </blockquote>
+          <div class="statement-author">— Helena Vance, Creative Director</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Curated Collection Grid (#collection) -->
+    <section id="collection" class="catalog-section collection-section catalog-container" aria-label="Curated Collection">
+      <header class="collection-header">
+        <div class="collection-header-left">
+          <span class="editorial-tag">Selected Pieces</span>
+          <h2 class="editorial-h2">Curated Collection</h2>
+        </div>
+        <div class="collection-header-right">
+          <span>Edition 026 / 6 Objects</span>
+        </div>
+      </header>
+
+      <div class="product-grid">
+        <!-- Product 01: Wool Coat -->
+        <article class="product-card" data-cursor="VIEW">
+          <div class="product-media-wrapper">
+            <span class="product-badge">Outerwear</span>
+            <img src="./assets/images/product-01.webp" alt="Structured Wool Coat in heavy Italian virgin wool" width="800" height="550" loading="lazy">
+          </div>
+          <div class="product-details">
+            <div class="product-title-row">
+              <h3 class="product-title">No. 01 — Structured Wool Coat</h3>
+              <span class="product-price">$380</span>
+            </div>
+            <p class="product-meta">Double-faced Italian wool • Hand-finished lapel</p>
+            <span class="product-hover-arrow">Examine Piece →</span>
+          </div>
+        </article>
+
+        <!-- Product 02: Carryall -->
+        <article class="product-card" data-cursor="VIEW">
+          <div class="product-media-wrapper">
+            <span class="product-badge">Leather Goods</span>
+            <img src="./assets/images/product-02.webp" alt="Vegetable tanned Leather Carryall bag" width="800" height="1000" loading="lazy">
+          </div>
+          <div class="product-details">
+            <div class="product-title-row">
+              <h3 class="product-title">No. 02 — Copenhagen Carryall</h3>
+              <span class="product-price">$420</span>
+            </div>
+            <p class="product-meta">Vegetable-tanned calfskin • Solid brass hardware</p>
+            <span class="product-hover-arrow">Examine Piece →</span>
+          </div>
+        </article>
+
+        <!-- Product 03: Knit Polo -->
+        <article class="product-card" data-cursor="VIEW">
+          <div class="product-media-wrapper">
+            <span class="product-badge">Knitwear</span>
+            <img src="./assets/images/product-03.webp" alt="Fine Knit Polo in merino and mulberry silk" width="800" height="1066" loading="lazy">
+          </div>
+          <div class="product-details">
+            <div class="product-title-row">
+              <h3 class="product-title">No. 03 — Fine Knit Polo</h3>
+              <span class="product-price">$190</span>
+            </div>
+            <p class="product-meta">Merino wool &amp; mulberry silk blend • Bone</p>
+            <span class="product-hover-arrow">Examine Piece →</span>
+          </div>
+        </article>
+
+        <!-- Product 04: Soft Trouser -->
+        <article class="product-card" data-cursor="VIEW">
+          <div class="product-media-wrapper">
+            <span class="product-badge">Tailoring</span>
+            <img src="./assets/images/product-04.webp" alt="Soft Tailored Trouser with relaxed pleat" width="800" height="1066" loading="lazy">
+          </div>
+          <div class="product-details">
+            <div class="product-title-row">
+              <h3 class="product-title">No. 04 — Soft Tailored Trouser</h3>
+              <span class="product-price">$240</span>
+            </div>
+            <p class="product-meta">Relaxed forward pleat • Japanese virgin wool</p>
+            <span class="product-hover-arrow">Examine Piece →</span>
+          </div>
+        </article>
+
+        <!-- Product 05: Sculpted Loafer -->
+        <article class="product-card" data-cursor="VIEW">
+          <div class="product-media-wrapper">
+            <span class="product-badge">Footwear</span>
+            <img src="./assets/images/product-05.webp" alt="Sculpted Loafer with stacked leather sole" width="800" height="1066" loading="lazy">
+          </div>
+          <div class="product-details">
+            <div class="product-title-row">
+              <h3 class="product-title">No. 05 — Sculpted Loafer</h3>
+              <span class="product-price">$340</span>
+            </div>
+            <p class="product-meta">Hand-stitched welt • Stacked leather sole</p>
+            <span class="product-hover-arrow">Examine Piece →</span>
+          </div>
+        </article>
+
+        <!-- Product 06: Cashmere Layer -->
+        <article class="product-card" data-cursor="VIEW">
+          <div class="product-media-wrapper">
+            <span class="product-badge">Knitwear</span>
+            <img src="./assets/images/product-06.webp" alt="Cashmere Over-Layer in un-dyed oatmeal" width="800" height="450" loading="lazy">
+          </div>
+          <div class="product-details">
+            <div class="product-title-row">
+              <h3 class="product-title">No. 06 — Cashmere Over-Layer</h3>
+              <span class="product-price">$310</span>
+            </div>
+            <p class="product-meta">Un-dyed Mongolian cashmere • Oversized drape</p>
+            <span class="product-hover-arrow">Examine Piece →</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 05. The Editorial Feature (#editorial) -->
+    <section id="editorial" class="catalog-section editorial-feature-section" aria-label="Editorial Feature">
+      <div class="catalog-container">
+        <div class="editorial-slider-container">
+          <div class="editorial-feature-left">
+            <div class="slider-counter">01 / 03</div>
+            <span class="editorial-tag">In Focus</span>
+            <h2 class="editorial-h2 editorial-feature-title">Between Form and Function</h2>
+            <p class="editorial-feature-prose">
+              An exploration of quiet spaces, tactile materials, and objects designed for everyday ritual. Each piece balances architectural discipline with soft, human comfort.
+            </p>
+            <div class="editorial-slider-nav">
+              <button type="button" id="slidePrev" class="slider-arrow-btn" aria-label="Previous Slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button type="button" id="slideNext" class="slider-arrow-btn" aria-label="Next Slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="editorial-feature-right" data-cursor="DRAG">
+            <img src="./assets/images/editorial-study-1.webp" alt="Tactile wool weave and architectural shadow" width="800" height="1000" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Pinned Horizontal Editorial Studies (#studies) -->
+    <section id="studies" class="studies-section" aria-label="Studies in Proportion">
+      <div class="catalog-container studies-header">
+        <div class="studies-header-inner">
+          <div class="studies-header-left">
+            <span class="editorial-tag">Curated Studies</span>
+            <h2 class="editorial-h2">Studies in Proportion</h2>
+          </div>
+          <div class="studies-instruction">
+            <span>Desktop: Horizontal Sequence →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="studies-pin-container">
+        <div class="studies-track">
+          <!-- Study 01 -->
+          <article class="study-item" data-cursor="DISCOVER">
+            <div class="study-media-wrapper">
+              <img src="./assets/images/editorial-study-1.webp" alt="Macro wool fibers and natural textile grain" width="600" height="800" loading="lazy">
+            </div>
+            <span class="study-number">Study 01</span>
+            <h3 class="study-title">Material Weight &amp; Grain</h3>
+            <p class="study-desc">
+              The weight, grain, and warmth of unadorned fibers. We prioritize unblended wools and un-dyed yarns that age with dignity.
+            </p>
+          </article>
+
+          <!-- Study 02 -->
+          <article class="study-item" data-cursor="DISCOVER">
+            <div class="study-media-wrapper">
+              <img src="./assets/images/editorial-study-2.webp" alt="Sculptural silhouette reduced to essential geometry" width="600" height="800" loading="lazy">
+            </div>
+            <span class="study-number">Study 02</span>
+            <h3 class="study-title">Essential Geometry</h3>
+            <p class="study-desc">
+              Silhouettes reduced to necessary lines. By softening the shoulder seam and dropping the closure, structure achieves calm grace.
+            </p>
+          </article>
+
+          <!-- Study 03 -->
+          <article class="study-item" data-cursor="DISCOVER">
+            <div class="study-media-wrapper">
+              <img src="./assets/images/editorial-study-3.webp" alt="Fabric in fluid natural motion and wind drape" width="600" height="800" loading="lazy">
+            </div>
+            <span class="study-number">Study 03</span>
+            <h3 class="study-title">Fluid Motion &amp; Posture</h3>
+            <p class="study-desc">
+              Drape engineered to move in harmony with human walking cadence. Garments that look just as compelling in motion as in stillness.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <div class="studies-progress-bar" aria-hidden="true">
+        <div class="studies-progress-fill"></div>
+      </div>
+    </section>
+
+    <!-- 07. A Study in Material (#materials) -->
+    <section id="materials" class="catalog-section materials-section catalog-container" aria-label="Material Archives">
+      <header class="materials-header">
+        <span class="editorial-tag">Material Honesty</span>
+        <h2 class="editorial-h2">Sourced from the Origin</h2>
+        <p>
+          We refuse synthetic fillers and petroleum-derived coatings. Every raw fiber is sourced directly from ethical mills adhering to centuries of textile tradition.
+        </p>
+      </header>
+
+      <div class="materials-grid">
+        <!-- Material 01 -->
+        <div class="material-card" data-cursor="VIEW">
+          <div class="material-photo">
+            <img src="./assets/images/material-wool.webp" alt="Italian Virgin Wool macro texture" width="500" height="500" loading="lazy">
+          </div>
+          <h3 class="material-name">Italian Virgin Wool</h3>
+          <span class="material-origin">Biella, Italy • 480 g/m²</span>
+          <p class="material-desc">Dense, double-faced weave that repels moisture naturally while offering exceptional structural drape.</p>
+        </div>
+
+        <!-- Material 02 -->
+        <div class="material-card" data-cursor="VIEW">
+          <div class="material-photo">
+            <img src="./assets/images/material-leather.webp" alt="Full-grain vegetable tanned calfskin leather" width="500" height="500" loading="lazy">
+          </div>
+          <h3 class="material-name">Full-Grain Calfskin</h3>
+          <span class="material-origin">Santa Croce, Italy</span>
+          <p class="material-desc">Slowly steeped in oak bark tannins for forty days. Develops a warm golden-amber patina with daily wear.</p>
+        </div>
+
+        <!-- Material 03 -->
+        <div class="material-card" data-cursor="VIEW">
+          <div class="material-photo">
+            <img src="./assets/images/material-cashmere.webp" alt="Un-dyed Mongolian Cashmere fiber" width="500" height="500" loading="lazy">
+          </div>
+          <h3 class="material-name">Mongolian Cashmere</h3>
+          <span class="material-origin">Steppes of Gobi</span>
+          <p class="material-desc">Gently combed from free-roaming mountain goats. Kept in natural raw oatmeal hues without synthetic bleach.</p>
+        </div>
+
+        <!-- Material 04 -->
+        <div class="material-card" data-cursor="VIEW">
+          <div class="material-photo">
+            <img src="./assets/images/material-cotton.webp" alt="Organic Milled Cotton heavy twill" width="500" height="500" loading="lazy">
+          </div>
+          <h3 class="material-name">Organic Milled Cotton</h3>
+          <span class="material-origin">Okayama, Japan • 320 g/m²</span>
+          <p class="material-desc">Shuttle-loomed with subtle slub texture, pre-washed in spring water for immediate softness.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. Featured Object Hero Showcase -->
+    <section class="catalog-section object-hero-section" aria-label="Featured Object Archive">
+      <div class="catalog-container">
+        <div class="object-hero-grid">
+          <div class="object-hero-visual" data-cursor="VIEW">
+            <img src="./assets/images/product-02.webp" alt="Detailed view of the Copenhagen Carryall bag" width="800" height="600" loading="lazy">
+          </div>
+          <div class="object-hero-info">
+            <span class="editorial-tag">Object Archive No. 02</span>
+            <h2 class="editorial-h2 object-hero-title">The Copenhagen Carryall</h2>
+            <p class="object-hero-desc">
+              Conceived as an everyday vessel for the creative practitioner. Cut from three continuous panels of Tuscan calfskin with hand-beveled edges and saddle stitching.
+            </p>
+
+            <table class="specs-table">
+              <tbody>
+                <tr>
+                  <td class="specs-label">Material</td>
+                  <td class="specs-val">100% Vegetable-Tanned Tuscan Calfskin</td>
+                </tr>
+                <tr>
+                  <td class="specs-label">Hardware</td>
+                  <td class="specs-val">Hand-Finished Solid Brass</td>
+                </tr>
+                <tr>
+                  <td class="specs-label">Dimensions</td>
+                  <td class="specs-val">42 cm × 31 cm × 16 cm (18L Capacity)</td>
+                </tr>
+                <tr>
+                  <td class="specs-label">Edition</td>
+                  <td class="specs-val">Autumn / Winter 2026 (Numbered 01–150)</td>
+                </tr>
+                <tr>
+                  <td class="specs-label">Origin</td>
+                  <td class="specs-val">Designed in Copenhagen • Crafted in Florence</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="#collection" class="editorial-btn-link">Examine Object Details ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. Typographic Statement Breathing Section -->
+    <section class="pause-section catalog-container" aria-label="Atelier Motto">
+      <blockquote class="pause-quote">
+        “Nothing added without purpose. Nothing kept without meaning.”
+      </blockquote>
+      <div class="pause-sub">Form Follows Silence</div>
+    </section>
+
+    <!-- 10. Lookbook Sequence (#lookbook) -->
+    <section id="lookbook" class="catalog-section lookbook-section catalog-container" aria-label="Editorial Lookbook">
+      <header class="lookbook-header">
+        <div>
+          <span class="editorial-tag">Autumn / Winter</span>
+          <h2 class="editorial-h2">Visual Lookbook</h2>
+        </div>
+        <div class="text-secondary font-sans" style="font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase;">
+          Plates 01–05
+        </div>
+      </header>
+
+      <div class="lookbook-mosaic">
+        <div class="lookbook-item" data-cursor="VIEW">
+          <img src="./assets/images/lookbook-01.webp" alt="Minimalist editorial portrait in bone overcoat" width="600" height="750" loading="lazy">
+        </div>
+        <div class="lookbook-item" data-cursor="VIEW">
+          <img src="./assets/images/lookbook-02.webp" alt="Architectural street composition in muted taupe" width="800" height="500" loading="lazy">
+        </div>
+        <div class="lookbook-item" data-cursor="VIEW">
+          <img src="./assets/images/lookbook-03.webp" alt="Model walking in relaxed tailored wool trousers" width="600" height="800" loading="lazy">
+        </div>
+        <div class="lookbook-item" data-cursor="VIEW">
+          <img src="./assets/images/lookbook-04.webp" alt="Sculptural interior space with warm afternoon light" width="600" height="750" loading="lazy">
+        </div>
+        <div class="lookbook-item" data-cursor="VIEW">
+          <img src="./assets/images/lookbook-05.webp" alt="Full-length editorial styling with cashmere layer" width="600" height="800" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. The Journal Index (#journal) -->
+    <section id="journal" class="catalog-section journal-section catalog-container" aria-label="The Journal">
+      <header class="journal-header">
+        <div>
+          <span class="editorial-tag">Dispatches</span>
+          <h2 class="editorial-h2">The Journal Index</h2>
+        </div>
+        <div class="text-secondary font-sans" style="font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase;">
+          Volume IV
+        </div>
+      </header>
+
+      <div class="journal-list">
+        <!-- Article 01 -->
+        <article class="journal-row" data-cursor="VIEW">
+          <span class="journal-num">01</span>
+          <h3 class="journal-title">On Material Honesty: Why synthetic blends compromise tactile longevity</h3>
+          <p class="journal-snippet">A reflection on the chemical coatings modern fast-fashion relies on, and why pure unblended wool retains warmth and drape for generations.</p>
+          <time class="journal-date" datetime="2026-09-12">Sep 2026</time>
+        </article>
+
+        <!-- Article 02 -->
+        <article class="journal-row" data-cursor="VIEW">
+          <span class="journal-num">02</span>
+          <h3 class="journal-title">The Architecture of Clothing: Proportion, seam placement, and shoulder balance</h3>
+          <p class="journal-snippet">Helena Vance discusses how subtle shifts in collar pitch and sleeve geometry transform silhouette from rigid to effortlessly relaxed.</p>
+          <time class="journal-date" datetime="2026-08-28">Aug 2026</time>
+        </article>
+
+        <!-- Article 03 -->
+        <article class="journal-row" data-cursor="VIEW">
+          <span class="journal-num">03</span>
+          <h3 class="journal-title">A Conversation About Permanence: Meeting our master leather artisans in Tuscany</h3>
+          <p class="journal-snippet">Behind the stone walls of a third-generation tannery in Santa Croce, where vegetable tanning remains an unhurried, natural communion with time.</p>
+          <time class="journal-date" datetime="2026-08-14">Aug 2026</time>
+        </article>
+      </div>
+    </section>
+
+    <!-- 12. Minimal Newsletter Section -->
+    <section class="catalog-section newsletter-section" aria-label="Newsletter Subscription">
+      <div class="catalog-container">
+        <div class="newsletter-box">
+          <span class="editorial-tag">Correspondence</span>
+          <h2 class="editorial-h2">Letters from the Atelier</h2>
+          <p>
+            We publish an occasional letter documenting new editions, textile provenance, and private exhibitions. Never promotional clutter.
+          </p>
+
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <label for="newsletterEmail" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0);">Email Address</label>
+            <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Enter your email address" required autocomplete="email">
+            <button type="submit" class="newsletter-submit">Inscribe →</button>
+          </form>
+          <div class="form-feedback" role="alert"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Luxury Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="catalog-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <span class="footer-brand-title">Atelier &amp; Co.</span>
+          <p class="footer-brand-desc">
+            A fictional luxury fashion editorial catalog created as a frontend design-to-code portfolio demonstration project.
+          </p>
+          <a href="../../index.html" class="footer-return-link">
+            ← Return to Design-to-Code Showcase Hub
+          </a>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Editions</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#collection" class="footer-nav-link">Edition 026 (AW26)</a></li>
+            <li><a href="#collection" class="footer-nav-link">Edition 025 (Archive)</a></li>
+            <li><a href="#materials" class="footer-nav-link">Material Provenance</a></li>
+            <li><a href="#studies" class="footer-nav-link">Studies in Form</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Editorial</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#editorial" class="footer-nav-link">Between Form &amp; Function</a></li>
+            <li><a href="#lookbook" class="footer-nav-link">Lookbook Plates</a></li>
+            <li><a href="#journal" class="footer-nav-link">Journal Index</a></li>
+            <li><a href="#statement" class="footer-nav-link">Philosophy Notes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Showcase</h4>
+          <ul class="footer-nav-list">
+            <li><a href="../../index.html" class="footer-nav-link">All Portfolio Projects</a></li>
+            <li><a href="../restaurant-design-to-code/index.html" class="footer-nav-link">Project 01: Savory Bites</a></li>
+            <li><a href="../saas-design-to-code/index.html" class="footer-nav-link">Project 02: CloudScale SaaS</a></li>
+            <li><a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer" class="footer-nav-link">GitHub Repository ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> Atelier &amp; Co. • Fictional brand created for frontend portfolio demonstration.
+        </div>
+        <div>
+          <span>Crafted with Semantic HTML5, Vanilla CSS3, GSAP &amp; Lenis</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Local Self-Contained Vendor Scripts -->
+  <script src="./js/vendor/lenis.min.js"></script>
+  <script src="./js/vendor/gsap.min.js"></script>
+  <script src="./js/vendor/ScrollTrigger.min.js"></script>
+  <!-- Application Script -->
+  <script src="./js/script.js"></script>
+</body>
+</html>
