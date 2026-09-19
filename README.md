@@ -28,7 +28,7 @@ Each project inside this repository is a standalone implementation built strictl
 | # | Project | Source Type | Tech Stack | Status | Live Demo | Source Code |
 |---|---|---|---|---|---|---|
 | **01** | **[The Daily Table](projects/restaurant-design-to-code/)**<br>Restaurant &amp; Café Landing Page | Visual Reference / JPG | HTML5, CSS3 Grid/Flex, Vanilla JS, WebP | `Completed` | [Live Demo ↗](./projects/restaurant-design-to-code/index.html) | [View Code ↗](./projects/restaurant-design-to-code/) |
-| **02** | **[CloudScale](projects/saas-design-to-code/)**<br>SaaS Analytics Dashboard | Figma File | HTML5, Modern CSS, Theme Engine | `In Progress` | *Coming Soon* | [View Code ↗](./projects/saas-design-to-code/) |
+| **02** | **[CloudScale](projects/saas-design-to-code/)**<br>SaaS Analytics Platform | Figma File | HTML5, Tailwind CSS v4, Vanilla JS, Dark Mode | `Completed` | [Live Demo ↗](./projects/saas-design-to-code/index.html) | [View Code ↗](./projects/saas-design-to-code/) |
 | **03** | **[Atelier &amp; Co.](projects/luxury-design-to-code/)**<br>Luxury Fashion Editorial Catalog | PSD / XD | HTML5, CSS Grid, Micro-Interactions | `In Progress` | *Coming Soon* | [View Code ↗](./projects/luxury-design-to-code/) |
 
 ---
@@ -69,8 +69,13 @@ design-to-code-showcase/
     │   └── assets/
     ├── saas-design-to-code/       # Project 02: SaaS Analytics Platform
     │   ├── index.html
-    │   ├── css/
-    │   └── js/
+    │   ├── package.json
+    │   ├── README.md
+    │   ├── src/
+    │   │   ├── input.css
+    │   │   └── script.js
+    │   └── dist/
+    │       └── output.css
     └── luxury-design-to-code/     # Project 03: Luxury Editorial Catalog
         ├── index.html
         ├── css/

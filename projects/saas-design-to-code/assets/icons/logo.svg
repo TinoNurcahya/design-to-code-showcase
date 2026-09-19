@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 90" width="340" height="90">
+  <defs>
+    <linearGradient id="logoFullGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Icon (76x76) -->
+  <g transform="translate(7, 7)">
+    <rect width="76" height="76" rx="20" fill="url(#logoFullGrad)"/>
+    <path d="M 21 26 V 51 C 21 53.5 22.5 55 25 55 H 55" 
+          fill="none" 
+          stroke="#ffffff" 
+          stroke-width="6" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    <path d="M 29 43 L 36 33 L 44 43 L 54 29" 
+          fill="none" 
+          stroke="#ffffff" 
+          stroke-width="6" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark Text -->
+  <text x="102" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-size="40" font-weight="800" letter-spacing="-0.03em">
+    <tspan fill="#ffffff">Cloud</tspan><tspan fill="#38bdf8">Scale</tspan>
+  </text>
+</svg>

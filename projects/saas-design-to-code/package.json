@@ -1,0 +1,23 @@
+{
+  "name": "cloudscale-saas-design-to-code",
+  "version": "1.0.0",
+  "description": "CloudScale — Enterprise SaaS Analytics Platform Landing Page built with HTML5, Tailwind CSS v4, and Vanilla JavaScript",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [
+    "saas",
+    "landing-page",
+    "tailwind-css",
+    "design-to-code",
+    "frontend-portfolio",
+    "dark-mode"
+  ],
+  "author": "Tino Nurcahya",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

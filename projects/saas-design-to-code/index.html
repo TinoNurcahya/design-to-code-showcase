@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>CloudScale — Enterprise SaaS Analytics Platform</title>
+  <meta name="description" content="CloudScale is a fictional enterprise SaaS analytics platform landing page featuring animated data metrics, monthly/annual pricing toggle, feature comparison matrix, interactive dashboard previews, and dark/light mode support.">
+  <meta name="author" content="Tino Nurcahya">
+  <meta name="keywords" content="Enterprise SaaS, Analytics Platform, Tailwind CSS, Dark Mode, Design to Code, Frontend Portfolio">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CloudScale — Enterprise SaaS Analytics Platform">
+  <meta property="og:description" content="Turn complex data into clear decisions. Monitor infrastructure, product usage, revenue, and operational metrics from one unified analytics workspace.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+  <link rel="alternate icon" href="./assets/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="bg-light-bg dark:bg-dark-bg text-slate-800 dark:text-slate-100 font-sans transition-colors duration-200">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-md focus:shadow-lg">
+    Skip to main content
+  </a>
+
+  <!-- Top Demo Disclaimer Banner -->
+  <aside class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-1.5 px-4 text-center text-xs text-slate-500 dark:text-slate-400">
+    <span class="inline-block font-mono font-semibold uppercase text-brand-600 dark:text-accent-sky mr-1.5">[Portfolio Project]</span>
+    Fictional enterprise SaaS demonstration built with HTML5, Tailwind CSS v4, &amp; Vanilla JavaScript. 
+    <a href="../../index.html" class="underline hover:text-slate-900 dark:hover:text-white ml-1 font-medium">← Back to Showcase Hub</a>
+  </aside>
+
+  <!-- Sticky Header & Navigation -->
+  <header id="siteHeader" class="sticky top-0 z-40 transition-all duration-200 bg-light-bg/85 dark:bg-dark-bg/85 border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-2.5 group" aria-label="CloudScale Homepage">
+          <div class="w-9 h-9 rounded-xl overflow-hidden shadow-sm shadow-brand-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
+            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+              <defs>
+                <linearGradient id="headerLogoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0ea5e9"/>
+                  <stop offset="50%" stop-color="#0284c7"/>
+                  <stop offset="100%" stop-color="#2563eb"/>
+                </linearGradient>
+              </defs>
+              <rect width="100" height="100" rx="26" fill="url(#headerLogoGrad)"/>
+              <path d="M 27 34 V 67 C 27 70 29 72 32 72 H 72" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 37 57 L 47 43 L 57 56 L 70 38" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Cloud<span class="text-sky-500 dark:text-accent-sky">Scale</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300" aria-label="Main Navigation">
+          <a href="#capabilities" class="hover:text-brand-600 dark:hover:text-white transition-colors">Platform</a>
+          <a href="#demo" class="hover:text-brand-600 dark:hover:text-white transition-colors">Live Workspace</a>
+          <a href="#features" class="hover:text-brand-600 dark:hover:text-white transition-colors">Features</a>
+          <a href="#matrix" class="hover:text-brand-600 dark:hover:text-white transition-colors">Comparison</a>
+          <a href="#pricing" class="hover:text-brand-600 dark:hover:text-white transition-colors">Pricing</a>
+          <a href="#faq" class="hover:text-brand-600 dark:hover:text-white transition-colors">FAQ</a>
+        </nav>
+
+        <!-- Right Side Actions & Theme Toggle -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Theme Toggle Button -->
+          <button 
+            type="button" 
+            id="themeToggleBtn"
+            class="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors focus:outline-none" 
+            aria-label="Toggle dark/light theme"
+          >
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg class="icon-sun w-5 h-5 text-amber-400 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg class="icon-moon w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+          </button>
+
+          <!-- Sign In Link -->
+          <a href="#pricing" class="hidden sm:inline-flex text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white px-3 py-2 transition-colors">
+            Sign In
+          </a>
+
+          <!-- Primary CTA -->
+          <a href="#pricing" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 dark:bg-brand-600 dark:hover:bg-brand-500 rounded-lg shadow-sm transition-all hover:shadow hover:shadow-brand-500/20 active:scale-95">
+            Start Free
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button 
+            type="button" 
+            id="mobileMenuBtn"
+            class="md:hidden p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg border border-slate-200 dark:border-slate-800"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileNavDrawer"
+          >
+            <div class="w-5 h-4 flex flex-col justify-between">
+              <span class="w-full h-0.5 bg-current rounded-full transition-transform"></span>
+              <span class="w-full h-0.5 bg-current rounded-full transition-opacity"></span>
+              <span class="w-full h-0.5 bg-current rounded-full transition-transform"></span>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="md:hidden hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-6 py-5 shadow-lg" aria-hidden="true">
+      <nav class="flex flex-col gap-4 text-base font-medium text-slate-700 dark:text-slate-200">
+        <a href="#capabilities" class="py-1 hover:text-brand-600">Platform Overview</a>
+        <a href="#demo" class="py-1 hover:text-brand-600">Interactive Workspace</a>
+        <a href="#features" class="py-1 hover:text-brand-600">Deep Capabilities</a>
+        <a href="#matrix" class="py-1 hover:text-brand-600">Comparison Matrix</a>
+        <a href="#pricing" class="py-1 hover:text-brand-600">Pricing Plans</a>
+        <a href="#faq" class="py-1 hover:text-brand-600">Frequently Asked Questions</a>
+        
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+          <button type="button" id="mobileThemeToggleBtn" class="flex items-center justify-between px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 text-sm">
+            <span>Appearance Theme</span>
+            <span class="font-mono text-xs text-brand-600 dark:text-accent-sky">Toggle Mode</span>
+          </button>
+          <a href="#pricing" class="w-full text-center py-2.5 bg-brand-600 text-white font-semibold rounded-lg shadow-sm">
+            Start Free Trial
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+      <!-- Subtle Ambient Lighting Glow -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-brand-500/10 via-accent-sky/5 to-transparent blur-3xl pointer-events-none -z-10" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Hero Copy -->
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-6">
+            Turn complex data into <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-sky dark:from-brand-400 dark:to-accent-cyan">clear decisions</span>.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+            Monitor infrastructure health, product adoption, recurring revenue, and operational throughput from one unified, high-speed analytics workspace.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-6">
+            <a href="#pricing" class="w-full sm:w-auto px-6 py-3.5 text-base font-semibold text-white bg-brand-600 hover:bg-brand-700 dark:bg-brand-600 dark:hover:bg-brand-500 rounded-lg shadow-sm hover:shadow-md hover:shadow-brand-500/25 transition-all flex items-center justify-center gap-2 group">
+              <span>Start Free Trial</span>
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#demo" class="w-full sm:w-auto px-6 py-3.5 text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900/80 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-800 rounded-lg transition-colors flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-brand-600 dark:text-accent-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>View Interactive Workspace</span>
+            </a>
+          </div>
+
+          <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center justify-center gap-4 flex-wrap">
+            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> No credit card required</span>
+            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 14-day enterprise trial</span>
+            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-minute zero-code setup</span>
+          </p>
+        </div>
+
+        <!-- Hero High-Fidelity Dashboard Mockup (HTML/CSS/SVG) -->
+        <div class="relative max-w-6xl mx-auto">
+          
+          <!-- Outer Browser Window -->
+          <div class="rounded-xl border border-slate-300 dark:border-slate-800/90 bg-white dark:bg-dark-surface shadow-2xl shadow-slate-900/10 dark:shadow-black/60 overflow-hidden">
+            
+            <!-- Window Titlebar -->
+            <div class="flex items-center justify-between px-4 py-3 bg-slate-100 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <span class="text-xs font-mono text-slate-400 dark:text-slate-500 ml-2 hidden sm:inline">cloudscale.analytics / live-metrics</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  STREAMING LIVE
+                </span>
+                <span class="text-xs font-mono text-slate-400 dark:text-slate-500 hidden md:inline">Cluster: us-east-1a</span>
+              </div>
+            </div>
+
+            <!-- Dashboard Internal Body -->
+            <div class="p-4 sm:p-6 lg:p-8 space-y-6">
+              
+              <!-- 4 Top Metric Cards -->
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Monthly Revenue</span>
+                    <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-1.5 py-0.5 rounded">+18.4%</span>
+                  </div>
+                  <div class="text-xl sm:text-2xl font-bold font-mono text-slate-900 dark:text-white">$428,950</div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">vs $362,100 last month</div>
+                </div>
+
+                <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Active Users (DAU)</span>
+                    <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-1.5 py-0.5 rounded">+12.1%</span>
+                  </div>
+                  <div class="text-xl sm:text-2xl font-bold font-mono text-slate-900 dark:text-white">1,420,890</div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Peak 84k concurrent</div>
+                </div>
+
+                <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">API Requests / Day</span>
+                    <span class="text-[11px] font-semibold text-brand-600 dark:text-accent-sky bg-brand-50 dark:bg-brand-950/60 px-1.5 py-0.5 rounded">99.99% SLA</span>
+                  </div>
+                  <div class="text-xl sm:text-2xl font-bold font-mono text-slate-900 dark:text-white">48,240,120</div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">0 dropped packets</div>
+                </div>
+
+                <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">P95 Global Latency</span>
+                    <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-1.5 py-0.5 rounded">-8ms drop</span>
+                  </div>
+                  <div class="text-xl sm:text-2xl font-bold font-mono text-slate-900 dark:text-white">42 ms</div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Global edge acceleration</div>
+                </div>
+
+              </div>
+
+              <!-- Main Visual Chart & Real-Time Stream Grid -->
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Large SVG Area Chart (2 cols) -->
+                <div class="lg:col-span-2 p-5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Throughput &amp; Ingestion Rate</h4>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Real-time event stream volume over last 24 hours</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="inline-block w-2.5 h-2.5 rounded-sm bg-brand-500"></span>
+                      <span class="text-xs font-mono text-slate-500">Ingested</span>
+                      <span class="inline-block w-2.5 h-2.5 rounded-sm bg-accent-sky ml-2"></span>
+                      <span class="text-xs font-mono text-slate-500">Processed</span>
+                    </div>
+                  </div>
+
+                  <!-- Responsive SVG Chart Graphic -->
+                  <div class="w-full aspect-[21/9] relative">
+                    <svg class="w-full h-full" viewBox="0 0 600 200" preserveAspectRatio="none" fill="none">
+                      <defs>
+                        <linearGradient id="heroChartGrad1" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35" />
+                          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0" />
+                        </linearGradient>
+                        <linearGradient id="heroChartGrad2" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25" />
+                          <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0" />
+                        </linearGradient>
+                      </defs>
+
+                      <!-- Grid Lines -->
+                      <line x1="0" y1="40" x2="600" y2="40" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4" class="text-slate-600" />
+                      <line x1="0" y1="90" x2="600" y2="90" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4" class="text-slate-600" />
+                      <line x1="0" y1="140" x2="600" y2="140" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4" class="text-slate-600" />
+
+                      <!-- Area 1 (Background Processed) -->
+                      <path d="M 0 160 Q 75 140, 150 110 T 300 90 T 450 60 T 600 45 L 600 200 L 0 200 Z" fill="url(#heroChartGrad2)" />
+                      <path d="M 0 160 Q 75 140, 150 110 T 300 90 T 450 60 T 600 45" stroke="#06b6d4" stroke-width="2" />
+
+                      <!-- Area 2 (Foreground Ingested) -->
+                      <path d="M 0 175 Q 80 160, 150 135 T 300 115 T 450 85 T 600 65 L 600 200 L 0 200 Z" fill="url(#heroChartGrad1)" />
+                      <path d="M 0 175 Q 80 160, 150 135 T 300 115 T 450 85 T 600 65" stroke="#3b82f6" stroke-width="2.5" />
+
+                      <!-- Data Points -->
+                      <circle cx="300" cy="115" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1.5" />
+                      <circle cx="450" cy="60" r="4" fill="#06b6d4" stroke="#fff" stroke-width="1.5" />
+                      <circle cx="600" cy="45" r="4" fill="#10b981" stroke="#fff" stroke-width="1.5" />
+                    </svg>
+                  </div>
+
+                  <div class="flex justify-between text-[11px] font-mono text-slate-400 mt-2">
+                    <span>00:00 UTC</span>
+                    <span>06:00 UTC</span>
+                    <span>12:00 UTC</span>
+                    <span>18:00 UTC</span>
+                    <span>Live Now</span>
+                  </div>
+                </div>
+
+                <!-- Regional Latency Breakdown & Node Health (1 col) -->
+                <div class="p-5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
+                  <div>
+                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-1">Region Latency Heatmap</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Edge PoP response distribution</p>
+
+                    <div class="space-y-3 font-mono text-xs">
+                      <div>
+                        <div class="flex justify-between text-slate-700 dark:text-slate-300 mb-1">
+                          <span>us-east (N. Virginia)</span>
+                          <span class="text-emerald-500 font-semibold">24 ms</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-emerald-500 rounded-full" style="width: 25%"></div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="flex justify-between text-slate-700 dark:text-slate-300 mb-1">
+                          <span>eu-central (Frankfurt)</span>
+                          <span class="text-emerald-500 font-semibold">38 ms</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-emerald-500 rounded-full" style="width: 40%"></div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="flex justify-between text-slate-700 dark:text-slate-300 mb-1">
+                          <span>ap-south (Singapore)</span>
+                          <span class="text-amber-500 font-semibold">56 ms</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-amber-500 rounded-full" style="width: 58%"></div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="flex justify-between text-slate-700 dark:text-slate-300 mb-1">
+                          <span>sa-east (São Paulo)</span>
+                          <span class="text-amber-500 font-semibold">68 ms</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-amber-500 rounded-full" style="width: 68%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 border-t border-slate-200 dark:border-slate-800 mt-4 flex items-center justify-between text-xs">
+                    <span class="text-slate-500">Global Cluster Health</span>
+                    <span class="font-mono font-semibold text-emerald-500">48 / 48 Nodes OK</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Real-Time Activity Feed Table -->
+              <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Live Ingested Event Feed</h4>
+                  <span class="text-[11px] font-mono text-slate-400">Auto-refresh: 1s</span>
+                </div>
+                
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs font-mono">
+                    <thead>
+                      <tr class="text-slate-400 dark:text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <th class="py-1.5 font-normal">Timestamp</th>
+                        <th class="py-1.5 font-normal">Event Type</th>
+                        <th class="py-1.5 font-normal">Source Node</th>
+                        <th class="py-1.5 font-normal">Payload Size</th>
+                        <th class="py-1.5 font-normal text-right">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200/60 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+                      <tr>
+                        <td class="py-2 text-slate-400">12:44:02.180</td>
+                        <td class="py-2 font-medium text-slate-900 dark:text-white">payment.intent.succeeded</td>
+                        <td class="py-2">gateway-edge-04</td>
+                        <td class="py-2">1.84 KB</td>
+                        <td class="py-2 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">VERIFIED</span></td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 text-slate-400">12:44:01.942</td>
+                        <td class="py-2 font-medium text-slate-900 dark:text-white">telemetry.k8s.pod_scaled</td>
+                        <td class="py-2">cluster-worker-08</td>
+                        <td class="py-2">4.12 KB</td>
+                        <td class="py-2 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] bg-brand-500/10 text-brand-600 dark:text-accent-sky border border-brand-500/20">SCALED</span></td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 text-slate-400">12:44:01.408</td>
+                        <td class="py-2 font-medium text-slate-900 dark:text-white">analytics.user.session_start</td>
+                        <td class="py-2">client-sdk-web</td>
+                        <td class="py-2">820 B</td>
+                        <td class="py-2 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">INDEXED</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Client Trust Section -->
+    <section class="py-12 border-y border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-8">
+          Trusted by high-velocity technology teams at scale
+        </p>
+        
+        <!-- Fictional Client Logos (Clean Text Marks) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center justify-center opacity-60 dark:opacity-40 hover:opacity-80 transition-opacity">
+          <div class="text-base sm:text-lg font-black tracking-widest text-slate-800 dark:text-slate-200">NORTHSTAR</div>
+          <div class="text-base sm:text-lg font-black tracking-widest text-slate-800 dark:text-slate-200">VERTEX</div>
+          <div class="text-base sm:text-lg font-black tracking-widest text-slate-800 dark:text-slate-200">ORBITAL</div>
+          <div class="text-base sm:text-lg font-black tracking-widest text-slate-800 dark:text-slate-200">NEXORA</div>
+          <div class="text-base sm:text-lg font-black tracking-widest text-slate-800 dark:text-slate-200">LUMEN</div>
+          <div class="text-base sm:text-lg font-black tracking-widest text-slate-800 dark:text-slate-200">ATLAS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animated Live Statistics Section -->
+    <section class="py-20 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface" id="metrics">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-slate-800">
+          
+          <div class="pt-4 sm:pt-0 sm:px-6 text-center">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-brand-600 dark:text-accent-sky mb-2 stat-counter" data-target="12.4" data-suffix="B+" data-decimals="1">
+              0.0B+
+            </div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Events Processed Daily</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sub-second streaming pipeline</p>
+          </div>
+
+          <div class="pt-4 sm:pt-0 sm:px-6 text-center">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-brand-600 dark:text-accent-sky mb-2 stat-counter" data-target="99.99" data-suffix="%" data-decimals="2">
+              0.00%
+            </div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Platform SLA Uptime</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Multi-region redundant failover</p>
+          </div>
+
+          <div class="pt-4 sm:pt-0 sm:px-6 text-center">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-brand-600 dark:text-accent-sky mb-2 stat-counter" data-target="180" data-suffix="+" data-decimals="0">
+              0+
+            </div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Global Edge PoPs</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Worldwide sub-50ms routing</p>
+          </div>
+
+          <div class="pt-4 sm:pt-0 sm:px-6 text-center">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-brand-600 dark:text-accent-sky mb-2 stat-counter" data-target="42" data-suffix="%" data-decimals="0">
+              0%
+            </div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Faster Root-Cause Analysis</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Automated anomaly diagnostics</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Overview / 4 Pillars -->
+    <section class="py-24 border-b border-slate-200 dark:border-slate-800 bg-light-bg dark:bg-dark-bg" id="capabilities">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+            One platform. Every critical metric.
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Eliminate fragmented monitoring silos. Consolidate your system metrics, business health, and product funnel into a singular, lightning-fast workspace.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-accent-sky flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Infrastructure Analytics</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Monitor CPU, memory usage, latency spikes, database locks, and microservices uptime in sub-second intervals.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 font-mono text-xs text-brand-600 dark:text-accent-sky">
+              P99 Latency • Error Budget SLA
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Product &amp; User Intelligence</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Understand end-to-end user onboarding funnels, cohort retention curves, and new feature adoption metrics effortlessly.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 font-mono text-xs text-emerald-600 dark:text-emerald-400">
+              DAU/MAU Ratio • Cohort Decay
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-lg bg-accent-sky/10 text-accent-sky flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Revenue &amp; Churn Health</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Track MRR velocity, customer lifetime value (LTV), payback periods, and net revenue retention in real-time.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 font-mono text-xs text-accent-sky">
+              ARR Runway • Net Retention (NRR)
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Custom Reporting &amp; Alerts</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Construct tailor-made executive views and configure instant anomaly webhooks to Slack, PagerDuty, and email.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 font-mono text-xs text-purple-600 dark:text-purple-400">
+              Webhook Dispatches • PagerDuty
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Multi-Team Workspace Demo -->
+    <section class="py-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface" id="demo">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+            Analytics built for every team
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Select a department view below to see how CloudScale automatically adjusts its telemetry views, KPIs, and charts.
+          </p>
+
+          <!-- 4 Interactive Tabs -->
+          <div class="flex items-center justify-center gap-2 mt-8 p-1.5 bg-slate-100 dark:bg-slate-900 rounded-xl max-w-xl mx-auto border border-slate-200 dark:border-slate-800" role="tablist" aria-label="Department Views">
+            <button 
+              type="button" 
+              class="dashboard-tab-btn active-tab flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all text-brand-600 border-b-2 border-brand-500 dark:text-accent-sky dark:border-accent-sky bg-white dark:bg-slate-800 shadow-sm"
+              data-tab="executive"
+              role="tab"
+              aria-selected="true"
+              aria-controls="tab-executive"
+            >
+              Executive
+            </button>
+            <button 
+              type="button" 
+              class="dashboard-tab-btn flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all text-slate-500 border-b-2 border-transparent hover:text-slate-700 dark:text-slate-400 dark:hover:text-white"
+              data-tab="product"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-product"
+            >
+              Product
+            </button>
+            <button 
+              type="button" 
+              class="dashboard-tab-btn flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all text-slate-500 border-b-2 border-transparent hover:text-slate-700 dark:text-slate-400 dark:hover:text-white"
+              data-tab="engineering"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-engineering"
+            >
+              Engineering
+            </button>
+            <button 
+              type="button" 
+              class="dashboard-tab-btn flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all text-slate-500 border-b-2 border-transparent hover:text-slate-700 dark:text-slate-400 dark:hover:text-white"
+              data-tab="revenue"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-revenue"
+            >
+              Revenue
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab Panel 1: Executive -->
+        <div id="tab-executive" class="dashboard-tab-panel tab-content-panel active" data-tab-content="executive" role="tabpanel">
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/70 p-6 lg:p-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Executive Strategy &amp; Runway View</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">High-level growth velocity, cash forecast, and enterprise client adoption</p>
+              </div>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-accent-sky border border-brand-200 dark:border-brand-800">
+                Target: Series B Metrics
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Annual Run Rate (ARR)</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">$5.14M</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">+48% YoY Growth</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Cash Runway</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">38 Months</div>
+                <div class="text-xs text-slate-500 mt-0.5">Profitable operating cashflow</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Net Retention Rate</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">128%</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">Top-quartile expansion</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Enterprise Accounts</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">840</div>
+                <div class="text-xs text-brand-500 font-medium mt-0.5">+62 accounts this month</div>
+              </div>
+            </div>
+
+            <!-- SVG Visual Trend -->
+            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-semibold text-slate-500 mb-2">ARR Growth Trajectory vs Budget Target</div>
+              <div class="w-full aspect-[28/8]">
+                <svg class="w-full h-full" viewBox="0 0 700 160" fill="none">
+                  <path d="M 0 140 Q 150 120, 300 90 T 500 50 T 700 20 L 700 160 L 0 160 Z" fill="#3b82f6" fill-opacity="0.15" />
+                  <path d="M 0 140 Q 150 120, 300 90 T 500 50 T 700 20" stroke="#3b82f6" stroke-width="3" />
+                  <path d="M 0 145 L 700 45" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 2: Product -->
+        <div id="tab-product" class="dashboard-tab-panel tab-content-panel hidden" data-tab-content="product" role="tabpanel">
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/70 p-6 lg:p-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Product Engagement &amp; Funnel View</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">User onboarding efficiency, daily retention stickiness, and feature adoption</p>
+              </div>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                Stickiness: High (68%)
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">DAU / MAU Ratio</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">68.2%</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">+4.2% engagement</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Activation Rate</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">84.5%</div>
+                <div class="text-xs text-slate-500 mt-0.5">Completed 1st dashboard</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">User Churn (Monthly)</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">0.82%</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">Historic lowest churn</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Avg Session Duration</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">24m 18s</div>
+                <div class="text-xs text-brand-500 font-medium mt-0.5">+3m vs baseline</div>
+              </div>
+            </div>
+
+            <!-- Funnel Breakdown Bars -->
+            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 space-y-3 font-mono text-xs">
+              <div class="text-xs font-sans font-semibold text-slate-500 mb-2">Onboarding Funnel Steps Conversion</div>
+              <div>
+                <div class="flex justify-between mb-1"><span>1. Account Created</span><span>100% (24,500)</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-full bg-emerald-500 rounded-full w-full"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1"><span>2. Ingestion Source Connected</span><span>88.2% (21,600)</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-full bg-emerald-500 rounded-full w-[88%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1"><span>3. Custom Query Built</span><span>74.1% (18,150)</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-full bg-brand-500 rounded-full w-[74%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1"><span>4. Team Member Invited</span><span>68.2% (16,700)</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-full bg-brand-500 rounded-full w-[68%]"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 3: Engineering -->
+        <div id="tab-engineering" class="dashboard-tab-panel tab-content-panel hidden" data-tab-content="engineering" role="tabpanel">
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/70 p-6 lg:p-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Engineering Observability &amp; SLI/SLO</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Real-time gateway latency percentiles, error budgets, and cluster auto-scaling</p>
+              </div>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800">
+                P99: 48ms SLA OK
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">P99 API Latency</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">48.2 ms</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">Threshold: &lt;100ms</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Error Budget Remaining</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">99.98%</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">0.02% consumed (30d)</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Cluster Pods Active</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">128 Nodes</div>
+                <div class="text-xs text-slate-500 mt-0.5">Zero crash loops</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Production Deploys</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">34 / day</div>
+                <div class="text-xs text-brand-500 font-medium mt-0.5">Zero rollback incident</div>
+              </div>
+            </div>
+
+            <!-- Multi-Line Latency Graph -->
+            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-semibold text-slate-500 mb-2">P50 vs P95 vs P99 Latency Distribution</div>
+              <div class="w-full aspect-[28/8]">
+                <svg class="w-full h-full" viewBox="0 0 700 160" fill="none">
+                  <!-- P99 line (amber) -->
+                  <path d="M 0 60 Q 150 70, 300 55 T 450 65 T 700 50" stroke="#f59e0b" stroke-width="2" />
+                  <!-- P95 line (cyan) -->
+                  <path d="M 0 95 Q 150 90, 300 100 T 450 92 T 700 88" stroke="#06b6d4" stroke-width="2" />
+                  <!-- P50 line (emerald) -->
+                  <path d="M 0 135 Q 150 130, 300 132 T 450 128 T 700 125" stroke="#10b981" stroke-width="2.5" />
+                </svg>
+              </div>
+              <div class="flex gap-4 text-[11px] font-mono text-slate-400 mt-2">
+                <span class="text-amber-500">■ P99 (48ms)</span>
+                <span class="text-cyan-400">■ P95 (28ms)</span>
+                <span class="text-emerald-500">■ P50 (14ms)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 4: Revenue -->
+        <div id="tab-revenue" class="dashboard-tab-panel tab-content-panel hidden" data-tab-content="revenue" role="tabpanel">
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/70 p-6 lg:p-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Revenue Intelligence &amp; Unit Economics</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Quarterly pipeline, expansion MRR, payback cycles, and customer lifetime value</p>
+              </div>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                CAC Payback: 7.2 Mo
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Pipeline Pipeline (Q3)</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">$8.24M</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">3.8x Coverage</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Expansion MRR</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">$68,400</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">+22% vs last month</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">Avg Contract Value (ACV)</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">$38,500</div>
+                <div class="text-xs text-brand-500 font-medium mt-0.5">Enterprise tier up-market</div>
+              </div>
+              <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+                <span class="text-xs text-slate-400">LTV / CAC Multiple</span>
+                <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white mt-1">5.4x</div>
+                <div class="text-xs text-emerald-500 font-medium mt-0.5">Capital efficient</div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-semibold text-slate-500 mb-2">Quarterly Revenue Breakdown (New vs Expansion vs Churn)</div>
+              <div class="grid grid-cols-3 gap-3 font-mono text-xs">
+                <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded">
+                  <div class="text-slate-400 text-[11px]">New Bookings</div>
+                  <div class="text-lg font-bold text-brand-500 mt-1">+$420K</div>
+                </div>
+                <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded">
+                  <div class="text-slate-400 text-[11px]">Seat Expansion</div>
+                  <div class="text-lg font-bold text-emerald-500 mt-1">+$180K</div>
+                </div>
+                <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded">
+                  <div class="text-slate-400 text-[11px]">Net Churn</div>
+                  <div class="text-lg font-bold text-rose-500 mt-1">-$12K</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Deep Feature Section (Alternating 4 Layouts) -->
+    <section class="py-24 border-b border-slate-200 dark:border-slate-800 bg-light-bg dark:bg-dark-bg" id="features">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+        
+        <!-- Feature 01 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+              See critical metrics as they change without waiting for scheduled reports.
+            </h3>
+            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              Batch processing is too slow for modern microservices. CloudScale streams incoming metric vectors directly into memory, delivering real-time visualizations in under 200 milliseconds.
+            </p>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Zero polling delay with persistent WebSocket connections</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>High-cardinality indexing for dynamic container tags</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Sub-second alerts dispatched before customers notice</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface shadow-md">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 font-mono text-xs text-slate-400">
+              <span>stream-pipeline: ingress-cluster-alpha</span>
+              <span class="text-emerald-500 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>ACTIVE</span>
+            </div>
+            <div class="py-6 font-mono text-xs space-y-3">
+              <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex justify-between">
+                <span class="text-slate-500">Kinesis Ingestion:</span>
+                <span class="text-brand-500 font-semibold">142,800 events/sec</span>
+              </div>
+              <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex justify-between">
+                <span class="text-slate-500">Pipeline Lag:</span>
+                <span class="text-emerald-500 font-semibold">18 ms (Healthy)</span>
+              </div>
+              <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex justify-between">
+                <span class="text-slate-500">Compression Efficiency:</span>
+                <span class="text-slate-900 dark:text-white font-semibold">8.4x ratio (ZSTD)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 02 (Reversed) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="lg:order-2">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+              Build focused views for executives, product teams, engineers, and revenue leaders.
+            </h3>
+            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              Empower every stakeholder with custom visual widgets. Combine SQL expressions, PromQL telemetry, and billing webhooks onto a unified drag-and-drop canvas.
+            </p>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Role-based dashboard permissions and workspace folders</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Export to automated PDF, CSV, or live public iframe</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:order-1 p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface shadow-md">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 text-xs font-mono">
+              <span class="text-slate-700 dark:text-slate-300 font-semibold">Widget Canvas: Q3 Product Health</span>
+              <span class="text-brand-500 font-medium">Layout: Grid 12</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 py-4">
+              <div class="h-24 rounded border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-xs font-mono text-slate-400">
+                [Funnel Widget]
+              </div>
+              <div class="h-24 rounded border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-xs font-mono text-slate-400">
+                [Churn Rate Gauge]
+              </div>
+              <div class="col-span-2 h-24 rounded border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-xs font-mono text-slate-400">
+                [Time Series Volume Ingestion Chart]
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 03 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+              Surface meaningful changes and trends before they become revenue problems.
+            </h3>
+            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              CloudScale applies statistical anomaly detection algorithms to separate true deviations from recurring seasonal fluctuations.
+            </p>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Automatic baseline calculation accounting for day-of-week patterns</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Root-cause correlation across deployment git commits</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface shadow-md font-mono text-xs">
+            <div class="p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-500 mb-3 flex items-center gap-2">
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span class="font-semibold">Anomaly Detected: +310% Error Rate on /v2/checkout</span>
+            </div>
+            <div class="space-y-2 text-slate-600 dark:text-slate-400">
+              <p>• Confidence: 99.4% (Statistical z-score: +4.8)</p>
+              <p>• Correlated Event: Deployment commit #d7a81b2 (v2.14.0)</p>
+              <p>• Automated Action: Slack incident channel #inc-checkout created</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 04 (Reversed) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="lg:order-2">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+              Enterprise-ready controls designed around strict security and predictable access.
+            </h3>
+            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              Keep sensitive telemetry isolated. Enforce SAML Single Sign-On, granular role-based permissions, and cryptographically signed audit trails.
+            </p>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Okta, Google Workspace, &amp; Azure AD SAML/OIDC SSO</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-xs">✓</span>
+                <span>Granular field-level PII masking before ingestion</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:order-1 p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface shadow-md">
+            <div class="text-xs font-mono font-semibold text-slate-500 mb-3">Role-Based Access Matrix (RBAC)</div>
+            <div class="space-y-2 font-mono text-xs">
+              <div class="flex justify-between items-center p-2 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                <span>Admin (Security Officer)</span>
+                <span class="text-emerald-500 font-medium">Read / Write / Decrypt</span>
+              </div>
+              <div class="flex justify-between items-center p-2 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                <span>Engineering Lead</span>
+                <span class="text-brand-500 font-medium">Read Telemetry / Masked PII</span>
+              </div>
+              <div class="flex justify-between items-center p-2 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                <span>Product Analyst</span>
+                <span class="text-slate-400 font-medium">Aggregated Metrics Only</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Integrations Ecosystem -->
+    <section class="py-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+            Connect your existing data stack
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            CloudScale ingests telemetry from your existing databases, cloud providers, payment rails, and webhooks with zero friction.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-center hover:border-brand-500/50 transition-colors">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-blue-500/10 text-brand-500 flex items-center justify-center mb-3 font-mono font-bold text-sm">DW</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-white">Data Warehouse</div>
+            <p class="text-xs text-slate-500 mt-1">Snowflake, BigQuery</p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-center hover:border-brand-500/50 transition-colors">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-3 font-mono font-bold text-sm">CRM</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-white">Enterprise CRM</div>
+            <p class="text-xs text-slate-500 mt-1">HubSpot, Salesforce</p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-center hover:border-brand-500/50 transition-colors">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-accent-sky/10 text-accent-sky flex items-center justify-center mb-3 font-mono font-bold text-sm">CLD</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-white">Cloud Providers</div>
+            <p class="text-xs text-slate-500 mt-1">AWS, GCP, Azure</p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-center hover:border-brand-500/50 transition-colors">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center mb-3 font-mono font-bold text-sm">API</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-white">REST &amp; GraphQL</div>
+            <p class="text-xs text-slate-500 mt-1">Direct Ingestion API</p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-center hover:border-brand-500/50 transition-colors">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-3 font-mono font-bold text-sm">HOOK</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-white">Event Webhooks</div>
+            <p class="text-xs text-slate-500 mt-1">Stripe, Shopify, Auth0</p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-center hover:border-brand-500/50 transition-colors">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-rose-500/10 text-rose-500 flex items-center justify-center mb-3 font-mono font-bold text-sm">MSG</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-white">Kafka &amp; Kinesis</div>
+            <p class="text-xs text-slate-500 mt-1">Streaming Queues</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Comparison Matrix -->
+    <section class="py-24 border-b border-slate-200 dark:border-slate-800 bg-light-bg dark:bg-dark-bg" id="matrix">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+            Everything your team needs to scale
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Compare all platform capabilities across plans. On mobile devices, swipe horizontally to compare columns.
+          </p>
+        </div>
+
+        <!-- Table Container with Sticky Feature Column on Mobile -->
+        <div class="relative overflow-x-auto custom-scrollbar rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-dark-surface">
+          <table class="w-full text-left text-sm border-collapse min-w-[640px]">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80">
+                <th scope="col" class="py-4 px-6 font-bold text-slate-900 dark:text-white sticky left-0 z-10 bg-slate-50 dark:bg-slate-900 w-1/3">
+                  Feature Matrix
+                </th>
+                <th scope="col" class="py-4 px-6 font-bold text-slate-900 dark:text-white text-center w-2/9">
+                  Starter
+                </th>
+                <th scope="col" class="py-4 px-6 font-bold text-brand-600 dark:text-accent-sky text-center w-2/9 bg-brand-50/30 dark:bg-brand-950/20">
+                  Growth (Popular)
+                </th>
+                <th scope="col" class="py-4 px-6 font-bold text-slate-900 dark:text-white text-center w-2/9">
+                  Enterprise
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+              
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">Analytics Dashboards</td>
+                <td class="py-3.5 px-6 text-center">3 Active</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10">Unlimited</td>
+                <td class="py-3.5 px-6 text-center">Unlimited + Custom Private</td>
+              </tr>
+
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">Telemetry Retention</td>
+                <td class="py-3.5 px-6 text-center">30 Days</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10">1 Year</td>
+                <td class="py-3.5 px-6 text-center">Unlimited Cold Storage</td>
+              </tr>
+
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">Team Member Seats</td>
+                <td class="py-3.5 px-6 text-center">5 Seats</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10">25 Seats</td>
+                <td class="py-3.5 px-6 text-center">Unlimited Seats</td>
+              </tr>
+
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">Custom Scheduled Reports</td>
+                <td class="py-3.5 px-6 text-center"><span class="text-emerald-500 font-bold">✓</span> Weekly</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10"><span class="text-emerald-500 font-bold">✓</span> Daily &amp; Real-time</td>
+                <td class="py-3.5 px-6 text-center"><span class="text-emerald-500 font-bold">✓</span> Continuous Webhooks</td>
+              </tr>
+
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">High-Throughput API Access</td>
+                <td class="py-3.5 px-6 text-center">1,000 req/min</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10">10,000 req/min</td>
+                <td class="py-3.5 px-6 text-center">Uncapped Dedicated Ingress</td>
+              </tr>
+
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">Single Sign-On (SAML / SSO)</td>
+                <td class="py-3.5 px-6 text-center text-slate-400">—</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10"><span class="text-emerald-500 font-bold">✓</span> Google Workspace</td>
+                <td class="py-3.5 px-6 text-center"><span class="text-emerald-500 font-bold">✓</span> Okta / Azure AD / SAML</td>
+              </tr>
+
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">Real-Time Audit Logs</td>
+                <td class="py-3.5 px-6 text-center text-slate-400">—</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10">30-Day Logs</td>
+                <td class="py-3.5 px-6 text-center">Immutable SIEM Stream</td>
+              </tr>
+
+              <tr>
+                <td class="py-3.5 px-6 font-medium sticky left-0 z-10 bg-white dark:bg-dark-surface">Dedicated Support SLA</td>
+                <td class="py-3.5 px-6 text-center">Community &amp; Email</td>
+                <td class="py-3.5 px-6 text-center font-semibold text-slate-900 dark:text-white bg-brand-50/10 dark:bg-brand-950/10">4-Hour SLA Priority</td>
+                <td class="py-3.5 px-6 text-center">15-Min 24/7 Phone + Slack</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Transparent Pricing Section with Monthly/Annual Toggle -->
+    <section class="py-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface" id="pricing">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+            Simple pricing that scales with you
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300 mb-8">
+            Start on our generous 14-day trial. Upgrade, downgrade, or cancel at any moment with zero penalty.
+          </p>
+
+          <!-- Pricing Toggle Switch -->
+          <div class="inline-flex items-center gap-3 p-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300 pl-3">Monthly</span>
+            
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="billingToggle" class="sr-only peer" aria-label="Toggle annual billing discount">
+              <div class="w-12 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-600"></div>
+            </label>
+
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300 pr-1">Annual</span>
+            <span id="billingAnnualBadge" class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mr-1 transition-colors">
+              Save 20%
+            </span>
+          </div>
+        </div>
+
+        <!-- 3 Pricing Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+          
+          <!-- Starter Plan -->
+          <div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/50 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <div>
+              <div class="text-lg font-bold text-slate-900 dark:text-white mb-1">Starter</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Ideal for early-stage products and engineering teams needing core telemetry.</p>
+              
+              <div class="flex items-baseline gap-1 mb-1">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">$</span>
+                <span class="text-5xl font-extrabold font-mono text-slate-900 dark:text-white tracking-tight" data-monthly-price="19" data-annual-price="15">19</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 pricing-period-text">/month, billed monthly</p>
+
+              <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-300 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Up to 5 team members
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> 3 active dashboards
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> 30-day telemetry retention
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> REST API &amp; Webhook access
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Email &amp; Community support
+                </li>
+              </ul>
+            </div>
+
+            <a href="#" class="w-full text-center py-3 px-4 rounded-lg font-semibold text-sm border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              Start 14-Day Trial
+            </a>
+          </div>
+
+          <!-- Growth Plan (Highlighted / Most Popular) -->
+          <div class="relative p-8 rounded-2xl border-2 border-brand-500 dark:border-brand-500 bg-white dark:bg-slate-900 shadow-xl shadow-brand-500/10 flex flex-col justify-between lg:-translate-y-2">
+            
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-brand-600 text-white font-mono text-xs font-bold tracking-wide uppercase shadow-sm">
+              Most Popular
+            </div>
+
+            <div>
+              <div class="text-lg font-bold text-slate-900 dark:text-white mb-1">Growth</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">For fast-scaling startups requiring multi-team analytics and 1-year data history.</p>
+              
+              <div class="flex items-baseline gap-1 mb-1">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">$</span>
+                <span class="text-5xl font-extrabold font-mono text-brand-600 dark:text-accent-sky tracking-tight" data-monthly-price="49" data-annual-price="39">49</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 pricing-period-text">/month, billed monthly</p>
+
+              <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-300 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+                <li class="flex items-center gap-2 font-medium text-slate-900 dark:text-white">
+                  <span class="text-emerald-500 font-bold">✓</span> Up to 25 team members
+                </li>
+                <li class="flex items-center gap-2 font-medium text-slate-900 dark:text-white">
+                  <span class="text-emerald-500 font-bold">✓</span> Unlimited active dashboards
+                </li>
+                <li class="flex items-center gap-2 font-medium text-slate-900 dark:text-white">
+                  <span class="text-emerald-500 font-bold">✓</span> 1-Year telemetry retention
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Google Workspace SSO
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Anomaly detection alert bots
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> 4-Hour priority support SLA
+                </li>
+              </ul>
+            </div>
+
+            <a href="#" class="w-full text-center py-3 px-4 rounded-lg font-semibold text-sm bg-brand-600 text-white hover:bg-brand-700 dark:hover:bg-brand-500 transition-colors shadow-sm">
+              Start Free 14-Day Trial
+            </a>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/50 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <div>
+              <div class="text-lg font-bold text-slate-900 dark:text-white mb-1">Enterprise</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Custom ingestion scale, SAML SSO, dedicated VPC endpoints, and custom compliance.</p>
+              
+              <div class="flex items-baseline gap-1 mb-1">
+                <span class="text-4xl font-extrabold font-mono text-slate-900 dark:text-white tracking-tight">Custom</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Volume-based contract pricing</p>
+
+              <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-300 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Unlimited team members
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Unlimited retention &amp; cold archive
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Okta / Azure AD SAML SSO
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> Dedicated VPC peering / Ingress
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span> 15-minute 24/7 dedicated engineer SLA
+                </li>
+              </ul>
+            </div>
+
+            <a href="#" class="w-full text-center py-3 px-4 rounded-lg font-semibold text-sm border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              Talk to Enterprise Sales
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Credible Testimonial -->
+    <section class="py-20 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        <svg class="w-10 h-10 mx-auto text-brand-500/40 dark:text-accent-sky/30 mb-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+        </svg>
+
+        <blockquote class="text-xl sm:text-2xl font-medium text-slate-900 dark:text-slate-100 leading-relaxed mb-6">
+          “CloudScale gave our teams one unified place to understand what was actually happening across our entire engineering infrastructure, customer funnel, and recurring revenue in real time.”
+        </blockquote>
+
+        <div class="font-semibold text-slate-900 dark:text-white">Jordan Lee</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400">VP of Product, Northstar</div>
+        <div class="mt-4 inline-block text-[11px] font-mono text-slate-400 dark:text-slate-500 px-2.5 py-0.5 rounded bg-slate-200/60 dark:bg-slate-800/60">
+          Fictional testimonial for portfolio demonstration
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Accessible FAQ Accordion -->
+    <section class="py-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface" id="faq">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+            Frequently asked questions
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Everything you need to know about the platform, implementation, and portfolio demonstration.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- FAQ 1 -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/40">
+            <button 
+              type="button" 
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left font-semibold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-accent-sky transition-colors focus:outline-none"
+              aria-expanded="false"
+              aria-controls="faq-ans-1"
+            >
+              <span>What types of data can CloudScale track and aggregate?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="faq-ans-1" class="hidden px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
+              CloudScale ingests structured time-series metrics, OpenTelemetry traces, SQL query event streams, webhook payload statistics, and financial recurring billing events into unified dimensional indexes.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/40">
+            <button 
+              type="button" 
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left font-semibold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-accent-sky transition-colors focus:outline-none"
+              aria-expanded="false"
+              aria-controls="faq-ans-2"
+            >
+              <span>Can different departments create private, isolated dashboards?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="faq-ans-2" class="hidden px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
+              Yes. CloudScale supports multi-workspace isolation with granular role-based access control (RBAC). Engineering teams can build private infrastructure diagnostics while Finance teams work in isolated MRR dashboards.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/40">
+            <button 
+              type="button" 
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left font-semibold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-accent-sky transition-colors focus:outline-none"
+              aria-expanded="false"
+              aria-controls="faq-ans-3"
+            >
+              <span>Does CloudScale require complex SDK installations or proxy servers?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="faq-ans-3" class="hidden px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
+              No. Ingestion can be initiated via lightweight REST HTTP POST payloads, standard OpenTelemetry exporters, or native data warehouse connectors (Snowflake / BigQuery) without proxy overhead.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/40">
+            <button 
+              type="button" 
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left font-semibold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-accent-sky transition-colors focus:outline-none"
+              aria-expanded="false"
+              aria-controls="faq-ans-4"
+            >
+              <span>Can we switch from monthly to annual billing at any point?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="faq-ans-4" class="hidden px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
+              Yes, plan adjustments take effect immediately. Upgrading to an annual plan applies the 20% discount with prorated credits for any remaining monthly billing time.
+            </div>
+          </div>
+
+          <!-- FAQ 5 (Portfolio Disclaimer) -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/40">
+            <button 
+              type="button" 
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left font-semibold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-accent-sky transition-colors focus:outline-none"
+              aria-expanded="false"
+              aria-controls="faq-ans-5"
+            >
+              <span>Is CloudScale a live commercial product or company?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="faq-ans-5" class="hidden px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
+              CloudScale is a fictional enterprise software product created as a frontend design-to-code portfolio demonstration by Tino Nurcahya to demonstrate modern HTML5, Tailwind CSS v4, responsive layout engineering, and Vanilla JavaScript interactions.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-dark-bg dark:to-slate-950">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        <div class="p-10 sm:p-16 rounded-3xl bg-slate-900 dark:bg-slate-900/90 text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+          
+          <div class="absolute -right-24 -top-24 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-accent-sky/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+            Make your data easier to act on.
+          </h2>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+            Bring your most important metrics into one focused analytics workspace today. Start your free 14-day enterprise trial.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#pricing" class="w-full sm:w-auto px-8 py-4 font-semibold text-slate-900 bg-white hover:bg-slate-100 rounded-xl transition-all shadow-lg hover:shadow-xl">
+              Start Free Trial ↗
+            </a>
+            <a href="#capabilities" class="w-full sm:w-auto px-8 py-4 font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl transition-colors">
+              Explore Platform
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-dark-surface py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Brand Column (2 cols on desktop) -->
+        <div class="col-span-2">
+          <div class="flex items-center gap-2.5 mb-4">
+            <div class="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
+              <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                <defs>
+                  <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#0ea5e9"/>
+                    <stop offset="50%" stop-color="#0284c7"/>
+                    <stop offset="100%" stop-color="#2563eb"/>
+                  </linearGradient>
+                </defs>
+                <rect width="100" height="100" rx="26" fill="url(#footerLogoGrad)"/>
+                <path d="M 27 34 V 67 C 27 70 29 72 32 72 H 72" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 37 57 L 47 43 L 57 56 L 70 38" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Cloud<span class="text-sky-500 dark:text-accent-sky">Scale</span>
+            </span>
+          </div>
+
+          <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed mb-4">
+            CloudScale brings infrastructure, product, revenue, and operational telemetry into one unified analytics workspace.
+          </p>
+
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-600 dark:text-accent-sky">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            All Global Clusters Operational
+          </div>
+        </div>
+
+        <!-- Product Links -->
+        <div>
+          <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-900 dark:text-white mb-3">Product</h4>
+          <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+            <li><a href="#capabilities" class="hover:text-brand-600">Observability</a></li>
+            <li><a href="#demo" class="hover:text-brand-600">Live Workspace</a></li>
+            <li><a href="#features" class="hover:text-brand-600">Real-Time Ingestion</a></li>
+            <li><a href="#pricing" class="hover:text-brand-600">Pricing Plans</a></li>
+          </ul>
+        </div>
+
+        <!-- Solutions Links -->
+        <div>
+          <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-900 dark:text-white mb-3">Solutions</h4>
+          <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+            <li><a href="#demo" class="hover:text-brand-600">Engineering Teams</a></li>
+            <li><a href="#demo" class="hover:text-brand-600">Product Analytics</a></li>
+            <li><a href="#demo" class="hover:text-brand-600">Executive Finance</a></li>
+            <li><a href="#features" class="hover:text-brand-600">Enterprise Security</a></li>
+          </ul>
+        </div>
+
+        <!-- Repository & Showcase Links -->
+        <div>
+          <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-900 dark:text-white mb-3">Showcase</h4>
+          <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+            <li><a href="../../index.html" class="hover:text-brand-600 font-semibold text-brand-600 dark:text-accent-sky">← Back to Hub</a></li>
+            <li><a href="../../projects/restaurant-design-to-code/index.html" class="hover:text-brand-600">Project 01: Restaurant</a></li>
+            <li><a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600">GitHub Repository</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar with Dynamic Year -->
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div>
+          &copy; <span id="currentYear">2026</span> CloudScale. Fictional SaaS product created for frontend portfolio demonstration.
+        </div>
+        <div class="flex items-center gap-3 font-mono text-[11px]">
+          <span>HTML5</span>
+          <span>•</span>
+          <span>Tailwind CSS v4</span>
+          <span>•</span>
+          <span>Vanilla JavaScript</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script src="./src/script.js"></script>
+</body>
+</html>
