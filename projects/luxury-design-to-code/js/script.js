@@ -13,16 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Reduced Motion Check
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // 3. Lenis Smooth Scroll Initialization
+  // 3. Lenis Smooth Scroll Initialization (Desktop / Fine Pointer Only)
   let lenis = null;
-  if (typeof Lenis !== 'undefined' && !prefersReducedMotion) {
+  const isTouchOrMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth < 1081;
+
+  if (typeof Lenis !== 'undefined' && !prefersReducedMotion && !isTouchOrMobile) {
     lenis = new Lenis({
       duration: 1.25,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 0.9,
-      touchMultiplier: 1.5,
       infinite: false
     });
 
@@ -153,8 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mm = gsap.matchMedia();
 
-    // Desktop Pinned Studies Track (>= 1024px)
-    mm.add('(min-width: 1024px)', () => {
+    // Desktop Pinned Studies Track (>= 1081px)
+    mm.add('(min-width: 1081px)', () => {
       const studiesSection = document.querySelector('.studies-section');
       const track = document.querySelector('.studies-track');
       const progressFill = document.querySelector('.studies-progress-fill');
@@ -182,6 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
           x: getScrollAmount,
           ease: 'none'
         });
+      }
+    });
+
+    // Mobile / Tablet Unpinned Studies (< 1081px)
+    mm.add('(max-width: 1080px)', () => {
+      const track = document.querySelector('.studies-track');
+      if (track) {
+        gsap.set(track, { clearProps: 'all' });
       }
     });
 

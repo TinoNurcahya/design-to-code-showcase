@@ -132,10 +132,10 @@ function initMobileNav() {
 
     if (isExpanded) {
       mobileNav.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden', 'md:overflow-auto');
+      document.body.classList.add('overflow-hidden', 'lg:overflow-auto');
     } else {
       mobileNav.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden', 'md:overflow-auto');
+      document.body.classList.remove('overflow-hidden', 'lg:overflow-auto');
     }
 
     // Toggle hamburger icon lines
