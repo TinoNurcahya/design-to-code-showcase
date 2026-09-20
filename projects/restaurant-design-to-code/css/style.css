@@ -2150,7 +2150,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-dark-bg);
   color: var(--color-dark-text);
   padding-top: clamp(4rem, 6vw, 5.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-footer .container {
+  padding-left: max(clamp(1.5rem, 5.5vw, 2.5rem), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(1.5rem, 5.5vw, 2.5rem), env(safe-area-inset-right, 0px));
 }
 
 .footer-top-grid {
@@ -2848,6 +2854,12 @@ h1, h2, h3, h4, h5, h6 {
   /* Footer */
   .site-footer {
     padding-top: 3.5rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .site-footer .container {
+    padding-left: max(clamp(1.5rem, 6vw, 2.25rem), env(safe-area-inset-left, 0px));
+    padding-right: max(clamp(1.5rem, 6vw, 2.25rem), env(safe-area-inset-right, 0px));
   }
 
   .footer-top-grid {
@@ -2885,6 +2897,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 380px) {
   :root {
     --container-padding: 0.85rem;
+  }
+
+  .site-footer .container {
+    padding-left: max(1.35rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.35rem, env(safe-area-inset-right, 0px));
   }
 
   .hero-dish-row {

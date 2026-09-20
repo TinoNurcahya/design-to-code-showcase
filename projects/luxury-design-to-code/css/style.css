@@ -1604,6 +1604,11 @@ ul, ol {
   position: relative;
 }
 
+.site-footer .catalog-container {
+  padding-left: max(clamp(1.5rem, 5.5vw, 3.5rem), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(1.5rem, 5.5vw, 3.5rem), env(safe-area-inset-right, 0px));
+}
+
 .footer-top {
   display: grid;
   grid-template-columns: 1.5fr repeat(3, 1fr);
