@@ -1,607 +1,344 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <title>Design-to-Code Showcase | Frontend Implementation Hub</title>
-  <meta name="description" content="A curated collection of pixel-perfect frontend implementations converting design files (Figma, PSD, XD, and visual references) into clean, responsive HTML5, CSS3, and JavaScript.">
-  <meta name="author" content="Tino Nurcahya">
-  <meta name="keywords" content="Figma to HTML, PSD to HTML, Design to Code, Frontend Developer, Responsive Web Design, Vanilla JavaScript, Pixel-Perfect">
-  
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Design-to-Code Showcase | Frontend Implementation Hub">
-  <meta property="og:description" content="Explore clean, responsive, and pixel-perfect design-to-code implementations built with pure HTML5, CSS3, and Vanilla JavaScript.">
-  <meta property="og:image" content="./assets/screenshots/restaurant-preview.webp">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Design-to-Code Showcase | Frontend Implementation Hub</title>
+    <meta
+      name="description"
+      content="A curated collection of responsive frontend implementations turning Figma, PSD, and visual references into polished, production-ready code." />
+    <meta name="author" content="Tino Nurcahya" />
+    <meta
+      name="keywords"
+      content="Figma to HTML, PSD to HTML, Design to Code, Frontend Developer, Responsive Web Design, Vanilla JavaScript, Pixel-Perfect" />
 
-  <!-- Main Stylesheet (versioned for cache-busting) -->
-  <link rel="stylesheet" href="./css/style.css?v=2.5">
-</head>
-<body>
-  <!-- Accessibility Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Design-to-Code Showcase | Frontend Implementation Hub" />
+    <meta
+      property="og:description"
+      content="Explore clean, responsive, and pixel-perfect design-to-code implementations built with pure HTML5, CSS3, and Vanilla JavaScript." />
+    <meta property="og:image" content="./assets/screenshots/restaurant-preview.webp" />
 
-  <!-- Header & Navigation -->
-  <header class="site-header" id="site-header">
-    <div class="container header-container">
-      <a href="#" class="logo-link" aria-label="Design to Code Showcase Hub">
-        <span class="logo-badge" aria-hidden="true">&lt;/&gt;</span>
-        <span class="logo-text">Design<span>→</span>Code</span>
-      </a>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
 
-      <!-- Desktop Nav -->
-      <nav class="desktop-nav" aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
-          <li><a href="#process" class="nav-link">Process</a></li>
-        </ul>
-      </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet" />
 
-      <!-- Header Actions -->
-      <div class="header-actions">
-        <div class="header-status-pill" aria-label="Freelance availability status">
-          <span class="pulse-dot" aria-hidden="true"></span>
-          <span>Available for Projects</span>
-        </div>
+    <link rel="stylesheet" href="./css/style.css?v=3.0" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-        <a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-          <span>GitHub Repo</span>
+    <header class="site-header" id="site-header">
+      <div class="container header-container">
+        <a href="#" class="logo-link" aria-label="Design to Code Showcase Hub">
+          <span class="logo-badge" aria-hidden="true">&lt;/&gt;</span>
+          <span class="logo-text">Design<span>→</span>Code</span>
         </a>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#process" class="nav-link">Process</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+          </ul>
+        </nav>
 
-    <!-- Mobile Nav Drawer -->
-    <nav class="mobile-nav" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
-      <ul class="mobile-menu-list">
-        <li class="mobile-status-item">
+        <div class="header-actions">
           <div class="header-status-pill" aria-label="Freelance availability status">
             <span class="pulse-dot" aria-hidden="true"></span>
             <span>Available for Projects</span>
           </div>
-        </li>
-        <li><a href="#projects" class="mobile-menu-link">Projects</a></li>
-        <li><a href="#capabilities" class="mobile-menu-link">Capabilities</a></li>
-        <li><a href="#process" class="mobile-menu-link">Process</a></li>
-        <li class="mobile-menu-cta">
-          <a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
-            View on GitHub ↗
+
+          <a
+            href="https://github.com/TinoNurcahya/design-to-code-showcase"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-sm">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>GitHub</span>
           </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Main Content Area -->
-  <main id="main-content">
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-eyebrow">
-            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            <span>Design-to-Code Specialist • Upwork &amp; Contracts</span>
-          </div>
-
-          <h1 class="hero-title">
-            Pixel-Perfect Frontend from <span>Modern Designs</span>.
-          </h1>
-
-          <p class="hero-desc">
-            Specialized frontend developer translating Figma, PSD, and visual designs into clean, responsive, production-ready code with zero framework bloat.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              Explore Projects (3 Demos)
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <polyline points="19 12 12 19 5 12"></polyline>
-              </svg>
-            </a>
-            <a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              View Repository
-            </a>
-          </div>
-
-          <!-- Proof / Stat Matrix Strip -->
-          <div class="hero-stats-strip">
-            <div class="stat-item">
-              <span class="stat-number">03</span>
-              <span class="stat-label">Production Demos</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Responsive 320px+</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-item">
-              <span class="stat-number">&lt; 1s</span>
-              <span class="stat-label">Fast Zero-Bloat Load</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-item">
-              <span class="stat-number">Multi-Stack</span>
-              <span class="stat-label">Vanilla · Tailwind · GSAP</span>
-            </div>
-          </div>
-
-          <!-- Spec / Skill Pills -->
-          <div class="hero-pills">
-            <span class="pills-label">Core Capabilities:</span>
-            <span class="pill"><span class="pill-dot"></span>Figma → Code</span>
-            <span class="pill"><span class="pill-dot"></span>PSD → Code</span>
-            <span class="pill"><span class="pill-dot"></span>Tailwind CSS v4</span>
-            <span class="pill"><span class="pill-dot"></span>GSAP &amp; Lenis Motion</span>
-            <span class="pill"><span class="pill-dot"></span>Semantic HTML5</span>
-            <span class="pill"><span class="pill-dot"></span>Component CSS</span>
-          </div>
+          <button
+            class="menu-toggle"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav-drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
-    </section>
 
-    <!-- Project Showcase Section -->
-    <section class="projects-section" id="projects">
+      <nav class="mobile-nav" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+        <ul class="mobile-menu-list">
+          <li class="mobile-status-item">
+            <div class="header-status-pill" aria-label="Freelance availability status">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span>Available for Projects</span>
+            </div>
+          </li>
+          <li><a href="#projects" class="mobile-menu-link">Projects</a></li>
+          <li><a href="#process" class="mobile-menu-link">Process</a></li>
+          <li><a href="#about" class="mobile-menu-link">About</a></li>
+          <li class="mobile-menu-cta">
+            <a
+              href="https://github.com/TinoNurcahya/design-to-code-showcase"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+              style="width: 100%">
+              View on GitHub ↗
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+              <span>Design → Code / Frontend Showcase</span>
+            </div>
+
+            <h1 class="hero-title">Designs translated into <span>production-ready frontend.</span></h1>
+
+            <p class="hero-desc">
+              A collection of responsive frontend implementations built from Figma, PSD, and visual design
+              references.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                Explore Projects
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/TinoNurcahya/design-to-code-showcase"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1 2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                GitHub Repository
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projects">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Projects</span>
+            <h2 class="section-title">Selected Design-to-Code Work</h2>
+            <p class="section-subtitle">
+              Frontend implementations focused on visual accuracy, responsive behavior, and production-ready
+              code.
+            </p>
+          </div>
+
+          <div class="project-filters" role="tablist" aria-label="Project filters">
+            <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">
+              All
+            </button>
+            <button class="filter-btn" type="button" data-filter="figma" aria-pressed="false">Figma</button>
+            <button class="filter-btn" type="button" data-filter="psd" aria-pressed="false">PSD</button>
+            <button class="filter-btn" type="button" data-filter="landing" aria-pressed="false">
+              Landing Page
+            </button>
+            <button class="filter-btn" type="button" data-filter="saas" aria-pressed="false">SaaS</button>
+            <button class="filter-btn" type="button" data-filter="editorial" aria-pressed="false">
+              Editorial
+            </button>
+            <button class="filter-btn" type="button" data-filter="motion" aria-pressed="false">Motion</button>
+          </div>
+
+          <div class="projects-grid" id="project-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="approach-section" id="about">
+        <div class="container approach-container">
+          <div class="approach-header">
+            <span class="section-tag">Approach</span>
+          </div>
+          <div class="approach-row">
+            <h2 class="section-title approach-title">
+              Visual fidelity · Responsive layouts · Semantic markup · Maintainable frontend
+            </h2>
+            <p class="approach-copy">
+              Every build focuses on fluid layouts, sharp visual hierarchy, and clean implementation that
+              stays easy to extend.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="process-section" id="process">
+        <div class="container">
+          <div class="section-header process-header">
+            <span class="section-tag">Workflow</span>
+            <h2 class="section-title">From design file to frontend</h2>
+          </div>
+
+          <div class="process-flow" aria-label="Project workflow">
+            <div class="process-step">
+              <span class="process-step-num">01</span>
+              <div>
+                <h3>Analyze</h3>
+                <p>Review layout, typography, spacing, and responsive intent.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">02</span>
+              <div>
+                <h3>Structure</h3>
+                <p>Plan hierarchy, semantics, and reusable patterns for the build.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">03</span>
+              <div>
+                <h3>Build</h3>
+                <p>Translate the design into a responsive, production-ready interface.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">04</span>
+              <div>
+                <h3>Refine</h3>
+                <p>Test behavior, polish the details, and tighten the final output.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-box">
+            <span class="cta-eyebrow">Available for Freelance Work</span>
+            <h2 class="cta-title">Have a design ready to become code?</h2>
+            <p class="cta-desc">
+              I build responsive frontend implementations from Figma, PSD, and visual references for
+              production-ready web experiences.
+            </p>
+            <div class="cta-actions">
+              <a
+                href="https://www.upwork.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary">
+                Hire on Upwork ↗
+              </a>
+              <a
+                href="https://github.com/TinoNurcahya/design-to-code-showcase"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+                View GitHub ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
       <div class="container">
-        <div class="section-header">
-          <div class="section-header-row">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#" class="logo-link" aria-label="Design to Code home">
+              <span class="logo-badge" aria-hidden="true">&lt;/&gt;</span>
+              <span class="logo-text">Design<span>→</span>Code</span>
+            </a>
+            <p class="footer-desc">
+              Frontend design-to-code showcase focused on visual fidelity, responsive systems, and
+              maintainable implementation.
+            </p>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer Navigation">
             <div>
-              <span class="section-tag">Showcase Hub</span>
-              <h2 class="section-title">Design-to-Code Projects</h2>
-              <p class="section-subtitle">
-                Selected frontend implementations demonstrating visual accuracy, responsive behavior, modern tooling, and maintainable code across distinct domains.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="projects-grid">
-          
-          <!-- Project 01: Restaurant (Complete) -->
-          <article class="project-card" data-category="vanilla" id="project-restaurant">
-            <div class="card-preview">
-              <div class="browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-                </div>
-                <div class="browser-url">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  <span>demo.daily-table.local</span>
-                </div>
-                <div class="browser-status-chip">
-                  <span class="status-dot"></span>
-                  <span>Live Demo</span>
-                </div>
-              </div>
-
-              <div class="preview-media-wrap">
-                <span class="status-badge complete">
-                  <span class="status-dot" aria-hidden="true"></span>
-                  Completed
-                </span>
-                <img 
-                  src="./assets/screenshots/restaurant-preview.webp" 
-                  alt="The Daily Table restaurant homepage preview" 
-                  loading="lazy"
-                  width="800"
-                  height="500"
-                >
-              </div>
-            </div>
-
-            <div class="card-body">
-              <div class="card-top-meta">
-                <span class="card-number">PROJECT 01</span>
-                <span class="card-source-badge">Visual Reference → Modular CSS &amp; JS</span>
-              </div>
-
-              <div class="card-title-group">
-                <h3 class="card-title">The Daily Table</h3>
-                <span class="card-subtitle">Gourmet Restaurant &amp; Café Experience</span>
-              </div>
-              
-              <p class="card-desc">
-                High-fidelity culinary interface recreated from visual design with artisanal typography, responsive multi-category menu, reservation system, and testimonial carousel.
-              </p>
-
-              <ul class="card-features">
-                <li><span class="feature-check">✓</span> Handcrafted semantic HTML5 &amp; modular CSS3</li>
-                <li><span class="feature-check">✓</span> Responsive menu filtering, reservations &amp; lightbox</li>
-                <li><span class="feature-check">✓</span> 100% pure vanilla code, zero external runtime</li>
+              <h4 class="footer-col-title">Navigate</h4>
+              <ul class="footer-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#about">About</a></li>
               </ul>
-
-              <div class="card-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Modular CSS</span>
-              </div>
-
-              <div class="card-actions">
-                <a href="./projects/restaurant-design-to-code/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  Live Demo ↗
-                </a>
-                <a href="https://github.com/TinoNurcahya/design-to-code-showcase/tree/main/projects/restaurant-design-to-code" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                  Source Code ↗
-                </a>
-              </div>
             </div>
-          </article>
-
-          <!-- Project 02: SaaS Landing Page (Complete) -->
-          <article class="project-card" data-category="tailwind" id="project-saas">
-            <div class="card-preview">
-              <div class="browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-                </div>
-                <div class="browser-url">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  <span>app.cloudscale.io</span>
-                </div>
-                <div class="browser-status-chip">
-                  <span class="status-dot"></span>
-                  <span>Live Demo</span>
-                </div>
-              </div>
-
-              <div class="preview-media-wrap">
-                <span class="status-badge complete">
-                  <span class="status-dot" aria-hidden="true"></span>
-                  Completed
-                </span>
-                <img 
-                  src="./assets/screenshots/saas-preview.webp" 
-                  alt="CloudScale SaaS analytics dashboard preview" 
-                  loading="lazy"
-                  width="800"
-                  height="500"
-                >
-              </div>
-            </div>
-
-            <div class="card-body">
-              <div class="card-top-meta">
-                <span class="card-number">PROJECT 02</span>
-                <span class="card-source-badge">UI Concept → Tailwind CSS v4 &amp; JS</span>
-              </div>
-
-              <div class="card-title-group">
-                <h3 class="card-title">CloudScale</h3>
-                <span class="card-subtitle">Enterprise SaaS Analytics Platform</span>
-              </div>
-              
-              <p class="card-desc">
-                Enterprise analytics landing page with live interactive metric counters, dynamic monthly/annual billing calculation, feature matrix, and instant dark/light themes.
-              </p>
-
-              <ul class="card-features">
-                <li><span class="feature-check">✓</span> Tailwind CSS v4 utility architecture &amp; custom theme</li>
-                <li><span class="feature-check">✓</span> Dynamic pricing toggle &amp; interactive workspace previews</li>
-                <li><span class="feature-check">✓</span> Seamless Dark/Light mode theme system with localStorage</li>
+            <div>
+              <h4 class="footer-col-title">Links</h4>
+              <ul class="footer-links">
+                <li>
+                  <a
+                    href="https://github.com/TinoNurcahya/design-to-code-showcase"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+                <li><a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer">Upwork</a></li>
               </ul>
-
-              <div class="card-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">Tailwind CSS v4</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Dark Mode</span>
-              </div>
-
-              <div class="card-actions">
-                <a href="./projects/saas-design-to-code/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  Live Demo ↗
-                </a>
-                <a href="https://github.com/TinoNurcahya/design-to-code-showcase/tree/main/projects/saas-design-to-code" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                  Source Code ↗
-                </a>
-              </div>
             </div>
-          </article>
+          </nav>
+        </div>
 
-          <!-- Project 03: Luxury / Editorial (Complete) -->
-          <article class="project-card" data-category="motion" id="project-luxury">
-            <div class="card-preview">
-              <div class="browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-                </div>
-                <div class="browser-url">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  <span>atelier.editorial.local</span>
-                </div>
-                <div class="browser-status-chip">
-                  <span class="status-dot"></span>
-                  <span>Live Demo</span>
-                </div>
-              </div>
-
-              <div class="preview-media-wrap">
-                <span class="status-badge complete">
-                  <span class="status-dot" aria-hidden="true"></span>
-                  Completed
-                </span>
-                <img 
-                  src="./assets/screenshots/luxury-preview.webp" 
-                  alt="Atelier &amp; Co luxury editorial catalog preview" 
-                  loading="lazy"
-                  width="800"
-                  height="500"
-                >
-              </div>
-            </div>
-
-            <div class="card-body">
-              <div class="card-top-meta">
-                <span class="card-number">PROJECT 03</span>
-                <span class="card-source-badge">Editorial Design → GSAP &amp; Lenis Motion</span>
-              </div>
-
-              <div class="card-title-group">
-                <h3 class="card-title">Atelier &amp; Co.</h3>
-                <span class="card-subtitle">Luxury Editorial Catalog</span>
-              </div>
-              
-              <p class="card-desc">
-                High-end fashion editorial catalog featuring bespoke typographic rhythm, asymmetric gallery compositions, smooth inertial scrolling via Lenis, and cinematic GSAP ScrollTrigger effects.
-              </p>
-
-              <ul class="card-features">
-                <li><span class="feature-check">✓</span> Bespoke editorial typography &amp; asymmetric CSS Grid</li>
-                <li><span class="feature-check">✓</span> GSAP ScrollTrigger timeline reveals &amp; pinned sections</li>
-                <li><span class="feature-check">✓</span> Ultra-fluid Lenis inertial smooth scroll experience</li>
-              </ul>
-
-              <div class="card-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">GSAP Motion</span>
-                <span class="tag">Lenis Scroll</span>
-              </div>
-
-              <div class="card-actions">
-                <a href="./projects/luxury-design-to-code/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  Live Demo ↗
-                </a>
-                <a href="https://github.com/TinoNurcahya/design-to-code-showcase/tree/main/projects/luxury-design-to-code" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                  Source Code ↗
-                </a>
-              </div>
-            </div>
-          </article>
-
+        <div class="footer-bottom">
+          <p>© <span id="currentYear">2026</span> Tino Nurcahya</p>
+          <span class="footer-badge">HTML · CSS · JavaScript</span>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <!-- Capabilities / About Showcase Section -->
-    <section class="about-section" id="capabilities">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Frontend Craft</span>
-          <h2 class="section-title">Built with Frontend Craft</h2>
-          <p class="section-subtitle">
-            Each project is built with attention to visual accuracy, semantic structure, responsive behavior, accessibility, and maintainable code.
-          </p>
-        </div>
-
-        <div class="capabilities-grid">
-          
-          <!-- Capability 1 -->
-          <div class="capability-card">
-            <div class="capability-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-              </svg>
-            </div>
-            <h3 class="capability-title">Visual Fidelity</h3>
-            <p class="capability-desc">
-              Careful translation of typography, spacing, scale, imagery, and layout from design to browser.
-            </p>
-          </div>
-
-          <!-- Capability 2 -->
-          <div class="capability-card">
-            <div class="capability-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h3 class="capability-title">Semantic Structure</h3>
-            <p class="capability-desc">
-              Accessible and maintainable markup with clear content hierarchy.
-            </p>
-          </div>
-
-          <!-- Capability 3 -->
-          <div class="capability-card">
-            <div class="capability-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h3 class="capability-title">Responsive Systems</h3>
-            <p class="capability-desc">
-              Layouts designed to adapt naturally across desktop, tablet, and mobile.
-            </p>
-          </div>
-
-          <!-- Capability 4 -->
-          <div class="capability-card">
-            <div class="capability-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <h3 class="capability-title">Lean Frontend</h3>
-            <p class="capability-desc">
-              Use only the tools a project actually needs, without unnecessary complexity.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Workflow / Process Section -->
-    <section class="process-section" id="process">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Workflow</span>
-          <h2 class="section-title">From Design File to Frontend</h2>
-          <p class="section-subtitle">
-            A structured, transparent approach to turning static designs into resilient frontend code.
-          </p>
-        </div>
-
-        <div class="process-grid">
-          
-          <!-- Step 1 -->
-          <div class="process-card">
-            <span class="process-step-num">01</span>
-            <h3 class="process-title">Analyze</h3>
-            <p class="process-desc">
-              Review layout, typography, spacing, assets, and responsive intent.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="process-card">
-            <span class="process-step-num">02</span>
-            <h3 class="process-title">Structure</h3>
-            <p class="process-desc">
-              Plan semantic markup, reusable patterns, and content hierarchy.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="process-card">
-            <span class="process-step-num">03</span>
-            <h3 class="process-title">Build</h3>
-            <p class="process-desc">
-              Translate the design into responsive frontend code.
-            </p>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="process-card">
-            <span class="process-step-num">04</span>
-            <h3 class="process-title">Refine</h3>
-            <p class="process-desc">
-              Test interactions, responsive behavior, accessibility, and browser consistency.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action Section (Freelance Target) -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <span class="cta-eyebrow">Available for Freelance Work</span>
-          <h2 class="cta-title">Have a Design Ready to Become Code?</h2>
-          <p class="cta-desc">
-            Available for frontend design-to-code projects, including Figma, PSD, and visual reference implementations.
-          </p>
-          <div class="cta-actions">
-            <a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Hire on Upwork ↗
-            </a>
-            <a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              View GitHub ↗
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="logo-link">
-            <span class="logo-badge" aria-hidden="true">&lt;/&gt;</span>
-            <span class="logo-text">Design<span>→</span>Code</span>
-          </a>
-          <p class="footer-desc">
-            Frontend design-to-code showcase focused on responsive implementation and visual accuracy.
-          </p>
-        </div>
-
-        <nav class="footer-nav" aria-label="Footer Navigation">
-          <div>
-            <h4 class="footer-col-title">Navigation</h4>
-            <ul class="footer-links">
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#capabilities">Capabilities</a></li>
-              <li><a href="#process">Process</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="footer-col-title">Projects</h4>
-            <ul class="footer-links">
-              <li><a href="./projects/restaurant-design-to-code/index.html">The Daily Table</a></li>
-              <li><a href="./projects/saas-design-to-code/index.html">CloudScale SaaS</a></li>
-              <li><a href="./projects/luxury-design-to-code/index.html">Atelier &amp; Co.</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="footer-col-title">Links</h4>
-            <ul class="footer-links">
-              <li><a href="https://github.com/TinoNurcahya/design-to-code-showcase" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer">Upwork</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="currentYear">2026</span> Tino Nurcahya.</p>
-        <div class="footer-badge">HTML · CSS · JavaScript</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Main JavaScript (versioned for cache-busting) -->
-  <script src="./js/script.js?v=2.5"></script>
-</body>
+    <script src="./js/script.js?v=3.0"></script>
+  </body>
 </html>
