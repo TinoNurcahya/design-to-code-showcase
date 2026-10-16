@@ -52,39 +52,16 @@ design-to-code-showcase/
 ├── css/
 │   └── style.css                  # Showcase hub design system & styling
 ├── js/
-│   └── script.js                  # Showcase hub interactions & mobile menu
+│   └── script.js                  # Dynamic project rendering & theme logic
 ├── assets/
-│   └── screenshots/               # Card previews & mockup graphics
-│       ├── restaurant-preview.webp
-│       ├── saas-preview.svg
-│       └── luxury-preview.webp
-└── projects/                      # Standalone design-to-code projects
-    ├── restaurant-v1/             # Project 01: Restaurant & Café
-    │   ├── index.html
-    │   ├── README.md
-    │   ├── css/
-    │   │   └── style.css
-    │   ├── js/
-    │   │   └── script.js
-    │   └── assets/
-    ├── saas-v1/                   # Project 02: SaaS Analytics Platform
-    │   ├── index.html
-    │   ├── package.json
-    │   ├── README.md
-    │   ├── src/
-    │   │   ├── input.css
-    │   │   └── script.js
-    │   └── dist/
-    │       └── output.css
-    └── ecommerce-v1/              # Project 03: Luxury Fashion E-Commerce
-        ├── index.html
-        ├── README.md
-        ├── css/
-        │   └── style.css
-        ├── js/
-        │   ├── script.js
-        │   └── vendor/
-        └── assets/
+│   └── screenshots/               # Preview images for showcase cards
+└── projects/                      # Standalone design-to-code implementations
+    ├── <category>-v<version>/     # Standardized project pattern (e.g., restaurant-v1, saas-v1, ...)
+    │   ├── index.html             # Project live demo / entry point
+    │   ├── README.md              # Project documentation & design source
+    │   ├── css/                   # Stylesheets / compiled CSS
+    │   ├── js/                    # Interactive vanilla scripts
+    │   └── assets/                # Images, icons, and media
 ```
 
 ---
