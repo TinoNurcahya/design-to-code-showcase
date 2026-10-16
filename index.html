@@ -1,24 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Design-to-Code Showcase | Frontend Implementation Hub</title>
+    <title>Design-to-Code Showcase | Frontend Implementation Archive</title>
     <meta
       name="description"
-      content="A curated collection of responsive frontend implementations turning Figma, PSD, and visual references into polished, production-ready code." />
+      content="An ultra-clean, visual-first archive of frontend implementations converting Figma, PSD, and visual designs into clean HTML, CSS, and JavaScript." />
     <meta name="author" content="Tino Nurcahya" />
     <meta
       name="keywords"
-      content="Figma to HTML, PSD to HTML, Design to Code, Frontend Developer, Responsive Web Design, Vanilla JavaScript, Pixel-Perfect" />
+      content="Design to Code, Figma to HTML, PSD to HTML, CSS, JavaScript, Frontend Developer, Showcase" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Design-to-Code Showcase | Frontend Implementation Hub" />
+    <meta property="og:title" content="Design-to-Code Showcase | Frontend Implementation Archive" />
     <meta
       property="og:description"
-      content="Explore clean, responsive, and pixel-perfect design-to-code implementations built with pure HTML5, CSS3, and Vanilla JavaScript." />
+      content="Visual archive of responsive design-to-code implementations built with pure HTML5, CSS3, and JavaScript." />
     <meta property="og:image" content="./assets/screenshots/restaurant-preview.webp" />
 
     <link
@@ -31,37 +31,78 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="./css/style.css?v=3.0" />
+    <link rel="stylesheet" href="./css/style.css?v=5.0" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="site-header" id="site-header">
-      <div class="container header-container">
-        <a href="#" class="logo-link" aria-label="Design to Code Showcase Hub">
-          <span class="logo-badge" aria-hidden="true">&lt;/&gt;</span>
-          <span class="logo-text">Design<span>→</span>Code</span>
+    <!-- Top Floating Pill Dock -->
+    <header class="floating-dock" id="floating-dock" aria-label="Showcase Controls">
+      <div class="dock-inner">
+        <a href="#" class="dock-brand" aria-label="Design to Code Showcase Home">
+          <span class="dock-badge" aria-hidden="true">&lt;/&gt;</span>
+          <span class="dock-title">Design<span>→</span>Code</span>
         </a>
 
-        <nav class="desktop-nav" aria-label="Main Navigation">
-          <ul class="nav-menu">
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#process" class="nav-link">Process</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-          </ul>
-        </nav>
+        <div class="dock-divider" aria-hidden="true"></div>
 
-        <div class="header-actions">
-          <div class="header-status-pill" aria-label="Freelance availability status">
-            <span class="pulse-dot" aria-hidden="true"></span>
-            <span>Available for Projects</span>
-          </div>
+        <div class="dock-counter" id="project-count" aria-label="Total projects count">
+          <span class="dock-pulse-dot" aria-hidden="true"></span>
+          <span class="dock-count-text">3 Projects</span>
+        </div>
+
+        <div class="dock-divider" aria-hidden="true"></div>
+
+        <div class="dock-actions">
+          <button
+            id="theme-toggle"
+            class="dock-icon-btn"
+            type="button"
+            aria-label="Switch between dark and light mode"
+            title="Switch theme">
+            <svg
+              class="theme-icon-sun"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg
+              class="theme-icon-moon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
 
           <a
             href="https://github.com/TinoNurcahya/design-to-code-showcase"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary btn-sm">
+            class="dock-icon-btn"
+            aria-label="View source repository on GitHub"
+            title="GitHub Repository">
             <svg
               width="16"
               height="16"
@@ -75,270 +116,28 @@
               <path
                 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
-            <span>GitHub</span>
           </a>
-
-          <button
-            class="menu-toggle"
-            aria-label="Toggle mobile menu"
-            aria-expanded="false"
-            aria-controls="mobile-nav-drawer">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
       </div>
-
-      <nav class="mobile-nav" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
-        <ul class="mobile-menu-list">
-          <li class="mobile-status-item">
-            <div class="header-status-pill" aria-label="Freelance availability status">
-              <span class="pulse-dot" aria-hidden="true"></span>
-              <span>Available for Projects</span>
-            </div>
-          </li>
-          <li><a href="#projects" class="mobile-menu-link">Projects</a></li>
-          <li><a href="#process" class="mobile-menu-link">Process</a></li>
-          <li><a href="#about" class="mobile-menu-link">About</a></li>
-          <li class="mobile-menu-cta">
-            <a
-              href="https://github.com/TinoNurcahya/design-to-code-showcase"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-              style="width: 100%">
-              View on GitHub ↗
-            </a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <main id="main-content">
-      <section class="hero-section">
-        <div class="container">
-          <div class="hero-content">
-            <div class="hero-eyebrow">
-              <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-              <span>Design → Code / Frontend Showcase</span>
-            </div>
-
-            <h1 class="hero-title">Designs translated into <span>production-ready frontend.</span></h1>
-
-            <p class="hero-desc">
-              A collection of responsive frontend implementations built from Figma, PSD, and visual design
-              references.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">
-                Explore Projects
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <polyline points="19 12 12 19 5 12"></polyline>
-                </svg>
-              </a>
-              <a
-                href="https://github.com/TinoNurcahya/design-to-code-showcase"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-secondary">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1 2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                GitHub Repository
-              </a>
-            </div>
-          </div>
+    <!-- Main Visual Gallery (Bento Grid) -->
+    <main id="main-content" class="gallery-wrapper">
+      <div class="gallery-container">
+        <div class="projects-grid" id="project-grid" aria-live="polite">
+          <!-- Populated dynamically by script.js -->
         </div>
-      </section>
-
-      <section class="projects-section" id="projects">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tag">Projects</span>
-            <h2 class="section-title">Selected Design-to-Code Work</h2>
-            <p class="section-subtitle">
-              Frontend implementations focused on visual accuracy, responsive behavior, and production-ready
-              code.
-            </p>
-          </div>
-
-          <div class="project-filters" role="tablist" aria-label="Project filters">
-            <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">
-              All
-            </button>
-            <button class="filter-btn" type="button" data-filter="figma" aria-pressed="false">Figma</button>
-            <button class="filter-btn" type="button" data-filter="psd" aria-pressed="false">PSD</button>
-            <button class="filter-btn" type="button" data-filter="landing" aria-pressed="false">
-              Landing Page
-            </button>
-            <button class="filter-btn" type="button" data-filter="saas" aria-pressed="false">SaaS</button>
-            <button class="filter-btn" type="button" data-filter="editorial" aria-pressed="false">
-              Editorial
-            </button>
-            <button class="filter-btn" type="button" data-filter="motion" aria-pressed="false">Motion</button>
-          </div>
-
-          <div class="projects-grid" id="project-grid" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section class="approach-section" id="about">
-        <div class="container approach-container">
-          <div class="approach-header">
-            <span class="section-tag">Approach</span>
-          </div>
-          <div class="approach-row">
-            <h2 class="section-title approach-title">
-              Visual fidelity · Responsive layouts · Semantic markup · Maintainable frontend
-            </h2>
-            <p class="approach-copy">
-              Every build focuses on fluid layouts, sharp visual hierarchy, and clean implementation that
-              stays easy to extend.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="process-section" id="process">
-        <div class="container">
-          <div class="section-header process-header">
-            <span class="section-tag">Workflow</span>
-            <h2 class="section-title">From design file to frontend</h2>
-          </div>
-
-          <div class="process-flow" aria-label="Project workflow">
-            <div class="process-step">
-              <span class="process-step-num">01</span>
-              <div>
-                <h3>Analyze</h3>
-                <p>Review layout, typography, spacing, and responsive intent.</p>
-              </div>
-            </div>
-            <div class="process-step">
-              <span class="process-step-num">02</span>
-              <div>
-                <h3>Structure</h3>
-                <p>Plan hierarchy, semantics, and reusable patterns for the build.</p>
-              </div>
-            </div>
-            <div class="process-step">
-              <span class="process-step-num">03</span>
-              <div>
-                <h3>Build</h3>
-                <p>Translate the design into a responsive, production-ready interface.</p>
-              </div>
-            </div>
-            <div class="process-step">
-              <span class="process-step-num">04</span>
-              <div>
-                <h3>Refine</h3>
-                <p>Test behavior, polish the details, and tighten the final output.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-section">
-        <div class="container">
-          <div class="cta-box">
-            <span class="cta-eyebrow">Available for Freelance Work</span>
-            <h2 class="cta-title">Have a design ready to become code?</h2>
-            <p class="cta-desc">
-              I build responsive frontend implementations from Figma, PSD, and visual references for
-              production-ready web experiences.
-            </p>
-            <div class="cta-actions">
-              <a
-                href="https://www.upwork.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary">
-                Hire on Upwork ↗
-              </a>
-              <a
-                href="https://github.com/TinoNurcahya/design-to-code-showcase"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-secondary">
-                View GitHub ↗
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <a href="#" class="logo-link" aria-label="Design to Code home">
-              <span class="logo-badge" aria-hidden="true">&lt;/&gt;</span>
-              <span class="logo-text">Design<span>→</span>Code</span>
-            </a>
-            <p class="footer-desc">
-              Frontend design-to-code showcase focused on visual fidelity, responsive systems, and
-              maintainable implementation.
-            </p>
-          </div>
-
-          <nav class="footer-nav" aria-label="Footer Navigation">
-            <div>
-              <h4 class="footer-col-title">Navigate</h4>
-              <ul class="footer-links">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#about">About</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="footer-col-title">Links</h4>
-              <ul class="footer-links">
-                <li>
-                  <a
-                    href="https://github.com/TinoNurcahya/design-to-code-showcase"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >
-                </li>
-                <li><a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer">Upwork</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-
-        <div class="footer-bottom">
-          <p>© <span id="currentYear">2026</span> Tino Nurcahya</p>
-          <span class="footer-badge">HTML · CSS · JavaScript</span>
-        </div>
+    <!-- Ultra Minimal Footer -->
+    <footer class="minimal-footer">
+      <div class="footer-container">
+        <p class="footer-copy">© <span id="currentYear">2026</span> Tino Nurcahya · Design-to-Code Showcase</p>
+        <span class="footer-tech">Pure HTML · CSS · JavaScript</span>
       </div>
     </footer>
 
-    <script src="./js/script.js?v=3.0"></script>
+    <script src="./js/script.js?v=5.0"></script>
   </body>
 </html>

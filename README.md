@@ -27,9 +27,9 @@ Each project inside this repository is a standalone implementation built strictl
 
 | # | Project | Source Type | Tech Stack | Status | Live Demo | Source Code |
 |---|---|---|---|---|---|---|
-| **01** | **[The Daily Table](projects/restaurant-design-to-code/)**<br>Restaurant &amp; Café Landing Page | Visual Reference / JPG | HTML5, CSS3 Grid/Flex, Vanilla JS, WebP | `Completed` | [Live Demo ↗](./projects/restaurant-design-to-code/index.html) | [View Code ↗](./projects/restaurant-design-to-code/) |
-| **02** | **[CloudScale](projects/saas-design-to-code/)**<br>SaaS Analytics Platform | Figma File | HTML5, Tailwind CSS v4, Vanilla JS, Dark Mode | `Completed` | [Live Demo ↗](./projects/saas-design-to-code/index.html) | [View Code ↗](./projects/saas-design-to-code/) |
-| **03** | **[Atelier &amp; Co.](projects/luxury-design-to-code/)**<br>Luxury Fashion Editorial Catalog | Awwwards / Figma | HTML5, Vanilla CSS3, GSAP 3, Lenis Scroll | `Completed` | [Live Demo ↗](./projects/luxury-design-to-code/index.html) | [View Code ↗](./projects/luxury-design-to-code/) |
+| **01** | **[The Daily Table](projects/restaurant-v1/)**<br>Restaurant &amp; Café Landing Page | Visual Reference / JPG | HTML5, CSS3 Grid/Flex, Vanilla JS, WebP | `Completed` | [Live Demo ↗](./projects/restaurant-v1/index.html) | [View Code ↗](./projects/restaurant-v1/) |
+| **02** | **[CloudScale](projects/saas-v1/)**<br>SaaS Analytics Platform | Figma File | HTML5, Tailwind CSS v4, Vanilla JS, Dark Mode | `Completed` | [Live Demo ↗](./projects/saas-v1/index.html) | [View Code ↗](./projects/saas-v1/) |
+| **03** | **[Atelier &amp; Co.](projects/ecommerce-v1/)**<br>Luxury Fashion E-Commerce Catalog | Awwwards / Figma | HTML5, Vanilla CSS3, GSAP 3, Lenis Scroll | `Completed` | [Live Demo ↗](./projects/ecommerce-v1/index.html) | [View Code ↗](./projects/ecommerce-v1/) |
 
 ---
 
@@ -59,7 +59,7 @@ design-to-code-showcase/
 │       ├── saas-preview.svg
 │       └── luxury-preview.webp
 └── projects/                      # Standalone design-to-code projects
-    ├── restaurant-design-to-code/ # Project 01: Restaurant & Café
+    ├── restaurant-v1/             # Project 01: Restaurant & Café
     │   ├── index.html
     │   ├── README.md
     │   ├── css/
@@ -67,7 +67,7 @@ design-to-code-showcase/
     │   ├── js/
     │   │   └── script.js
     │   └── assets/
-    ├── saas-design-to-code/       # Project 02: SaaS Analytics Platform
+    ├── saas-v1/                   # Project 02: SaaS Analytics Platform
     │   ├── index.html
     │   ├── package.json
     │   ├── README.md
@@ -76,7 +76,7 @@ design-to-code-showcase/
     │   │   └── script.js
     │   └── dist/
     │       └── output.css
-    └── luxury-design-to-code/     # Project 03: Luxury Editorial Catalog
+    └── ecommerce-v1/              # Project 03: Luxury Fashion E-Commerce
         ├── index.html
         ├── README.md
         ├── css/
