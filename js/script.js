@@ -44,6 +44,19 @@ const projects = [
     sourceUrl:
       "https://github.com/TinoNurcahya/design-to-code-showcase/tree/main/projects/ecommerce-v1",
   },
+  {
+    title: "Careon Medical",
+    slug: "careon-medical",
+    categoryLabel: "Healthcare",
+    type: "HealthTech Portal",
+    badge: "Figma → Healthcare",
+    image: "./assets/screenshots/healthcare-preview.png",
+    alt: "Careon Medical specialist healthcare and diagnostic telemetry portal preview",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    liveUrl: "./projects/healthcare-v1/index.html",
+    sourceUrl:
+      "https://github.com/TinoNurcahya/design-to-code-showcase/tree/main/projects/healthcare-v1",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Careon Medical — Specialist Healthcare & Diagnostic Telemetry Portal</title>
+    <meta
+      name="description"
+      content="Advanced technology and compassionate care come together. Consult board-certified specialists, explore 3D cardiology & genomic telemetry, and order clinical home test kits." />
+    <meta name="author" content="Tino Nurcahya" />
+    <meta
+      name="keywords"
+      content="Healthcare UI, Medical Portal, Doctor Appointment, HealthTech Landing Page, Figma to Code, Vanilla CSS, Biometric Telemetry" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Careon Medical — Specialist Healthcare & Diagnostic Telemetry Portal" />
+    <meta
+      property="og:description"
+      content="Modern botanical-healthtech clinic portal inspired by 2026 Figma & Dribbble standards." />
+    <meta property="og:image" content="../../assets/screenshots/healthcare-preview.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg?v=2" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css?v=4.8" />
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  </head>
+  <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Fixed Floating Vertical Social & Hotline Dock (CareIQ Reference) -->
+    <aside class="floating-vertical-dock" aria-label="Social and Quick Contact">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="dock-btn" title="Instagram" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        </svg>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="dock-btn" title="LinkedIn" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect width="4" height="12" x="2" y="9"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="dock-btn" title="X (Twitter)" aria-label="X (Twitter)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4l11.733 16h4.267l-11.733-16z"></path>
+          <path d="M4 20l6.768-6.768m2.464-2.464L20 4"></path>
+        </svg>
+      </a>
+      <button class="dock-btn dock-btn-phone" id="dock-call-btn" title="Emergency Hotline: +1 (800) 450-CARE" aria-label="Call Emergency Hotline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+    </aside>
+
+    <!-- Top Navigation Bar (Sticky with Glassmorphism) -->
+    <header class="site-header" id="site-header">
+      <div class="container">
+        <div class="nav-container">
+          <!-- Brand Logo -->
+          <a href="#hero" class="brand-logo" aria-label="Careon Medical Homepage">
+            <div class="logo-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="8" fill="#22c55e" fill-opacity="0.15" />
+                <path d="M12 6V18M6 12H18" stroke="#16a34a" stroke-width="2.6" stroke-linecap="round" />
+                <circle cx="12" cy="12" r="2.5" fill="#15803d" />
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="brand-title">Care<span class="text-emerald">on</span> Medical</span>
+            </div>
+          </a>
+
+          <!-- Navigation Links (Streamlined 4 Core Links) -->
+          <nav class="desktop-nav" aria-label="Main navigation">
+            <ul class="nav-menu">
+              <li><a href="#services" class="nav-link">Services</a></li>
+              <li><a href="#telemetry-suite" class="nav-link">3D Telemetry</a></li>
+              <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+              <li><a href="#specialists" class="nav-link">Specialists</a></li>
+            </ul>
+          </nav>
+
+          <!-- Header Action Controls -->
+          <div class="header-actions">
+            <a href="../../index.html" class="hub-back-pill" title="Return to Showcase Portfolio Hub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Hub</span>
+            </a>
+
+            <button id="header-book-btn" class="btn-pill-primary btn-nav-cta" type="button" aria-haspopup="dialog">
+              <span>Book a Schedule</span>
+              <span class="btn-arrow-circle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </button>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button
+              class="mobile-toggle"
+              id="mobile-toggle-btn"
+              type="button"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-nav-drawer">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <nav class="mobile-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+          <ul class="mobile-menu">
+            <li><a href="#hero" class="mobile-link">Home</a></li>
+            <li><a href="#services" class="mobile-link">Medical Services</a></li>
+            <li><a href="#telemetry-suite" class="mobile-link">3D Telemetry</a></li>
+            <li><a href="#how-it-works" class="mobile-link">How It Works</a></li>
+            <li><a href="#test-kits" class="mobile-link">Diagnostic Home Kits</a></li>
+            <li><a href="#specialists" class="mobile-link">Specialists Directory</a></li>
+            <li><a href="#faq" class="mobile-link">FAQ</a></li>
+            <li><a href="#reviews" class="mobile-link">Patient Reviews</a></li>
+            <li class="mobile-action-item">
+              <button class="btn-pill-primary w-100" id="mobile-book-btn" type="button">
+                <span>Book a Schedule</span>
+                <span class="btn-arrow-circle">→</span>
+              </button>
+            </li>
+            <li>
+              <a href="../../index.html" class="mobile-hub-link">← Return to Showcase Hub</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+      <!-- ================================================================
+           01. Hero Section (FyniteCare & CareIQ Aesthetic)
+           ================================================================ -->
+      <section class="hero-section" id="hero" aria-label="Hero Overview">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Left Column: Typography & CTAs -->
+            <div class="hero-left">
+              <!-- Pill Badge -->
+              <div class="hero-pill-badge" data-aos="fade-down">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21a9 9 0 0 0 9-9c0-4.97-4.03-9-9-9s-9 4.03-9 9a9 9 0 0 0 9 9Z"></path>
+                    <path d="M12 7v5l3 3"></path>
+                  </svg>
+                </span>
+                <span>Smart Healthcare, Just for You</span>
+              </div>
+
+              <!-- Big Headline -->
+              <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                Your Health,<br />
+                Our <span class="text-highlight">Priority</span>
+              </h1>
+
+              <!-- Subtitle Description -->
+              <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                Advanced technology and compassionate care come together to deliver a healthier, happier you. Connect with world-class specialists with zero waiting time.
+              </p>
+
+              <!-- Dual Action Pill Buttons -->
+              <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="300">
+                <button class="btn-pill-primary btn-hero-cta" id="hero-book-btn" type="button">
+                  <span>Book a Schedule</span>
+                  <span class="btn-arrow-circle" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </button>
+
+                <a href="#telemetry-suite" class="btn-pill-secondary">
+                  <span>Explore Telemetry</span>
+                </a>
+              </div>
+
+              <!-- Social Proof & Trusted Avatars -->
+              <div class="hero-trust-proof" data-aos="fade-up" data-aos-delay="400">
+                <div class="avatar-stack" aria-hidden="true">
+                  <img src="./assets/images/doctor-specialist-female.jpg" alt="Specialist" class="stack-avatar" />
+                  <img src="./assets/images/doctor-pediatrician.jpg" alt="Pediatrician" class="stack-avatar" />
+                  <img src="./assets/images/doctor-specialist-male.jpg" alt="Doctor" class="stack-avatar" />
+                  <img src="./assets/images/doctor-hero.jpg" alt="Lead Doctor" class="stack-avatar" />
+                </div>
+                <div class="trust-text">
+                  <span class="trust-count">4K+</span>
+                  <span class="trust-label">Trusted by Thousands</span>
+                </div>
+              </div>
+
+              <!-- Interactive Specialty Chips (Careon reference) -->
+              <div class="hero-specialty-chips" data-aos="fade-up" data-aos-delay="450" aria-label="Quick Specialty Filter">
+                <span class="chips-label">Browse Department:</span>
+                <div class="chips-wrap" id="hero-chips-wrap">
+                  <button type="button" class="chip active" data-filter="all">All</button>
+                  <button type="button" class="chip" data-filter="cardiology">Cardiology</button>
+                  <button type="button" class="chip" data-filter="pediatrics">Pediatrics</button>
+                  <button type="button" class="chip" data-filter="dermatology">Dermatology</button>
+                  <button type="button" class="chip" data-filter="neurology">Neurology</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Doctor Hero Portrait & Floating Glass Badges -->
+            <div class="hero-right">
+              <div class="doctor-canvas-frame" data-aos="fade-left" data-aos-delay="200">
+                <!-- Radial aura contour backdrop -->
+                <div class="canvas-aura-bg"></div>
+
+                <!-- Hero Doctor Image -->
+                <div class="doctor-photo-wrap">
+                  <img
+                    src="./assets/images/doctor-hero.jpg"
+                    alt="Dr. Sarah Jensen, Lead Medical Specialist at Careon Medical"
+                    class="doctor-main-photo"
+                    loading="eager" />
+                </div>
+
+                <!-- Floating Glass Badge 1: Expert Features (Left Side) -->
+                <div class="floating-badge badge-features glassmorphism" aria-label="Key Clinic Features">
+                  <div class="feature-item">
+                    <div class="feature-icon icon-mint" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
+                        <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+                        <circle cx="20" cy="10" r="2"></circle>
+                      </svg>
+                    </div>
+                    <div class="feature-text">
+                      <strong>Expert Doctors</strong>
+                    </div>
+                  </div>
+
+                  <div class="feature-divider"></div>
+
+                  <div class="feature-item">
+                    <div class="feature-icon icon-blue" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                    </div>
+                    <div class="feature-text">
+                      <strong>Advanced Technology</strong>
+                    </div>
+                  </div>
+
+                  <div class="feature-divider"></div>
+
+                  <div class="feature-item">
+                    <div class="feature-icon icon-emerald" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                      </svg>
+                    </div>
+                    <div class="feature-text">
+                      <strong>24/7 Support</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Glass Badge 2: Doctor Mini Profile (Bottom Right) -->
+                <div class="floating-badge badge-profile glassmorphism">
+                  <div class="profile-header">
+                    <img
+                      src="./assets/images/doctor-hero.jpg"
+                      alt="Dr. Sarah Jensen"
+                      class="profile-mini-thumb" />
+                    <div class="profile-info">
+                      <h4 class="profile-name">Dr. Sarah Jensen, MD</h4>
+                      <span class="profile-specialty">General Physician</span>
+                      <div class="profile-rating">
+                        <span class="star-icon">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </span>
+                        <strong>4.9</strong>
+                        <span class="review-count">(179 Reviews)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-mini-book"
+                    data-doctor-id="doc-1"
+                    id="card-quick-book-btn">
+                    Book a Schedule
+                  </button>
+                </div>
+
+                <!-- Floating Glass Badge 3: Companion Note (Bottom Left) -->
+                <div class="floating-badge badge-companion glassmorphism">
+                  <div class="companion-text">
+                    <span class="companion-title">Your Health Companion</span>
+                    <p class="companion-sub">Personalized care for every stage of your life.</p>
+                  </div>
+                  <div class="companion-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           02. Partner & Accreditation Marquee Strip (Ethical Demonstration Network)
+           ================================================================ -->
+      <section class="section-marquee" aria-label="Clinical Partners and Certifications">
+        <div class="marquee-track">
+          <div class="marquee-item">
+            <span class="marquee-bullet" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <span class="marquee-text">CareTrust International Clinical Accreditation</span>
+          </div>
+          <div class="marquee-item">
+            <span class="marquee-bullet" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.5" x2="15.5" y1="8.5" y2="15.5"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="8.5" x2="15.5" y1="15.5" y2="8.5"/></svg>
+            </span>
+            <span class="marquee-text">BioHorizon Genomic Research Alliance</span>
+          </div>
+          <div class="marquee-item">
+            <span class="marquee-bullet" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+            <span class="marquee-text">MetroHealth Clinical Telehealth Network</span>
+          </div>
+          <div class="marquee-item">
+            <span class="marquee-bullet" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="m14 22-4-4"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/></svg>
+            </span>
+            <span class="marquee-text">Zenith Diagnostic Pathology Labs</span>
+          </div>
+          <div class="marquee-item">
+            <span class="marquee-bullet" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+            </span>
+            <span class="marquee-text">AuraHealth Research &amp; Clinical Consortium</span>
+          </div>
+          <!-- Loop duplicates for continuous flow -->
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-bullet">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <span class="marquee-text">CareTrust International Clinical Accreditation</span>
+          </div>
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-bullet">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.5" x2="15.5" y1="8.5" y2="15.5"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="8.5" x2="15.5" y1="15.5" y2="8.5"/></svg>
+            </span>
+            <span class="marquee-text">BioHorizon Genomic Research Alliance</span>
+          </div>
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-bullet">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+            <span class="marquee-text">MetroHealth Clinical Telehealth Network</span>
+          </div>
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-bullet">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="m14 22-4-4"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/></svg>
+            </span>
+            <span class="marquee-text">Zenith Diagnostic Pathology Labs</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           03. Specialized Medical Services (Carely Reference)
+           ================================================================ -->
+      <section class="section-services" id="services" aria-label="Comprehensive Medical Services">
+        <div class="container">
+          <div class="section-header-wrap text-center" data-aos="fade-up">
+            <div class="section-badge">Specialized Clinical Care</div>
+            <h2 class="section-heading">
+              Comprehensive Medical Services <span>Engineered for You</span>
+            </h2>
+            <p class="section-subheading">
+              From advanced interventional diagnostics to compassionate pediatric care, explore dedicated clinical departments staffed by board-certified specialists.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <!-- Service 1: Cardiovascular Care -->
+            <article class="service-card" data-department="cardiology" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-icon-box icon-emerald">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  <path d="M12 5 9.04 11l6.92 2-3.96 6"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <span class="service-dept-tag">Cardiology Center</span>
+                <h3 class="service-title">Cardiovascular &amp; Heart Health</h3>
+                <p class="service-desc">
+                  Advanced 24-hour Holter monitoring, arterial velocity analysis, echocardiography, and preventive heart failure management.
+                </p>
+                <ul class="service-highlights">
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> 3D ECG &amp; Hemodynamic Mapping</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Interventional Rhythm Specialists</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Preventive Hypertension Clinics</li>
+                </ul>
+                <div class="service-footer">
+                  <button type="button" class="btn-service-action" onclick="openBookingModalWithDoctor('doc-3')">
+                    <span>Consult Cardiologist</span>
+                    <span class="action-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 2: Pediatrics & Family -->
+            <article class="service-card" data-department="pediatrics" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-icon-box icon-blue">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="5"/>
+                  <path d="M20 21a8 8 0 1 0-16 0"/>
+                  <circle cx="12" cy="7" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <span class="service-dept-tag">Family Care</span>
+                <h3 class="service-title">Pediatrics &amp; Adolescent Health</h3>
+                <p class="service-desc">
+                  Gentle, reassuring clinical care for newborns, children, and teens with zero intimidation and dedicated sensory-friendly rooms.
+                </p>
+                <ul class="service-highlights">
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Developmental Milestone Tracking</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Same-Day Pediatric Urgencies</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Complete Immunization Programs</li>
+                </ul>
+                <div class="service-footer">
+                  <button type="button" class="btn-service-action" onclick="openBookingModalWithDoctor('doc-2')">
+                    <span>Consult Pediatrician</span>
+                    <span class="action-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 3: Dermatology -->
+            <article class="service-card" data-department="dermatology" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-icon-box icon-rose">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <span class="service-dept-tag">Skin Center</span>
+                <h3 class="service-title">Dermatology &amp; Cutaneous Health</h3>
+                <p class="service-desc">
+                  High-definition digital dermoscopy, clinical acne therapies, allergen patch testing, and non-invasive medical aesthetic restorations.
+                </p>
+                <ul class="service-highlights">
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Full-Body Skin Lesion Screening</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Targeted Barrier Repair Regimens</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Precision Laser Dermatology</li>
+                </ul>
+                <div class="service-footer">
+                  <button type="button" class="btn-service-action" onclick="openBookingModalWithDoctor('doc-4')">
+                    <span>Consult Dermatologist</span>
+                    <span class="action-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 4: Neurology -->
+            <article class="service-card" data-department="neurology" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-icon-box icon-violet">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a4 4 0 0 0-4 4c0 1.5.8 2.8 2 3.5V11a2 2 0 0 0 2 2 2 2 0 0 0 2-2V9.5c1.2-.7 2-2 2-3.5a4 4 0 0 0-4-4Z"/>
+                  <path d="M10 13a5 5 0 0 0-5 5v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3a5 5 0 0 0-5-5"/>
+                  <path d="M6 18h12"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <span class="service-dept-tag">Neuro Institute</span>
+                <h3 class="service-title">Cognitive Neurology &amp; Sleep</h3>
+                <p class="service-desc">
+                  State-of-the-art neuro-electrophysiology, chronic migraine mitigation, cognitive memory preservation, and circadian sleep telemetry.
+                </p>
+                <ul class="service-highlights">
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Digital EEG &amp; Nerve Conduction</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Specialized Migraine Infusion Care</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Memory &amp; Cognitive Wellness</li>
+                </ul>
+                <div class="service-footer">
+                  <button type="button" class="btn-service-action" onclick="openBookingModalWithDoctor('doc-5')">
+                    <span>Consult Neurologist</span>
+                    <span class="action-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 5: Preventive Care & Longevity -->
+            <article class="service-card" data-department="cardiology" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-icon-box icon-amber">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <span class="service-dept-tag">Preventive Health</span>
+                <h3 class="service-title">Longevity &amp; Executive Wellness</h3>
+                <p class="service-desc">
+                  Data-driven annual physicals, full-spectrum metabolic biomarker diagnostics, biological age quantification, and personalized nutrition.
+                </p>
+                <ul class="service-highlights">
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> 80+ Biological Biomarker Panels</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Metabolic Flexibility Scoring</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Personalized Longevity Roadmap</li>
+                </ul>
+                <div class="service-footer">
+                  <button type="button" class="btn-service-action" onclick="openBookingModalWithDoctor('doc-1')">
+                    <span>Consult Chief Physician</span>
+                    <span class="action-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 6: 24/7 Virtual Telehealth -->
+            <article class="service-card" data-department="diagnostics" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-icon-box icon-mint">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="15" x="2" y="3" rx="3"/>
+                  <path d="m22 7-6.5 4.5L22 16"/>
+                  <circle cx="9" cy="10" r="2"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <span class="service-dept-tag">Virtual Clinic</span>
+                <h3 class="service-title">Encrypted Telehealth &amp; E-Script</h3>
+                <p class="service-desc">
+                  Immediate borderless access to board-certified doctors via encrypted WebRTC video, same-day digital pharmacy e-prescriptions, and continuous follow-ups.
+                </p>
+                <ul class="service-highlights">
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Instant Zero-Wait Triage Queue</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Direct Pharmacy E-Prescribing</li>
+                  <li><span class="check-dot" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Encrypted Medical Record Sync</li>
+                </ul>
+                <div class="service-footer">
+                  <button type="button" class="btn-service-action" onclick="openBookingModalWithDoctor('doc-1')">
+                    <span>Start Telehealth Visit</span>
+                    <span class="action-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           04. Mega Diagnostic & Biometric Telemetry Bento (Awwwards 2026 Showcase)
+           ================================================================ -->
+      <section class="section-telemetry-bento" id="telemetry-suite" aria-label="Clinical Intelligence & 3D Biometric Telemetry">
+        <div class="container">
+          <div class="section-header-wrap" data-aos="fade-up">
+            <div class="section-badge">Clinical Intelligence &amp; 3D Telemetry</div>
+            <h2 class="section-heading">
+              Biometric Telemetry &amp; <span>Diagnostic Intelligence</span>
+            </h2>
+            <p class="section-subheading">
+              Synchronized 3D organ telemetry, interactive arterial velocity mapping, genomic profiling, and board-certified clinical care—engineered for complete clarity.
+            </p>
+          </div>
+
+          <div class="mega-bento-grid">
+            <!-- Bento Card 1: 3D Anatomical Heart with Callout Pins + Live EKG + HUD (Spans 7 Cols) -->
+            <div class="bento-card card-unified-cardiology" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-meta">
+                <span class="meta-tag tag-rose">3D Organ Telemetry</span>
+                <span class="live-indicator"><span class="live-dot"></span> Live EKG Waveform</span>
+              </div>
+
+              <div class="unified-cardiology-body">
+                <!-- 3D Heart Media with Pulsing Pins -->
+                <div class="heart-pins-container">
+                  <img
+                    src="./assets/images/cardiology-heart.jpg"
+                    alt="3D Anatomical Heart with Interactive Callout Pins"
+                    class="heart-pins-img" />
+
+                  <!-- Callout Pin 1: Aorta -->
+                  <div class="telemetry-pin pin-aorta" style="top: 15%; left: 10%;">
+                    <div class="pin-dot"></div>
+                    <div class="pin-tag">
+                      <span class="pin-title">Aortic Arch</span>
+                      <strong class="pin-value">120/80 mmHg</strong>
+                    </div>
+                  </div>
+
+                  <!-- Callout Pin 2: Right Atrium -->
+                  <div class="telemetry-pin pin-atrium" style="top: 38%; right: 8%;">
+                    <div class="pin-dot"></div>
+                    <div class="pin-tag">
+                      <span class="pin-title">Sinus Rhythm</span>
+                      <strong class="pin-value" id="pin-bpm-val">74 bpm</strong>
+                    </div>
+                  </div>
+
+                  <!-- Callout Pin 3: Ventricle -->
+                  <div class="telemetry-pin pin-ventricle" style="bottom: 12%; left: 10%;">
+                    <div class="pin-dot"></div>
+                    <div class="pin-tag">
+                      <span class="pin-title">SpO2 Oxygen</span>
+                      <strong class="pin-value">99% Saturation</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Telemetry Content & Real-time HUD -->
+                <div class="unified-cardiology-info">
+                  <h3 class="card-title">Real-Time Cardiovascular Telemetry</h3>
+                  <p class="card-desc">
+                    Continuous cardiac impedance mapping with millisecond rhythm telemetry and systolic arterial analysis.
+                  </p>
+
+                  <div class="telemetry-hud">
+                    <div class="hud-item">
+                      <span class="hud-label">Heart Rate</span>
+                      <div class="hud-value-row">
+                        <span class="hud-number" id="live-hr">74</span>
+                        <span class="hud-unit">bpm</span>
+                      </div>
+                      <!-- Animated EKG Waveform -->
+                      <div class="ekg-svg-wrap" aria-hidden="true">
+                        <svg class="ekg-line" viewBox="0 0 160 30" preserveAspectRatio="none">
+                          <polyline points="0,15 30,15 40,5 50,25 60,8 70,22 80,15 110,15 120,5 130,25 140,8 150,22 160,15" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="hud-item">
+                      <span class="hud-label">Blood Status</span>
+                      <div class="hud-value-row">
+                        <span class="hud-number">118/76</span>
+                        <span class="hud-unit">mmHg</span>
+                      </div>
+                      <span class="hud-status status-optimal">Optimal Systolic</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Card 2: Interactive Radial Pulse Speedometer (Spans 5 Cols) -->
+            <div class="bento-card card-gauge" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-meta">
+                <span class="meta-tag tag-blue">Pulse Speedometer</span>
+                <span class="gauge-state-badge" id="gauge-state-badge">Normal</span>
+              </div>
+
+              <h3 class="card-title">Radial Pulse Speedometer</h3>
+              <p class="card-desc">Simulate arterial heart rate velocity across cardiovascular zones.</p>
+
+              <!-- SVG Radial Arc Speedometer -->
+              <div class="speedometer-wrap">
+                <svg class="speedometer-svg" viewBox="0 0 240 140" aria-label="Heart rate radial speedometer">
+                  <!-- Gauge Arc Background Tracks -->
+                  <path d="M 25 125 A 95 95 0 0 1 215 125" fill="none" stroke="#e2e8f0" stroke-width="14" stroke-linecap="round" />
+                  <!-- Colored Zone Highlights -->
+                  <path d="M 25 125 A 95 95 0 0 1 80 50" fill="none" stroke="#3b82f6" stroke-width="14" stroke-linecap="round" />
+                  <path d="M 80 50 A 95 95 0 0 1 160 50" fill="none" stroke="#22c55e" stroke-width="14" />
+                  <path d="M 160 50 A 95 95 0 0 1 215 125" fill="none" stroke="#f43f5e" stroke-width="14" stroke-linecap="round" />
+                  <!-- Needle indicator (Centered at 120, 125 in viewBox) -->
+                  <g id="gauge-needle" class="gauge-needle" style="transform: rotate(0deg);">
+                    <line x1="120" y1="125" x2="120" y2="40" stroke="#0f172a" stroke-width="3.5" stroke-linecap="round" />
+                    <circle cx="120" cy="125" r="9" fill="#0f172a" />
+                    <circle cx="120" cy="125" r="4" fill="#ffffff" />
+                  </g>
+                </svg>
+
+                <div class="gauge-reading">
+                  <span class="gauge-val" id="gauge-display-val">74</span>
+                  <span class="gauge-unit">BPM</span>
+                </div>
+              </div>
+
+              <!-- Simulation Buttons Row -->
+              <div class="gauge-presets-row" role="group" aria-label="Heart rate simulation modes">
+                <button type="button" class="btn-gauge-preset" data-bpm="62" data-state="Resting" data-angle="-60">
+                  Resting (62)
+                </button>
+                <button type="button" class="btn-gauge-preset active" data-bpm="74" data-state="Normal" data-angle="0">
+                  Normal (74)
+                </button>
+                <button type="button" class="btn-gauge-preset" data-bpm="118" data-state="Cardio Peak" data-angle="60">
+                  Peak (118)
+                </button>
+              </div>
+            </div>
+
+            <!-- Bento Card 3: 3D DNA Pharmacogenomics (Spans 6 Cols) -->
+            <div class="bento-card card-dna" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-meta">
+                <span class="meta-tag tag-violet">Genomic Sequencing</span>
+                <span class="card-arrow-circle" aria-hidden="true">↗</span>
+              </div>
+
+              <div class="dna-layout">
+                <div class="dna-image-wrap">
+                  <img
+                    src="./assets/images/dna-helix.jpg"
+                    alt="3D DNA Double Helix Genomic Visualization"
+                    class="dna-helix-img"
+                    loading="lazy" />
+                </div>
+                <div class="dna-info">
+                  <h3 class="card-title">Precision Pharmacogenomics</h3>
+                  <p class="card-desc">
+                    Targeted molecular profiling to identify genetic drug interactions, hereditary markers, and individual metabolic rates.
+                  </p>
+                  <ul class="dna-tags-list">
+                    <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="dna-check-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Hydrogen Bond Integrity: <strong>99.8%</strong></li>
+                    <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="dna-check-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Nucleotide Base Alignment: <strong>Optimal</strong></li>
+                    <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="dna-check-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Adverse Reaction Risk: <strong>Very Low</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Card 4: Dedicated Pediatric & Family Wellness (Spans 6 Cols) -->
+            <div class="bento-card card-pediatrics" data-aos="fade-up" data-aos-delay="200">
+              <div class="pediatrics-layout">
+                <div class="pediatrics-img-col">
+                  <img
+                    src="./assets/images/doctor-pediatrician.jpg"
+                    alt="Pediatric Specialist"
+                    class="pediatrics-photo"
+                    loading="lazy" />
+                </div>
+                <div class="pediatrics-info-col">
+                  <div class="card-meta">
+                    <span class="meta-tag tag-blue">Pediatrics Wing</span>
+                    <span class="card-arrow-circle" aria-hidden="true">→</span>
+                  </div>
+                  <h3 class="card-title">Dedicated Pediatric &amp; Family Wellness</h3>
+                  <p class="card-desc">
+                    Warm, reassuring clinical environments tailored for infants, children, and young adolescents with zero intimidation.
+                  </p>
+                  <div class="pediatric-badge-pill">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: -2px; margin-right: 4px;">
+                      <circle cx="12" cy="8" r="5"/>
+                      <path d="M20 21a8 8 0 1 0-16 0"/>
+                    </svg>
+                    <span>Same-Day Pediatric Urgencies Available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Card 5: 24/7 Virtual Consultation Telehealth (Spans 7 Cols) -->
+            <div class="bento-card card-telehealth" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-meta">
+                <span class="meta-tag tag-violet">Telehealth Network</span>
+                <span class="telehealth-status"><span class="status-pulse-dot" aria-hidden="true"></span> Ready 24/7</span>
+              </div>
+              <h3 class="card-title">Encrypted Video Consultations</h3>
+              <p class="card-desc">
+                Connect from home with top doctors via HD video, instant digital prescriptions, and direct laboratory follow-ups.
+              </p>
+
+              <!-- Floating Call UI Simulation -->
+              <div class="telehealth-call-chip glassmorphism">
+                <div class="call-doctor">
+                  <img src="./assets/images/doctor-specialist-male.jpg" alt="Doctor" class="call-avatar" />
+                  <div>
+                    <strong class="call-name">Dr. Michael Thorne</strong>
+                    <span class="call-note">Incoming Consultation Call...</span>
+                  </div>
+                </div>
+                <div class="call-buttons">
+                  <button class="btn-call-action btn-call-accept" id="btn-demo-telehealth" title="Join Video Session">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Card 6: AI-Driven Precision (Spans 5 Cols) -->
+            <div class="bento-card card-ai-precision" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-meta">
+                <span class="meta-tag">AI Intelligence</span>
+                <span class="card-arrow-circle" aria-hidden="true">→</span>
+              </div>
+              <h3 class="card-title">AI-Driven Diagnostic Precision</h3>
+              <p class="card-desc">
+                Machine learning models cross-reference clinical biometric telemetry against millions of validated cases for early detection.
+              </p>
+              <div class="metric-pill-row">
+                <div class="metric-pill">
+                  <span class="metric-val">98.4%</span>
+                  <span class="metric-lbl">Diagnostic Accuracy</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="metric-val">&lt; 15 min</span>
+                  <span class="metric-lbl">Lab Triaging</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           05. How It Works: 3 Simple Steps (Healthio Reference)
+           ================================================================ -->
+      <section class="section-how-it-works" id="how-it-works" aria-label="How Careon Medical Works">
+        <div class="container">
+          <div class="section-header-wrap text-center" data-aos="fade-up">
+            <div class="section-badge">Streamlined Patient Flow</div>
+            <h2 class="section-heading">
+              Healthcare Made Seamless in <span>3 Simple Steps</span>
+            </h2>
+            <p class="section-subheading">
+              Whether you need an in-person specialist consultation, an encrypted video visit, or a home diagnostic test kit, our care pathway connects you in minutes.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <!-- Step 1 -->
+            <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="step-card-header">
+                <span class="step-number">01</span>
+                <div class="step-icon-wrap icon-mint">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.3-4.3"/>
+                    <path d="M11 8v6M8 11h6"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="step-title">Choose Specialist or Diagnostic Test</h3>
+              <p class="step-desc">
+                Filter our board-certified clinical directory by medical department, doctor reviews, or select an at-home CLIA-certified specimen collection kit.
+              </p>
+              <div class="step-pill">Department Filters &amp; Live Availability</div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card" data-aos="fade-up" data-aos-delay="250">
+              <div class="step-card-header">
+                <span class="step-number">02</span>
+                <div class="step-icon-wrap icon-blue">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                    <line x1="16" x2="16" y1="2" y2="6"/>
+                    <line x1="8" x2="8" y1="2" y2="6"/>
+                    <line x1="3" x2="21" y1="10" y2="10"/>
+                    <path d="m9 16 2 2 4-4"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="step-title">Book In-Clinic or Virtual Visit</h3>
+              <p class="step-desc">
+                Select your preferred calendar date and available time slot. Choose between an outpatient clinic consultation or an encrypted HD telehealth call.
+              </p>
+              <div class="step-pill">Zero-Wait Calendar Confirmation</div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="step-card-header">
+                <span class="step-number">03</span>
+                <div class="step-icon-wrap icon-emerald">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12h6M12 9v6"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="step-title">Receive Care &amp; Telemetry Reports</h3>
+              <p class="step-desc">
+                Consult with your doctor, receive actionable telemetry diagnostics, and obtain digital prescriptions with automated pharmacy dispatch.
+              </p>
+              <div class="step-pill">Personalized Health Intelligence</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           06. Diagnostic At-Home Test Kits (Nauto Reference)
+           ================================================================ -->
+      <section class="section-test-kits" id="test-kits" aria-label="Diagnostic Home Test Kits">
+        <div class="container">
+          <div class="kits-banner-card" data-aos="fade-up">
+            <div class="kits-content-col">
+              <div class="section-badge badge-dark">Laboratory Diagnostics</div>
+              <h2 class="kits-heading">
+                Trusted Kits. <span>Real Results.</span>
+              </h2>
+              <p class="kits-description">
+                Order medical-grade diagnostic test kits online, collect samples securely from home, and receive verified clinical results through our encrypted patient portal within 24 hours.
+              </p>
+
+              <div class="kits-stats-row">
+                <div class="stat-item">
+                  <strong class="stat-number">100%</strong>
+                  <span class="stat-caption">Safe &amp; CLIA-Waived</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <strong class="stat-number">&lt; 24h</strong>
+                  <span class="stat-caption">Courier Lab Turnaround</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <strong class="stat-number">98%</strong>
+                  <span class="stat-caption">Patient Satisfaction</span>
+                </div>
+              </div>
+
+              <div class="kits-cta-row">
+                <button class="btn-pill-primary" id="btn-order-kit" type="button">
+                  <span>Order Test Kit</span>
+                  <span class="btn-arrow-circle">→</span>
+                </button>
+                <span class="kits-guarantee">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: -2px; margin-right: 4px;">
+                    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                    <path d="m3.3 7 8.7 5 8.7-5"/>
+                    <path d="M12 22V12"/>
+                  </svg>
+                  <span>Fast &amp; Discreet Doorstep Delivery</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="kits-image-col">
+              <div class="kits-img-frame">
+                <img
+                  src="./assets/images/diagnostic-kit.jpg"
+                  alt="MediLab Home Diagnostic System Packaging"
+                  class="kits-main-img"
+                  loading="lazy" />
+                <div class="kits-floating-chip glassmorphism">
+                  <span class="chip-dot"></span>
+                  <span>Direct Doctor Follow-Up Included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           06. Specialist Physicians Roster (Careon & KS Medical Reference)
+           ================================================================ -->
+      <section class="section-specialists" id="specialists" aria-label="Our Board-Certified Medical Team">
+        <div class="container">
+          <div class="section-header-wrap" data-aos="fade-up">
+            <div class="section-badge">Medical Faculty</div>
+            <h2 class="section-heading">
+              Meet the Minds <span>Behind Your Care</span>
+            </h2>
+            <p class="section-subheading">
+              Our multidisciplinary team of board-certified consultants brings together decades of academic leadership and empathetic bedside care.
+            </p>
+          </div>
+
+          <!-- Specialist Department Filter Tabs -->
+          <div class="specialist-filter-tabs" role="tablist" aria-label="Filter Doctors by Department">
+            <button class="filter-tab active" role="tab" aria-selected="true" data-filter="all">All Specialists (6)</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="cardiology">Cardiology</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="pediatrics">Pediatrics</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="dermatology">Dermatology</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="neurology">Neurology</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="dental">Oral Surgery</button>
+          </div>
+
+          <!-- Doctor Cards Grid -->
+          <div class="doctors-grid" id="doctors-grid">
+            <!-- Dynamically populated via script.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           07. Patient Trust & Testimonials
+           ================================================================ -->
+      <section class="section-reviews" id="reviews" aria-label="Patient Testimonials">
+        <div class="container">
+          <div class="section-header-wrap" data-aos="fade-up">
+            <div class="section-badge">Patient Stories</div>
+            <h2 class="section-heading">
+              Trusted by Families, <span>Proven by Outcomes</span>
+            </h2>
+          </div>
+
+          <div class="reviews-grid">
+            <article class="review-card glassmorphism" data-aos="fade-up" data-aos-delay="100">
+              <div class="review-stars" aria-label="5 stars rating">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="review-quote">
+                “The ease of scheduling and the warmth of Dr. Sarah Jensen gave me complete peace of mind. The digital telemetry report was explained in plain English.”
+              </p>
+              <div class="reviewer-meta">
+                <div class="reviewer-avatar">CW</div>
+                <div>
+                  <strong class="reviewer-name">Claire Washington</strong>
+                  <span class="reviewer-type">Cardiology Patient • 3 Visits</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card glassmorphism" data-aos="fade-up" data-aos-delay="200">
+              <div class="review-stars" aria-label="5 stars rating">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="review-quote">
+                “Finding a pediatrician who can calm a crying toddler in seconds is priceless. Dr. David Chen is extraordinary, and the clinic environment is pristine.”
+              </p>
+              <div class="reviewer-meta">
+                <div class="reviewer-avatar">RL</div>
+                <div>
+                  <strong class="reviewer-name">Robert &amp; Liam Miller</strong>
+                  <span class="reviewer-type">Pediatric Wellness • Family Member</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card glassmorphism" data-aos="fade-up" data-aos-delay="300">
+              <div class="review-stars" aria-label="5 stars rating">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="review-quote">
+                “The virtual consultation hotline connected me to Dr. Evelyn Chen within 10 minutes when I had an acute skin reaction while traveling. Outstanding!”
+              </p>
+              <div class="reviewer-meta">
+                <div class="reviewer-avatar">AT</div>
+                <div>
+                  <strong class="reviewer-name">Aaliyah Tariq</strong>
+                  <span class="reviewer-type">Telehealth Patient • Verified</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           09. Frequently Asked Questions Accordion (Slate Reference)
+           ================================================================ -->
+      <section class="section-faq" id="faq" aria-label="Frequently Asked Questions">
+        <div class="container">
+          <div class="section-header-wrap text-center" data-aos="fade-up">
+            <div class="section-badge">Got Questions?</div>
+            <h2 class="section-heading">
+              Frequently Asked <span>Questions</span>
+            </h2>
+            <p class="section-subheading">
+              Everything you need to know about booking visits, telehealth coverage, laboratory kits, and clinic appointments.
+            </p>
+          </div>
+
+          <div class="faq-accordion-wrap">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+              <button
+                type="button"
+                class="faq-trigger"
+                aria-expanded="false"
+                aria-controls="faq-ans-1"
+                id="faq-btn-1">
+                <span class="faq-question">How do I choose between an in-clinic visit and a virtual telehealth consultation?</span>
+                <span class="faq-toggle-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-1" class="faq-content" role="region" aria-labelledby="faq-btn-1">
+                <div class="faq-body">
+                  <p>
+                    When clicking <strong>Book a Schedule</strong> or <strong>Book Visit</strong> on any doctor's profile, you can toggle between <em>In-Clinic Outpatient Visit</em> and <em>Telehealth Virtual Video</em> directly in the booking modal. Telehealth is ideal for initial assessments, prescription renewals, and non-emergency follow-ups, while in-clinic visits are recommended for physical examinations, ECG monitoring, and diagnostic imaging.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+              <button
+                type="button"
+                class="faq-trigger"
+                aria-expanded="false"
+                aria-controls="faq-ans-2"
+                id="faq-btn-2">
+                <span class="faq-question">What is included with the At-Home Diagnostic Test Kits?</span>
+                <span class="faq-toggle-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-2" class="faq-content" role="region" aria-labelledby="faq-btn-2">
+                <div class="faq-body">
+                  <p>
+                    Every diagnostic kit includes sterile, painless sample collection materials, pre-paid return express courier packaging, step-by-step instructions, and a digital barcode to link your specimen to your Careon portal. Once returned to our CLIA-certified laboratory, digital pathology reports are delivered to your portal within 24 to 48 hours with a complimentary doctor review.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+              <button
+                type="button"
+                class="faq-trigger"
+                aria-expanded="false"
+                aria-controls="faq-ans-3"
+                id="faq-btn-3">
+                <span class="faq-question">Do you accept health insurance and what payment methods are supported?</span>
+                <span class="faq-toggle-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-3" class="faq-content" role="region" aria-labelledby="faq-btn-3">
+                <div class="faq-body">
+                  <p>
+                    Careon Medical accepts major private insurance carriers, HSA/FSA cards, and self-pay plans. Transparent out-of-pocket estimates are calculated before you confirm your appointment. For self-pay consultations and home test kits, we support all major credit cards, Apple Pay, and Google Pay with zero hidden facility fees.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+              <button
+                type="button"
+                class="faq-trigger"
+                aria-expanded="false"
+                aria-controls="faq-ans-4"
+                id="faq-btn-4">
+                <span class="faq-question">How does the 3D Telemetry and Biometric Monitoring technology work?</span>
+                <span class="faq-toggle-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-4" class="faq-content" role="region" aria-labelledby="faq-btn-2">
+                <div class="faq-body">
+                  <p>
+                    Our Clinical Intelligence platform utilizes advanced anatomical rendering and sensor telemetry to map cardiac rhythm waveforms, arterial flow velocity, and genomic markers. Patients can explore high-resolution 3D reconstructions of their diagnostic scans alongside plain-language explanations from their attending specialist.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+              <button
+                type="button"
+                class="faq-trigger"
+                aria-expanded="false"
+                aria-controls="faq-ans-5"
+                id="faq-btn-5">
+                <span class="faq-question">What is your appointment cancellation and rescheduling policy?</span>
+                <span class="faq-toggle-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-5" class="faq-content" role="region" aria-labelledby="faq-btn-5">
+                <div class="faq-body">
+                  <p>
+                    We understand that schedules change. You can reschedule or cancel any appointment up to 2 hours prior to your scheduled time without penalty directly from your appointment confirmation link or by calling our 24/7 patient support desk at <code>+1 (800) 450-CARE</code>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           10. Bottom Pre-Footer CTA Banner Card (Care Today Reference)
+           ================================================================ -->
+      <section class="section-cta-banner" aria-label="Pre-Footer Call to Action">
+        <div class="container">
+          <div class="cta-banner-card" data-aos="zoom-in-up">
+            <!-- Left Content Column -->
+            <div class="cta-card-content">
+              <!-- Pill Badge -->
+              <div class="cta-pill-badge">
+                <span class="cta-badge-heart" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </span>
+                <span>CARE TODAY • HEALTHIER TOMORROWS</span>
+              </div>
+
+              <!-- Main Title -->
+              <h2 class="cta-card-title">
+                Your Health,<br />
+                <span class="text-emerald">Our Priority.</span>
+              </h2>
+
+              <!-- Description -->
+              <p class="cta-card-desc">
+                Experience compassionate care with trusted healthcare professionals.
+              </p>
+
+              <!-- Dual Buttons Row -->
+              <div class="cta-card-actions">
+                <button class="btn-pill-primary btn-cta-book" id="banner-book-btn" type="button">
+                  <span class="btn-icon-calendar" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                      <line x1="16" x2="16" y1="2" y2="6"></line>
+                      <line x1="8" x2="8" y1="2" y2="6"></line>
+                      <line x1="3" x2="21" y1="10" y2="10"></line>
+                    </svg>
+                  </span>
+                  <span>Book an Appointment</span>
+                  <span class="btn-arrow-right" aria-hidden="true">→</span>
+                </button>
+
+                <button class="btn-pill-secondary btn-cta-contact" id="banner-contact-btn" type="button">
+                  <span class="btn-icon-phone" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </span>
+                  <span>Contact Us</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Visual & Media Column -->
+            <div class="cta-card-visual">
+              <!-- Background Clinic Photo with Sunlit Plants -->
+              <img
+                src="./assets/images/clinic-plants-banner.jpg"
+                alt="Sunlit Careon Medical Consultation Suite with Plants"
+                class="cta-visual-photo"
+                loading="lazy" />
+
+              <!-- Curved Organic Wave Overlay -->
+              <div class="cta-wave-blend" aria-hidden="true"></div>
+
+              <!-- Decorative Plus Cross -->
+              <div class="cta-deco-cross" aria-hidden="true">+</div>
+
+              <!-- Handwritten Script Note -->
+              <div class="cta-script-note" aria-hidden="true">
+                <span>Better Care</span>
+                <em>Brighter Tomorrows</em>
+              </div>
+
+              <!-- Floating Glass Badge: Trusted by Patients -->
+              <div class="cta-floating-trust glassmorphism" aria-label="Trusted by Thousands of Patients">
+                <div class="trust-badge-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="trust-badge-text">
+                  <span class="trust-sub">Trusted by</span>
+                  <strong class="trust-main">Thousands of Patients</strong>
+                  <div class="trust-accent-bar" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Vertical Wall Sign Typography -->
+              <div class="cta-vertical-sign" aria-hidden="true">
+                <span>Healthier</span>
+                <span>People</span>
+                <span>Happier</span>
+                <span>Lives</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         Main Site Footer (Deep Emerald 4-Column Layout with Right Chevrons)
+         ==================================================================== -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Brand & Tagline -->
+          <div class="footer-col-brand" data-aos="fade-up" data-aos-delay="100">
+            <a href="#hero" class="footer-logo" aria-label="Careon Medical Homepage">
+              <div class="logo-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <rect width="24" height="24" rx="8" fill="#22c55e" fill-opacity="0.25" />
+                  <path d="M12 6V18M6 12H18" stroke="#4ade80" stroke-width="2.6" stroke-linecap="round" />
+                  <circle cx="12" cy="12" r="2.5" fill="#22c55e" />
+                </svg>
+              </div>
+              <span class="brand-title">Care<span class="text-mint">on</span> Medical</span>
+            </a>
+
+            <p class="footer-tagline">
+              Accessible, personalized, and trusted healthcare for a healthier, brighter tomorrow.
+            </p>
+
+            <!-- Social Media Icon Pills -->
+            <div class="footer-social-row" aria-label="Social Media Links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Facebook">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                </svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="YouTube">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Clean Minimalist Links) -->
+          <div class="footer-col-nav" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-clean-list">
+              <li><a href="#services">Medical Services</a></li>
+              <li><a href="#telemetry-suite">3D Telemetry Suite</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#specialists">Specialist Faculty</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Clinical Departments (Interactive Filters) -->
+          <div class="footer-col-nav" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="footer-heading">Clinical Departments</h3>
+            <ul class="footer-clean-list">
+              <li>
+                <button type="button" class="footer-dept-btn" data-filter="cardiology">Cardiology Center</button>
+              </li>
+              <li>
+                <button type="button" class="footer-dept-btn" data-filter="pediatrics">Pediatrics &amp; Family</button>
+              </li>
+              <li>
+                <button type="button" class="footer-dept-btn" data-filter="dermatology">Dermatology &amp; Skin</button>
+              </li>
+              <li>
+                <button type="button" class="footer-dept-btn" data-filter="neurology">Neurology Institute</button>
+              </li>
+              <li>
+                <button type="button" class="footer-dept-btn" data-filter="dental">Oral &amp; Dental Surgery</button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact & Support -->
+          <div class="footer-col-contact" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="footer-heading">Contact &amp; Support</h3>
+            <ul class="footer-contact-details">
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <span>123 Health Ave, San Francisco, CA 94107</span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </span>
+                <span>+1 (800) 450-CARE</span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+                <span>support@careonmedical.com</span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </span>
+                <span>Daily: 8:00 AM – 8:00 PM (Emergency 24/7)</span>
+              </li>
+            </ul>
+
+            <!-- Highlight Support Link -->
+            <a href="tel:+18004502273" class="footer-support-link" id="footer-support-btn">
+              <span class="support-headset-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </span>
+              <span>Need Help? Contact Our Support →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sub-Footer Bottom Bar -->
+        <div class="footer-sub-bar">
+          <p class="copyright-text">
+            Copyright © 2026 <strong>Careon Medical</strong>. All Rights Reserved.
+          </p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <span class="legal-sep">|</span>
+            <a href="#">Terms of Service</a>
+            <span class="legal-sep">|</span>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+         09. Interactive Appointment Booking Modal
+         ==================================================================== -->
+    <div class="modal-backdrop" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-container glassmorphism-modal">
+        <div class="modal-header">
+          <div>
+            <div class="modal-pill-tag">Instant Scheduling</div>
+            <h2 class="modal-title" id="modal-title">Book Doctor Appointment</h2>
+          </div>
+          <button class="modal-close-btn" id="modal-close-btn" type="button" aria-label="Close booking modal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <form id="appointment-form" class="modal-form" novalidate>
+          <!-- Doctor Selection Field -->
+          <div class="form-group">
+            <label for="modal-doctor-select" class="form-label">Select Specialist Doctor or Service</label>
+            <select id="modal-doctor-select" class="form-select" required>
+              <!-- Populated via script.js -->
+            </select>
+          </div>
+
+          <!-- Mode of Consultation -->
+          <div class="form-group">
+            <label class="form-label">Consultation Mode</label>
+            <div class="mode-toggle-group" role="radiogroup" aria-label="Consultation Mode">
+              <label class="mode-option active">
+                <input type="radio" name="consultation-mode" value="in-clinic" checked />
+                <span class="mode-label">
+                  <svg class="mode-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 21h18"/>
+                    <path d="M5 21V7l8-4v18"/>
+                    <path d="M19 21V11l-6-4"/>
+                    <path d="M9 9h1"/>
+                    <path d="M9 13h1"/>
+                    <path d="M9 17h1"/>
+                  </svg>
+                  <span>In-Clinic Visit</span>
+                </span>
+              </label>
+              <label class="mode-option">
+                <input type="radio" name="consultation-mode" value="telehealth" />
+                <span class="mode-label">
+                  <svg class="mode-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="23 7 16 12 23 17 23 7"/>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                  </svg>
+                  <span>Video Telehealth</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Date & Time Row -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="modal-date" class="form-label">Preferred Date</label>
+              <input type="date" id="modal-date" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label for="modal-time" class="form-label">Available Slot</label>
+              <select id="modal-time" class="form-select" required>
+                <option value="09:00 AM">09:00 AM — Morning</option>
+                <option value="10:30 AM">10:30 AM — Morning</option>
+                <option value="01:30 PM">01:30 PM — Afternoon</option>
+                <option value="03:00 PM">03:00 PM — Afternoon</option>
+                <option value="05:00 PM">05:00 PM — Evening</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Patient Information -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="modal-patient-name" class="form-label">Patient Full Name</label>
+              <input type="text" id="modal-patient-name" class="form-input" placeholder="e.g. Eleanor Vance" required />
+            </div>
+            <div class="form-group">
+              <label for="modal-patient-phone" class="form-label">Phone Number</label>
+              <input type="tel" id="modal-patient-phone" class="form-input" placeholder="+1 (555) 019-2834" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="modal-patient-email" class="form-label">Email Address</label>
+            <input type="email" id="modal-patient-email" class="form-input" placeholder="patient@example.com" required />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="modal-footer">
+            <button type="button" class="btn-cancel" id="modal-cancel-btn">Cancel</button>
+            <button type="submit" class="btn-pill-primary btn-submit-booking">
+              <span class="btn-text">Confirm Appointment</span>
+              <span class="btn-arrow-circle">→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification for Confirmations -->
+    <div class="toast-notification" id="toast-notify" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="toast-content">
+        <strong class="toast-title" id="toast-title">Appointment Confirmed!</strong>
+        <p class="toast-message" id="toast-message">Your consultation has been reserved.</p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="./js/script.js?v=4.4"></script>
+  </body>
+</html>

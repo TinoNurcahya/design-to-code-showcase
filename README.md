@@ -30,6 +30,7 @@ Each project inside this repository is a standalone implementation built strictl
 | **01** | **[The Daily Table](projects/restaurant-v1/)**<br>Restaurant &amp; Café Landing Page | Visual Reference / JPG | HTML5, CSS3 Grid/Flex, Vanilla JS, WebP | `Completed` | [Live Demo ↗](./projects/restaurant-v1/index.html) | [View Code ↗](./projects/restaurant-v1/) |
 | **02** | **[CloudScale](projects/saas-v1/)**<br>SaaS Analytics Platform | Figma File | HTML5, Tailwind CSS v4, Vanilla JS, Dark Mode | `Completed` | [Live Demo ↗](./projects/saas-v1/index.html) | [View Code ↗](./projects/saas-v1/) |
 | **03** | **[Atelier &amp; Co.](projects/ecommerce-v1/)**<br>Luxury Fashion E-Commerce Catalog | Awwwards / Figma | HTML5, Vanilla CSS3, GSAP 3, Lenis Scroll | `Completed` | [Live Demo ↗](./projects/ecommerce-v1/index.html) | [View Code ↗](./projects/ecommerce-v1/) |
+| **04** | **[Careon Medical](projects/healthcare-v1/)**<br>Specialist Healthcare &amp; Diagnostic Telemetry Portal | Figma / HealthTech | HTML5, Modern CSS3, Vanilla JS, Bento Telemetry, Booking Gateway | `Completed` | [Live Demo ↗](./projects/healthcare-v1/index.html) | [View Code ↗](./projects/healthcare-v1/) |
 
 ---
 
@@ -56,7 +57,7 @@ design-to-code-showcase/
 ├── assets/
 │   └── screenshots/               # Preview images for showcase cards
 └── projects/                      # Standalone design-to-code implementations
-    ├── <category>-v<version>/     # Standardized project pattern (e.g., restaurant-v1, saas-v1, ...)
+    ├── <category>-v<version>/     # Standardized project pattern (e.g., restaurant-v1, ...)
     │   ├── index.html             # Project live demo / entry point
     │   ├── README.md              # Project documentation & design source
     │   ├── css/                   # Stylesheets / compiled CSS
