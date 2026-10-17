@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Sylvane Conservation — Save Nature, Save Tomorrow</title>
+  <meta name="description" content="Sylvane unites communities, ideas, and actions to protect our planet and build a sustainable, resilient future for all. Explore our global reforestation, clean oceans, and wildlife protection initiatives.">
+  <meta name="author" content="Sylvane Conservation (Portfolio Showcase by Tino Nurcahya)">
+  <meta name="keywords" content="sustainability, nature conservation, reforestation, clean oceans, climate action, green planet, Sylvane">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sylvane Conservation — Save Nature, Save Tomorrow">
+  <meta property="og:description" content="We unite communities, ideas, and actions to protect our planet and build a sustainable future for all.">
+  <meta property="og:image" content="./assets/images/hero-split-forest.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Google Font: Manrope (400, 500, 600, 700, 800) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="#hero" class="brand-link" aria-label="Sylvane Conservation Home">
+        <svg class="brand-logo" width="148" height="38" viewBox="0 0 160 40" fill="none" aria-hidden="true">
+          <g class="logo-mark">
+            <path d="M12 28C12 18.0589 20.0589 10 30 10V28H12Z" fill="#143d2b"/>
+            <path d="M30 10C30 19.9411 21.9411 28 12 28V10H30Z" fill="#2d6a4f" opacity="0.85"/>
+            <path d="M18 28C18 20.268 24.268 14 32 14V28H18Z" fill="#c2e812"/>
+            <circle cx="21" cy="20" r="3" fill="#ffffff" opacity="0.9"/>
+          </g>
+          <text x="44" y="27" font-family="'Manrope', -apple-system, sans-serif" font-size="22" font-weight="800" fill="#143d2b" letter-spacing="-0.5px">Sylvane</text>
+        </svg>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#mission" class="nav-link">Our Mission</a></li>
+          <li><a href="#initiatives" class="nav-link">Projects</a></li>
+          <li><a href="#resources" class="nav-link">Resources</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#footer" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#newsletter" class="btn btn-lime btn-sm magnetic-btn">Get Involved</a>
+        <button class="hamburger-btn" id="mobileMenuBtn" aria-label="Open mobile navigation" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <span class="drawer-title">Sylvane</span>
+        <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+          <li><a href="#mission" class="mobile-nav-link">Our Mission</a></li>
+          <li><a href="#initiatives" class="mobile-nav-link">Projects</a></li>
+          <li><a href="#resources" class="mobile-nav-link">Resources</a></li>
+          <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+          <li><a href="#footer" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="#newsletter" class="btn btn-lime btn-block">Get Involved</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <!-- Full-bleed background layer: forest on right, seamless mist on left -->
+      <div class="hero-backdrop-layer">
+        <img 
+          src="./assets/images/hero-split-forest.jpg" 
+          alt="Aerial view contrasting thriving emerald rainforest with degraded ecosystem" 
+          class="hero-bg-split-img"
+          fetchpriority="high" />
+        <div class="hero-mist-mask"></div>
+      </div>
+
+      <!-- Organic Floating Spores & Sunlight Dust Canvas -->
+      <canvas class="hero-spores-canvas" id="heroSporesCanvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-container">
+        <!-- Hero Left / Content -->
+        <div class="hero-content">
+          <h1 class="hero-title" id="heroTitle" aria-label="Save Nature, Save Tomorrow.">
+            <span class="hero-title-line">
+              <span class="word-mask"><span class="reveal-word">Save</span></span>
+              <span class="word-mask"><span class="reveal-word text-forest">Nature,</span></span>
+            </span>
+            <span class="hero-title-line">
+              <span class="word-mask"><span class="reveal-word">Save</span></span>
+              <span class="word-mask"><span class="reveal-word">Tomorrow.</span></span>
+            </span>
+          </h1>
+
+          <p class="hero-subtitle">
+            We unite communities, ideas, and actions to protect our planet and build a sustainable future for all.
+          </p>
+
+          <!-- Email CTA Form -->
+          <form class="hero-signup-form" id="heroSignupForm" novalidate>
+            <div class="input-pill-wrapper">
+              <input 
+                type="email" 
+                class="pill-input" 
+                id="heroEmailInput"
+                placeholder="Enter your email" 
+                aria-label="Enter your email address" 
+                required />
+              <button type="submit" class="pill-submit-btn magnetic-btn" aria-label="Join Us">
+                Join Us <span>→</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Social Proof -->
+          <div class="hero-social-proof">
+            <div class="avatar-group">
+              <img src="./assets/images/avatar-1.jpg" alt="Active community member" class="avatar-img" width="38" height="38">
+              <img src="./assets/images/avatar-2.jpg" alt="Active community member" class="avatar-img" width="38" height="38">
+              <img src="./assets/images/avatar-3.jpg" alt="Active community member" class="avatar-img" width="38" height="38">
+            </div>
+            <div class="social-proof-text">
+              <svg class="proof-icon-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 20h10"/>
+                <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+              </svg>
+              <p>Join <strong>15,000+</strong> people making a difference</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Overlays: Watch Story Button & Floating Badges -->
+        <div class="hero-floating-elements">
+          <!-- Central Watch Story Button positioned on division line -->
+          <button class="watch-story-btn magnetic-btn" id="watchStoryBtn" type="button" aria-label="Watch Our Story Video">
+            <span class="play-circle">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </span>
+            <span class="watch-text">Watch Our Story</span>
+          </button>
+
+          <!-- Floating Glass Cards (Over deforested right terrain) -->
+          <div class="floating-cards-column">
+            <!-- Floating Card 1: Reforestation -->
+            <div class="floating-card-slot card-reforest">
+              <article class="glass-float-card" id="heroCardReforest" role="button" aria-label="Explore Reforestation Initiative" tabindex="0">
+                <div class="float-card-thumb">
+                  <img src="./assets/images/thumb-reforestation.jpg" alt="Lush forest canopy" width="52" height="68" loading="lazy">
+                </div>
+                <div class="float-card-info">
+                  <h3 class="float-card-title">Reforestation</h3>
+                  <p class="float-card-desc">Planting trees,<br>restoring forests.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Floating Card 2: Clean Oceans -->
+            <div class="floating-card-slot card-oceans">
+              <article class="glass-float-card" id="heroCardOceans" role="button" aria-label="Explore Clean Oceans Initiative" tabindex="0">
+                <div class="float-card-thumb">
+                  <img src="./assets/images/thumb-ocean.jpg" alt="Marine ecosystem" width="52" height="68" loading="lazy">
+                </div>
+                <div class="float-card-info">
+                  <h3 class="float-card-title">Clean Oceans</h3>
+                  <p class="float-card-desc">Removing waste,<br>protecting marine life.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Floating Card 3: Wildlife Protection -->
+            <div class="floating-card-slot card-wildlife">
+              <article class="glass-float-card" id="heroCardWildlife" role="button" aria-label="Explore Wildlife & Community Initiative" tabindex="0">
+                <div class="float-card-thumb">
+                  <img src="./assets/images/thumb-wildlife.jpg" alt="Wild tiger habitat" width="52" height="68" loading="lazy">
+                </div>
+                <div class="float-card-info">
+                  <h3 class="float-card-title">Wildlife Protection</h3>
+                  <p class="float-card-desc">Safeguarding species,<br>preserving habitats.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Stats Bar (Docked Frosted Cards) -->
+      <div class="container hero-stats-container">
+        <div class="stats-grid">
+          <div class="stat-card" data-stat="trees">
+            <span class="stat-number"><span class="counter" data-target="520">0</span>K+</span>
+            <span class="stat-label">Trees Planted</span>
+          </div>
+
+          <div class="stat-card" data-stat="communities">
+            <span class="stat-number"><span class="counter" data-target="120">0</span>+</span>
+            <span class="stat-label">Communities</span>
+          </div>
+
+          <div class="stat-card" data-stat="projects">
+            <span class="stat-number"><span class="counter" data-target="350">0</span>+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+
+          <div class="stat-card" data-stat="planet">
+            <span class="stat-number"><span class="counter" data-target="100">0</span>%</span>
+            <span class="stat-label">For the Planet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission Section (3-Card Bento Grid) -->
+    <section class="mission-section" id="mission">
+      <div class="container mission-container">
+        <!-- Mission Left Intro -->
+        <div class="mission-intro">
+          <h2 class="mission-title masked-heading" aria-label="We’re Building a Greener, Cleaner, Stronger World.">
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">We’re</span></span>
+              <span class="word-mask"><span class="reveal-word">Building</span></span>
+            </span>
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">a</span></span>
+              <span class="word-mask"><span class="reveal-word text-forest">Greener,</span></span>
+            </span>
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">Cleaner,</span></span>
+              <span class="word-mask"><span class="reveal-word">Stronger</span></span>
+            </span>
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">World.</span></span>
+            </span>
+          </h2>
+
+          <p class="mission-description reveal-desc">
+            Through education, action, and innovation, we empower people to protect nature and create lasting change.
+          </p>
+
+          <div class="mission-actions">
+            <a href="#initiatives" class="btn btn-forest-pill">
+              Explore Projects <span>→</span>
+            </a>
+            <a href="#about" class="btn btn-white-pill">
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Mission Right 3 Vertical Bento Cards -->
+        <div class="mission-cards-grid">
+          <!-- Card 1: Sustainable Land Use -->
+          <article class="mission-bento-card bento-card-land" tabindex="0">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <div class="mission-badge-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 0110 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0112 2z"/>
+                  <path d="M12 8v8M8 12h8"/>
+                </svg>
+              </div>
+              <h3 class="mission-card-title">Sustainable<br>Land Use</h3>
+              <p class="mission-card-desc">Promoting responsible<br>land management.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Climate Action -->
+          <article class="mission-bento-card bento-card-climate" tabindex="0">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <div class="mission-badge-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 5-2.5 7 0"/>
+                  <path d="M2 7c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 5-2.5 7 0"/>
+                  <path d="M2 17c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 5-2.5 7 0"/>
+                </svg>
+              </div>
+              <h3 class="mission-card-title">Climate<br>Action</h3>
+              <p class="mission-card-desc">Reducing emissions,<br>building resilience.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Community Empowerment -->
+          <article class="mission-bento-card bento-card-community" tabindex="0">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <div class="mission-badge-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+              </div>
+              <h3 class="mission-card-title">Community<br>Empowerment</h3>
+              <p class="mission-card-desc">Empowering local<br>heroes, creating impact.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Initiatives & Newsletter Section -->
+    <section class="initiatives-section" id="initiatives">
+      <div class="container initiatives-top-bar">
+        <div class="initiatives-nav-arrows">
+          <button class="arrow-btn" id="prevInitiativeBtn" aria-label="Previous initiative">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+          <button class="arrow-btn" id="nextInitiativeBtn" aria-label="Next initiative">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="container initiatives-container">
+        <!-- Initiatives Left: 3 Cards -->
+        <div class="initiatives-carousel-wrapper">
+          <div class="initiatives-track" id="initiativesTrack" role="region" aria-label="Initiatives Carousel">
+            <!-- Initiative Card 1 -->
+            <article class="initiative-card" id="initiativeOceanCard" tabindex="0">
+              <div class="initiative-img-box">
+                <img src="./assets/images/initiative-ocean.jpg" alt="Sea turtle swimming in clear turquoise ocean" width="360" height="250" loading="lazy">
+                <span class="initiative-category-tag">Ocean Cleanup</span>
+              </div>
+              <div class="initiative-body">
+                <h3 class="initiative-card-title">Clean Oceans,<br>Bright Future</h3>
+                <p class="initiative-card-desc">Removing plastic and debris from our oceans and coastlines.</p>
+                <a href="#initiatives" class="initiative-link" aria-label="Learn more about Clean Oceans">
+                  Learn More <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Initiative Card 2 -->
+            <article class="initiative-card" id="initiativeForestCard" tabindex="0">
+              <div class="initiative-img-box">
+                <img src="./assets/images/initiative-forest.jpg" alt="Lush waterfall cascading down through dense jungle trees" width="360" height="250" loading="lazy">
+                <span class="initiative-category-tag">Reforestation</span>
+              </div>
+              <div class="initiative-body">
+                <h3 class="initiative-card-title">More Trees,<br>Better Planet</h3>
+                <p class="initiative-card-desc">Planting and restoring forests for a healthier Earth.</p>
+                <a href="#initiatives" class="initiative-link" aria-label="Learn more about More Trees, Better Planet">
+                  Learn More <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Initiative Card 3 -->
+            <article class="initiative-card" id="initiativeCommunityCard" tabindex="0">
+              <div class="initiative-img-box">
+                <img src="./assets/images/initiative-community.jpg" alt="Volunteers planting saplings together during golden sunset" width="360" height="250" loading="lazy">
+                <span class="initiative-category-tag">Community</span>
+              </div>
+              <div class="initiative-body">
+                <h3 class="initiative-card-title">Stronger Communities,<br>Stronger Future</h3>
+                <p class="initiative-card-desc">Empowering communities to lead local change.</p>
+                <a href="#initiatives" class="initiative-link" aria-label="Learn more about Stronger Communities">
+                  Learn More <span>→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carousel Pagination Dots -->
+          <div class="carousel-pagination" id="carouselPagination" aria-label="Initiatives slide pagination">
+            <button class="carousel-dot active" data-index="0" aria-label="Slide 1: Clean Oceans"></button>
+            <button class="carousel-dot" data-index="1" aria-label="Slide 2: Reforestation"></button>
+            <button class="carousel-dot" data-index="2" aria-label="Slide 3: Community"></button>
+          </div>
+        </div>
+
+        <!-- Initiatives Right: Copy & Lime Newsletter Card -->
+        <div class="initiatives-meta-wrapper">
+          <div class="initiatives-header-block">
+            <h2 class="initiatives-main-title masked-heading" aria-label="Real Actions. Real Impact. A Better Future.">
+              <span class="masked-heading-line">
+                <span class="word-mask"><span class="reveal-word">Real</span></span>
+                <span class="word-mask"><span class="reveal-word text-forest">Actions.</span></span>
+                <span class="word-mask"><span class="reveal-word">Real</span></span>
+                <span class="word-mask"><span class="reveal-word text-forest">Impact.</span></span>
+              </span>
+              <span class="masked-heading-line">
+                <span class="word-mask"><span class="reveal-word">A</span></span>
+                <span class="word-mask"><span class="reveal-word">Better</span></span>
+                <span class="word-mask"><span class="reveal-word">Future.</span></span>
+              </span>
+            </h2>
+
+            <p class="initiatives-lead-text reveal-desc">
+              Discover how we turn ideas into impact through projects that protect our planet and support communities.
+            </p>
+
+            <a href="#initiatives" class="view-all-link">
+              View All Initiatives <span>→</span>
+            </a>
+          </div>
+
+          <!-- Vibrant Lime Callout Card (Newsletter) -->
+          <aside class="lime-callout-card" id="newsletter">
+            <h3 class="lime-card-title">Stay Inspired. Stay Informed.</h3>
+            <p class="lime-card-desc">
+              Subscribe to our newsletter and get the latest updates on our projects, stories, and how you can help.
+            </p>
+
+            <form class="lime-newsletter-form" id="newsletterForm" novalidate>
+              <div class="lime-form-row">
+                <input 
+                  type="email" 
+                  class="lime-email-input" 
+                  id="newsletterEmailInput"
+                  placeholder="Enter your email" 
+                  aria-label="Enter your email address" 
+                  required />
+                <button type="submit" class="lime-submit-btn" aria-label="Subscribe to newsletter">
+                  Subscribe <span>→</span>
+                </button>
+              </div>
+            </form>
+
+            <div class="lime-card-footer">
+              <div class="avatar-group">
+                <img src="./assets/images/avatar-1.jpg" alt="Member" class="avatar-img-sm" width="30" height="30">
+                <img src="./assets/images/avatar-2.jpg" alt="Member" class="avatar-img-sm" width="30" height="30">
+                <img src="./assets/images/avatar-3.jpg" alt="Member" class="avatar-img-sm" width="30" height="30">
+              </div>
+              <div class="lime-social-copy">
+                <svg class="lime-sprout-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 20h10"/>
+                  <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                  <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                  <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                </svg>
+                <span>Join thousands of change-makers</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Resources / Open Knowledge Hub Section -->
+    <section class="resources-section" id="resources">
+      <div class="container resources-container">
+        <!-- Section Top Header -->
+        <div class="resources-header">
+          <h2 class="resources-title masked-heading" aria-label="Open Access to Climate Data, Audit Reports & Field Guides">
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">Open</span></span>
+              <span class="word-mask"><span class="reveal-word">Access</span></span>
+              <span class="word-mask"><span class="reveal-word">to</span></span>
+              <span class="word-mask"><span class="reveal-word text-forest">Climate</span></span>
+              <span class="word-mask"><span class="reveal-word text-forest">Data,</span></span>
+            </span>
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">Audit</span></span>
+              <span class="word-mask"><span class="reveal-word">Reports</span></span>
+              <span class="word-mask"><span class="reveal-word">&amp;</span></span>
+              <span class="word-mask"><span class="reveal-word">Field</span></span>
+              <span class="word-mask"><span class="reveal-word">Guides</span></span>
+            </span>
+          </h2>
+
+          <p class="resources-desc reveal-desc">
+            We believe environmental conservation accelerates through transparent, peer-reviewed research. Download our audited impact metrics, blue carbon manuals, and open-source ranger toolkits.
+          </p>
+
+          <!-- Interactive Category Filter Tabs -->
+          <div class="resource-filter-bar" role="tablist" aria-label="Resource Categories">
+            <button class="resource-filter-pill active" data-filter="all" role="tab" aria-selected="true">
+              All Resources <span class="pill-count">4</span>
+            </button>
+            <button class="resource-filter-pill" data-filter="reports" role="tab" aria-selected="false">
+              Impact Reports <span class="pill-count">1</span>
+            </button>
+            <button class="resource-filter-pill" data-filter="guides" role="tab" aria-selected="false">
+              Climate Guides <span class="pill-count">2</span>
+            </button>
+            <button class="resource-filter-pill" data-filter="research" role="tab" aria-selected="false">
+              Field Research <span class="pill-count">1</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Resources Card Grid (Visual Bento Cards) -->
+        <div class="resources-grid" id="resourcesGrid">
+          <!-- Card 1: Reforestation Audit -->
+          <article class="resource-card" data-category="reports" tabindex="0">
+            <div class="resource-card-media">
+              <img src="./assets/images/initiative-forest.jpg" alt="Aerial view of dense reforestation canopy" class="resource-cover-img" width="560" height="240" loading="lazy">
+              <div class="resource-media-overlay"></div>
+              <div class="resource-media-badges">
+                <span class="resource-badge-pill pill-lime">Impact Report</span>
+                <span class="resource-badge-pill pill-glass">PDF · 14.2 MB</span>
+              </div>
+            </div>
+            <div class="resource-card-body">
+              <h3 class="resource-card-title">2026 Global Ecosystem &amp; Reforestation Audit</h3>
+              <p class="resource-card-summary">
+                Comprehensive canopy density LiDAR telemetry, native seedling survival curves, and audited carbon sequestration metrics across 520,000+ planted trees.
+              </p>
+              <div class="resource-meta-row">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  84 Pages
+                </span>
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Audited Q1 2026
+                </span>
+              </div>
+              <div class="resource-card-action">
+                <button class="btn-resource-download" data-report="2026 Global Ecosystem &amp; Reforestation Audit" aria-label="Download 2026 Global Ecosystem &amp; Reforestation Audit">
+                  <span>Download Report</span>
+                  <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Blue Carbon Handbook -->
+          <article class="resource-card" data-category="guides" tabindex="0">
+            <div class="resource-card-media">
+              <img src="./assets/images/initiative-ocean.jpg" alt="Pristine coastal ocean ecosystem and blue carbon habitat" class="resource-cover-img" width="560" height="240" loading="lazy">
+              <div class="resource-media-overlay"></div>
+              <div class="resource-media-badges">
+                <span class="resource-badge-pill pill-lime">Climate Guide</span>
+                <span class="resource-badge-pill pill-glass">PDF · 8.6 MB</span>
+              </div>
+            </div>
+            <div class="resource-card-body">
+              <h3 class="resource-card-title">Blue Carbon Mangrove Restoration Handbook</h3>
+              <p class="resource-card-summary">
+                A field-tested manual detailing intertidal mangrove nursery engineering, hydrological channel restoration, and benthic carbon baseline measurements.
+              </p>
+              <div class="resource-meta-row">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  56 Pages
+                </span>
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Field Edition 2025
+                </span>
+              </div>
+              <div class="resource-card-action">
+                <button class="btn-resource-download" data-report="Blue Carbon Mangrove Restoration Handbook" aria-label="Download Blue Carbon Mangrove Restoration Handbook">
+                  <span>Download Guide</span>
+                  <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Community Biodiversity Toolkit -->
+          <article class="resource-card" data-category="guides" tabindex="0">
+            <div class="resource-card-media">
+              <img src="./assets/images/initiative-community.jpg" alt="Community members planting saplings in local reserve" class="resource-cover-img" width="560" height="240" loading="lazy">
+              <div class="resource-media-overlay"></div>
+              <div class="resource-media-badges">
+                <span class="resource-badge-pill pill-lime">Field Toolkit</span>
+                <span class="resource-badge-pill pill-glass">ZIP · 22.4 MB</span>
+              </div>
+            </div>
+            <div class="resource-card-body">
+              <h3 class="resource-card-title">Community Biodiversity Monitoring Toolkit</h3>
+              <p class="resource-card-summary">
+                Open-source camera trap calibration software, bioacoustic recording grids, and multilingual offline field survey templates for indigenous rangers.
+              </p>
+              <div class="resource-meta-row">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Complete Pack
+                </span>
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  v3.2 Release
+                </span>
+              </div>
+              <div class="resource-card-action">
+                <button class="btn-resource-download" data-report="Community Biodiversity Monitoring Toolkit" aria-label="Download Community Biodiversity Monitoring Toolkit">
+                  <span>Download Toolkit</span>
+                  <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Coral Thermal Resilience Study -->
+          <article class="resource-card" data-category="research" tabindex="0">
+            <div class="resource-card-media">
+              <img src="./assets/images/mission-climate.jpg" alt="Vibrant protected coral reef ecosystem" class="resource-cover-img" width="560" height="240" loading="lazy">
+              <div class="resource-media-overlay"></div>
+              <div class="resource-media-badges">
+                <span class="resource-badge-pill pill-lime">Field Research</span>
+                <span class="resource-badge-pill pill-glass">PDF · 11.5 MB</span>
+              </div>
+            </div>
+            <div class="resource-card-body">
+              <h3 class="resource-card-title">Coral Reef Thermal Resilience &amp; Larval Reseeding</h3>
+              <p class="resource-card-summary">
+                A 5-year longitudinal study evaluating micro-fragmentation, thermal hardening, and assisted gene flow across damaged Coral Triangle barrier reefs.
+              </p>
+              <div class="resource-meta-row">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  68 Pages
+                </span>
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Peer Reviewed
+                </span>
+              </div>
+              <div class="resource-card-action">
+                <button class="btn-resource-download" data-report="Coral Reef Thermal Resilience &amp; Larval Reseeding Study" aria-label="Download Coral Reef Thermal Resilience &amp; Larval Reseeding Study">
+                  <span>Download Study</span>
+                  <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. About Us / Founding Story & Alternating Zig-zag Milestones -->
+    <section class="about-section" id="about">
+      <div class="container about-container">
+        <!-- Section Top Header -->
+        <div class="about-header">
+          <h2 class="about-title masked-heading" aria-label="From a Local Seed Nursery to a Global Living Coalition">
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">From</span></span>
+              <span class="word-mask"><span class="reveal-word">a</span></span>
+              <span class="word-mask"><span class="reveal-word">Local</span></span>
+              <span class="word-mask"><span class="reveal-word text-forest">Seed</span></span>
+              <span class="word-mask"><span class="reveal-word text-forest">Nursery</span></span>
+            </span>
+            <span class="masked-heading-line">
+              <span class="word-mask"><span class="reveal-word">to</span></span>
+              <span class="word-mask"><span class="reveal-word">a</span></span>
+              <span class="word-mask"><span class="reveal-word">Global</span></span>
+              <span class="word-mask"><span class="reveal-word">Living</span></span>
+              <span class="word-mask"><span class="reveal-word">Coalition</span></span>
+            </span>
+          </h2>
+
+          <p class="about-desc reveal-desc">
+            We started with a simple conviction: ecological restoration only endures when local communities hold genuine stewardship and open science leads the way.
+          </p>
+        </div>
+
+        <!-- Alternating Zig-zag Milestone Timeline -->
+        <div class="timeline-wrapper" id="timelineWrapper">
+          <!-- Sinuous Botanical Vine SVG Canvas -->
+          <svg class="timeline-vine-svg" id="timelineVineSvg" aria-hidden="true">
+            <defs>
+              <linearGradient id="vineStemGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#143d2b"/>
+                <stop offset="35%" stop-color="#2d6a4f"/>
+                <stop offset="70%" stop-color="#52b788"/>
+                <stop offset="100%" stop-color="#c2e812"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Background subtle tracks -->
+            <path class="vine-path vine-track-stem" id="vineTrackStem" />
+            <g class="vine-branch-tracks" id="vineBranchTracks"></g>
+
+            <!-- Foreground living active paths -->
+            <path class="vine-path vine-fill-stem" id="vineFillStem" />
+            <g class="vine-branch-fills" id="vineBranchFills"></g>
+
+            <!-- Traveling seedling energy orb -->
+            <g class="vine-traveler-group" id="vineTravelerGroup">
+              <circle class="vine-traveler-glow" id="vineTravelerGlow" r="10" />
+              <circle class="vine-traveler" id="vineTraveler" r="5" />
+            </g>
+
+            <!-- Leaf sprouts at each milestone node -->
+            <g class="vine-sprouts" id="vineSprouts"></g>
+          </svg>
+
+          <!-- Milestone 1: 2020 (Left) -->
+          <div class="timeline-row timeline-left">
+            <div class="timeline-node" aria-hidden="true">
+              <div class="node-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-year-badge">2020</div>
+              <h3 class="timeline-card-title">The First Seedlings in Sumatra</h3>
+              <p class="timeline-card-story">
+                Founded by 12 field ecologists and 50 indigenous youths in North Sumatra. Working from a hand-built bamboo shade house, the team propagated and planted 5,000 critically endangered ironwood and meranti saplings to reverse illegal logging.
+              </p>
+              <div class="timeline-stat-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>5,000 Indigenous Trees · 1 Community Nursery</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 2: 2022 (Right) -->
+          <div class="timeline-row timeline-right">
+            <div class="timeline-node" aria-hidden="true">
+              <div class="node-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-year-badge">2022</div>
+              <h3 class="timeline-card-title">Grassroots Stewardship &amp; Tech Tracking</h3>
+              <p class="timeline-card-story">
+                Expanded across 35 village collectives. We established living-wage indigenous ranger patrols and pioneered our proprietary mobile seedling health ledger, verifying over 100,000 thriving trees with an unprecedented 89% two-year survival rate.
+              </p>
+              <div class="timeline-stat-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>100K+ Trees · 40 Communities Empowered</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 3: 2024 (Left) -->
+          <div class="timeline-row timeline-left">
+            <div class="timeline-node" aria-hidden="true">
+              <div class="node-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-year-badge">2024</div>
+              <h3 class="timeline-card-title">Blue Carbon &amp; Coastal Sanctuaries</h3>
+              <p class="timeline-card-story">
+                Bridged ridge-to-reef ecology with the launch of our Blue Carbon Sanctuary initiative. Restored 3,200 km² of degraded coastline, replanting over 200,000 mangroves and anchoring community coral nurseries to safeguard marine biodiversity.
+              </p>
+              <div class="timeline-stat-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 5-2.5 7 0"/></svg>
+                <span>3,200 km² Protected · 18 Marine Sanctuaries</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 4: 2026 (Right) -->
+          <div class="timeline-row timeline-right">
+            <div class="timeline-node" aria-hidden="true">
+              <div class="node-inner"></div>
+            </div>
+            <div class="timeline-card timeline-card-current">
+              <div class="timeline-year-badge badge-active">2026 · TODAY</div>
+              <h3 class="timeline-card-title">A Worldwide Living Coalition</h3>
+              <p class="timeline-card-story">
+                Today, Sylvane unites 15,000+ donors, researchers, and village champions across 120+ communities. With more than 520,000 trees standing tall and self-regenerating forest corridors, we are proving that collective human will can heal the planet.
+              </p>
+              <div class="timeline-stat-pill pill-lime">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>520K+ Trees · 120+ Communities · 100% For the Planet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Core Values Grid -->
+        <div class="about-values-grid">
+          <div class="value-card">
+            <div class="value-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h4 class="value-card-title">Radical Transparency</h4>
+            <p class="value-card-desc">Every dollar, GPS tree coordinate, and satellite mortality audit is published live on our public data ledger.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h4 class="value-card-title">Community Sovereignty</h4>
+            <p class="value-card-desc">Restoration is led by local indigenous stewards who make decisions, retain land rights, and lead monitoring.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h4 class="value-card-title">Science-Backed Ecology</h4>
+            <p class="value-card-desc">No monocultures. We plant diverse, native multi-strata species matched to indigenous soil micro-biomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Trusted By / Partners Section -->
+    <section class="partners-section" id="partners" aria-label="Trusted Partners">
+      <div class="container partners-container">
+        <span class="partners-label">TRUSTED BY GLOBAL ALLIANCES &amp; INSTITUTIONS</span>
+        <div class="partners-logo-strip">
+          <div class="partner-item" title="Global Eco Alliance">
+            <svg class="partner-logo" width="124" height="26" viewBox="0 0 124 26" fill="none">
+              <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="2.2"/>
+              <circle cx="12" cy="13" r="4" fill="currentColor"/>
+              <text x="30" y="18" font-family="'Manrope', sans-serif" font-size="14" font-weight="700" fill="currentColor">EcoAlliance</text>
+            </svg>
+          </div>
+          <div class="partner-item" title="Earth Fund International">
+            <svg class="partner-logo" width="124" height="26" viewBox="0 0 124 26" fill="none">
+              <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="2.2"/>
+              <path d="M8 9l8 8M16 9l-8 8" stroke="currentColor" stroke-width="2"/>
+              <text x="30" y="18" font-family="'Manrope', sans-serif" font-size="14" font-weight="700" fill="currentColor">EarthFund</text>
+            </svg>
+          </div>
+          <div class="partner-item" title="BioSphere Coalition">
+            <svg class="partner-logo" width="124" height="26" viewBox="0 0 124 26" fill="none">
+              <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="2.2"/>
+              <path d="M8 9l8 8M16 9l-8 8" stroke="currentColor" stroke-width="2"/>
+              <text x="30" y="18" font-family="'Manrope', sans-serif" font-size="14" font-weight="700" fill="currentColor">BioSphere</text>
+            </svg>
+          </div>
+          <div class="partner-item" title="Terra Trust">
+            <svg class="partner-logo" width="124" height="26" viewBox="0 0 124 26" fill="none">
+              <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="2.2"/>
+              <path d="M5 10h14M4 13h16M5 16h14" stroke="currentColor" stroke-width="1.8"/>
+              <text x="30" y="18" font-family="'Manrope', sans-serif" font-size="14" font-weight="700" fill="currentColor">TerraTrust</text>
+            </svg>
+          </div>
+          <div class="partner-item" title="Oceanic Flora">
+            <svg class="partner-logo" width="124" height="26" viewBox="0 0 124 26" fill="none">
+              <path d="M12 4c4 4 6 8 4 13s-6 5-8 3-2-6 0-9 4-7 4-7z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <text x="30" y="18" font-family="'Manrope', sans-serif" font-size="14" font-weight="700" fill="currentColor">OceanFlora</text>
+            </svg>
+          </div>
+          <div class="partner-item" title="Canopy Forward">
+            <svg class="partner-logo" width="124" height="26" viewBox="0 0 124 26" fill="none">
+              <path d="M12 4c4 4 6 8 4 13s-6 5-8 3-2-6 0-9 4-7 4-7z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="1.8"/>
+              <text x="30" y="18" font-family="'Manrope', sans-serif" font-size="14" font-weight="700" fill="currentColor">CanopyFwd</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand -->
+      <div class="footer-col footer-col-brand">
+        <a href="#hero" class="footer-brand-logo" aria-label="Sylvane Home">
+          <svg width="148" height="38" viewBox="0 0 160 40" fill="none" aria-hidden="true">
+            <g class="logo-mark">
+              <path d="M12 28C12 18.0589 20.0589 10 30 10V28H12Z" fill="#143d2b"/>
+              <path d="M30 10C30 19.9411 21.9411 28 12 28V10H30Z" fill="#2d6a4f" opacity="0.85"/>
+              <path d="M18 28C18 20.268 24.268 14 32 14V28H18Z" fill="#c2e812"/>
+              <circle cx="21" cy="20" r="3" fill="#ffffff" opacity="0.9"/>
+            </g>
+            <text x="44" y="27" font-family="'Manrope', -apple-system, sans-serif" font-size="22" font-weight="800" fill="#143d2b" letter-spacing="-0.5px">Sylvane</text>
+          </svg>
+        </a>
+        <p class="footer-manifesto">
+          Together, we can create a sustainable future for generations to come.
+        </p>
+      </div>
+
+      <!-- Col 2: Explore -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#initiatives">Projects</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Get Involved -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Get Involved</h3>
+        <ul class="footer-links">
+          <li><a href="#newsletter">Volunteer</a></li>
+          <li><a href="#newsletter">Donate</a></li>
+          <li><a href="#partners">Partner With Us</a></li>
+          <li><a href="#initiatives">Projects Overview</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Support -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Support</h3>
+        <ul class="footer-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#footer">Contact Us</a></li>
+          <li><a href="#resources">Impact Data</a></li>
+          <li><a href="#footer">Privacy &amp; Terms</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Follow Us -->
+      <div class="footer-col footer-col-social">
+        <h3 class="footer-col-title">Follow Us</h3>
+        <div class="social-icon-row">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Sylvane on Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Sylvane on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Sylvane on Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Sylvane on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub-footer Bottom Bar -->
+    <div class="sub-footer">
+      <div class="container sub-footer-container">
+        <p class="copyright-text">© 2026 Sylvane Conservation. All rights reserved.</p>
+        <p class="demonstration-sub-text">Built with Semantic HTML5, Modern CSS3 &amp; Vanilla JavaScript · Zero Dependencies</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Video Modal (Watch Our Story) -->
+  <div class="video-modal-backdrop" id="videoModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalStoryTitle">
+    <div class="video-modal-card">
+      <div class="video-modal-header">
+        <div class="modal-badge">
+          <svg class="badge-icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 20h10"/>
+            <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+            <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+            <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+          </svg>
+          <span>SYLVANE DOCUMENTARY</span>
+        </div>
+        <button class="modal-close-btn" id="closeVideoModalBtn" aria-label="Close documentary modal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="video-player-container" id="videoPlayerContainer">
+        <video 
+          id="storyVideo" 
+          class="story-html5-video"
+          poster="./assets/images/hero-split-forest.jpg" 
+          playsinline 
+          preload="metadata"
+          aria-label="Sylvane conservation documentary video">
+          <source src="./assets/videos/nature-preview.mp4" type="video/mp4">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Big Center Play Button Overlay (when paused) -->
+        <div class="video-center-overlay" id="videoCenterOverlay">
+          <button class="video-big-play-btn" id="videoBigPlayBtn" aria-label="Play documentary video">
+            <svg class="big-icon-play" width="28" height="28" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="big-icon-replay" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+          </button>
+          <h3 id="modalStoryTitle" class="modal-video-title">Guardians of the Living Earth</h3>
+          <p class="modal-video-desc">Watch our 2026 expedition uncovering community-led reforestation across the Southern Hemisphere.</p>
+          <span class="video-duration-pill">Duration: 04:32 · 4K UHD</span>
+        </div>
+
+        <!-- Custom Frosted Video Controls Bar -->
+        <div class="video-custom-controls" id="videoCustomControls">
+          <!-- Play / Pause Button -->
+          <button class="v-ctrl-btn" id="vPlayPauseBtn" aria-label="Play / Pause video">
+            <svg class="v-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="v-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+
+          <!-- Current Time & Duration -->
+          <span class="v-time-display" id="vTimeDisplay">00:00 / 00:00</span>
+
+          <!-- Progress Bar / Scrub Slider -->
+          <div class="v-progress-container" id="vProgressContainer" role="slider" aria-label="Video progress slider" tabindex="0">
+            <div class="v-progress-bar" id="vProgressBar"></div>
+          </div>
+
+          <!-- Mute / Unmute Button -->
+          <button class="v-ctrl-btn" id="vMuteBtn" aria-label="Mute / Unmute audio">
+            <svg class="v-icon-volume" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <svg class="v-icon-mute" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+          </button>
+
+          <!-- Fullscreen Button -->
+          <button class="v-ctrl-btn" id="vFullscreenBtn" aria-label="Toggle Fullscreen">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Dynamic Toast Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

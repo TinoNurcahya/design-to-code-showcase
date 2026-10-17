@@ -57,6 +57,19 @@ const projects = [
     sourceUrl:
       "https://github.com/TinoNurcahya/design-to-code-showcase/tree/main/projects/healthcare-v1",
   },
+  {
+    title: "Sylvane Conservation",
+    slug: "sylvane-conservation",
+    categoryLabel: "Non-Profit",
+    type: "Sustainability Hub",
+    badge: "Design → Sustainability",
+    image: "./assets/screenshots/sustainability-preview.webp",
+    alt: "Sylvane Conservation environmental and sustainability landing page preview",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    liveUrl: "./projects/sustainability-v1/index.html",
+    sourceUrl:
+      "https://github.com/TinoNurcahya/design-to-code-showcase/tree/main/projects/sustainability-v1",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

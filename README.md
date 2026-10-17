@@ -31,6 +31,7 @@ Each project inside this repository is a standalone implementation built strictl
 | **02** | **[CloudScale](projects/saas-v1/)**<br>SaaS Analytics Platform | Figma File | HTML5, Tailwind CSS v4, Vanilla JS, Dark Mode | `Completed` | [Live Demo ↗](./projects/saas-v1/index.html) | [View Code ↗](./projects/saas-v1/) |
 | **03** | **[Atelier &amp; Co.](projects/ecommerce-v1/)**<br>Luxury Fashion E-Commerce Catalog | Awwwards / Figma | HTML5, Vanilla CSS3, GSAP 3, Lenis Scroll | `Completed` | [Live Demo ↗](./projects/ecommerce-v1/index.html) | [View Code ↗](./projects/ecommerce-v1/) |
 | **04** | **[Careon Medical](projects/healthcare-v1/)**<br>Specialist Healthcare &amp; Diagnostic Telemetry Portal | Figma / HealthTech | HTML5, Modern CSS3, Vanilla JS, Bento Telemetry, Booking Gateway | `Completed` | [Live Demo ↗](./projects/healthcare-v1/index.html) | [View Code ↗](./projects/healthcare-v1/) |
+| **05** | **[Sylvane Conservation](projects/sustainability-v1/)**<br>Environmental &amp; Nature Conservation Landing Page | Visual Reference / Non-Profit | HTML5, Modern CSS3, Manrope, Vanilla JS, Glass Bento | `Completed` | [Live Demo ↗](./projects/sustainability-v1/index.html) | [View Code ↗](./projects/sustainability-v1/) |
 
 ---
 

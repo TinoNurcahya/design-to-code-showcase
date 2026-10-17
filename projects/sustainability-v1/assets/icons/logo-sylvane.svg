@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" class="sylvane-brand-logo" aria-label="Sylvane Conservation Logo">
+  <!-- Brand Glyph: Interlocking Sprout & Canopy -->
+  <g class="logo-mark">
+    <path d="M12 28C12 18.0589 20.0589 10 30 10V28H12Z" fill="#143d2b"/>
+    <path d="M30 10C30 19.9411 21.9411 28 12 28V10H30Z" fill="#2d6a4f" opacity="0.85"/>
+    <path d="M18 28C18 20.268 24.268 14 32 14V28H18Z" fill="#c2e812"/>
+    <circle cx="21" cy="20" r="3" fill="#ffffff" opacity="0.9"/>
+  </g>
+  <!-- Wordmark: Sylvane -->
+  <text x="44" y="27" font-family="'Manrope', -apple-system, sans-serif" font-size="22" font-weight="800" fill="#143d2b" letter-spacing="-0.5px">Sylvane</text>
+</svg>
