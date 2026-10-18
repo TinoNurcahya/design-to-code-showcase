@@ -781,6 +781,7 @@ function initThemeToggle() {
   function toggleThemeWithTransition(e) {
     const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
     const targetTheme = currentTheme === "dark" ? "light" : "dark";
+    const isDark = targetTheme === "dark";
 
     // Check if View Transition API is supported and not reduced-motion
     const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -802,24 +803,43 @@ function initThemeToggle() {
       Math.max(y, window.innerHeight - y)
     );
 
+    // Apply transition lock class to avoid CSS property collision during screenshot capture
+    document.documentElement.classList.add("theme-transitioning");
+    if (!isDark) {
+      document.documentElement.classList.add("theme-transitioning-to-light");
+    }
+
     const transition = document.startViewTransition(() => {
       applyThemeDom(targetTheme);
     });
 
     transition.ready.then(() => {
-      document.documentElement.animate(
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`,
+      ];
+
+      const anim = document.documentElement.animate(
         {
-          clipPath: [
-            `circle(0px at ${x}px ${y}px)`,
-            `circle(${endRadius}px at ${x}px ${y}px)`,
-          ],
+          clipPath: isDark ? clipPath : [...clipPath].reverse(),
         },
         {
-          duration: 550,
-          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-          pseudoElement: "::view-transition-new(root)",
+          duration: 480,
+          easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+          pseudoElement: isDark ? "::view-transition-new(root)" : "::view-transition-old(root)",
         }
       );
+
+      const cleanup = () => {
+        document.documentElement.classList.remove("theme-transitioning");
+        document.documentElement.classList.remove("theme-transitioning-to-light");
+      };
+
+      anim.addEventListener("finish", cleanup, { once: true });
+      transition.finished.finally(cleanup);
+    }).catch(() => {
+      document.documentElement.classList.remove("theme-transitioning");
+      document.documentElement.classList.remove("theme-transitioning-to-light");
     });
   }
 
