@@ -97,7 +97,15 @@ function initMobileDrawer() {
     document.body.style.overflow = "";
   };
 
-  openBtn.addEventListener("click", openDrawer);
+  const toggleDrawer = () => {
+    if (drawer.classList.contains("open")) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  };
+
+  openBtn.addEventListener("click", toggleDrawer);
   if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
   backdrop.addEventListener("click", closeDrawer);
 
@@ -1014,9 +1022,9 @@ function initTimelineScroll() {
       const dyEnd = totalH - last.ny;
       mainD += `C ${last.nx + 55},${last.ny + dyEnd * 0.35} ${last.nx + 40},${totalH - 15} ${last.nx},${totalH}`;
     } else {
-      // Mobile: vine gracefully meanders along left margin where nodes sit
+      // Mobile: vine gracefully meanders along left margin where nodes sit safely
       const startX = nodesData[0].nx;
-      const mWave = 14;
+      const mWave = 8;
       mainD = `M ${startX},0 `;
       mainD += `C ${startX + mWave},${nodesData[0].ny * 0.35} ${startX + mWave * 0.8},${nodesData[0].ny * 0.7} ${nodesData[0].nx},${nodesData[0].ny} `;
 
@@ -1030,7 +1038,7 @@ function initTimelineScroll() {
 
       const last = nodesData[nodesData.length - 1];
       const dyEnd = totalH - last.ny;
-      mainD += `C ${last.nx + mWave},${last.ny + dyEnd * 0.35} ${last.nx + 4},${totalH - 10} ${last.nx},${totalH}`;
+      mainD += `C ${last.nx + mWave},${last.ny + dyEnd * 0.35} ${last.nx + 2},${totalH - 10} ${last.nx},${totalH}`;
     }
 
     trackStem.setAttribute("d", mainD);
@@ -1056,12 +1064,21 @@ function initTimelineScroll() {
       branchTracksHTML += `<path class="vine-branch-track" d="${branchD}" />`;
       branchFillsHTML += `<path class="vine-branch-fill" id="vineBranch-${i}" data-index="${i}" d="${branchD}" />`;
 
-      // Botanical Leaf Sprout pair at node
+      // Botanical Leaf Sprout pair at node (proportional for mobile & desktop)
+      const leftLeafD = isMobile 
+        ? "M 0,-8 C -5,-16 -15,-16 -13,-7 C -10,-1 -3,-2 0,-8 Z"
+        : "M 0,-11 C -8,-22 -22,-22 -18,-10 C -15,-2 -4,-4 0,-11 Z";
+      const rightLeafD = isMobile
+        ? "M 0,-8 C 5,-16 15,-16 13,-7 C 10,-1 3,-2 0,-8 Z"
+        : "M 0,-11 C 8,-22 22,-22 18,-10 C 15,-2 4,-4 0,-11 Z";
+      const seedR = isMobile ? "2.6" : "3.5";
+      const seedCy = isMobile ? "-8" : "-11";
+
       sproutsHTML += `
         <g class="vine-sprout" id="vineSprout-${i}" style="transform: translate(${d.nx.toFixed(1)}px, ${d.ny.toFixed(1)}px);">
-          <path class="sprout-leaf leaf-left" d="M 0,-11 C -8,-22 -22,-22 -18,-10 C -15,-2 -4,-4 0,-11 Z" />
-          <path class="sprout-leaf leaf-right" d="M 0,-11 C 8,-22 22,-22 18,-10 C 15,-2 4,-4 0,-11 Z" />
-          <circle class="sprout-seed" cx="0" cy="-11" r="3.5" />
+          <path class="sprout-leaf leaf-left" d="${leftLeafD}" />
+          <path class="sprout-leaf leaf-right" d="${rightLeafD}" />
+          <circle class="sprout-seed" cx="0" cy="${seedCy}" r="${seedR}" />
         </g>
       `;
     });
