@@ -134,6 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavScrollSpy();
   initDockFooterObserver();
   setMinDatePicker();
+  initThemeToggle();
+  initThreeHeartTelemetry();
+  init3DTiltEffects();
+  initKineticTypography();
 });
 
 /**
@@ -314,6 +318,8 @@ function initSpeedometerSimulation() {
   const displayVal = document.getElementById("gauge-display-val");
   const badge = document.getElementById("gauge-state-badge");
   const pinBpm = document.getElementById("pin-bpm-val");
+  const liveHr = document.getElementById("live-hr");
+  const ekgLine = document.querySelector(".pulse-ekg-line");
 
   // Ensure initial needle angle is at 0deg (Normal)
   if (needle) {
@@ -325,7 +331,7 @@ function initSpeedometerSimulation() {
       presetButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const bpm = btn.getAttribute("data-bpm");
+      const bpm = parseInt(btn.getAttribute("data-bpm"), 10) || 74;
       const state = btn.getAttribute("data-state");
       const angle = btn.getAttribute("data-angle");
 
@@ -334,6 +340,9 @@ function initSpeedometerSimulation() {
       }
       if (displayVal) {
         displayVal.textContent = bpm;
+      }
+      if (liveHr) {
+        liveHr.textContent = bpm;
       }
       if (badge) {
         badge.textContent = state;
@@ -350,6 +359,16 @@ function initSpeedometerSimulation() {
       }
       if (pinBpm) {
         pinBpm.textContent = `${bpm} bpm`;
+      }
+
+      // Sync 3D heart pulse speed & EKG SVG animation rate
+      if (typeof setHeartTelemetryBpm === "function") {
+        setHeartTelemetryBpm(bpm);
+      }
+      if (ekgLine) {
+        // Normal 74 bpm => ~3.2s; 62 bpm => ~3.8s; 118 bpm => ~2.0s
+        const duration = ((60 / bpm) * 3.9).toFixed(2);
+        ekgLine.style.animationDuration = `${duration}s`;
       }
     });
   });
@@ -727,4 +746,466 @@ function initDockFooterObserver() {
 
   observer.observe(footer);
 }
+
+/**
+ * 17. Nocturnal ICU Telemetry Theme Toggle with Circular Reveal View Transition API
+ */
+function initThemeToggle() {
+  const headerBtn = document.getElementById("header-theme-btn");
+  const dockBtn = document.getElementById("dock-theme-btn");
+  const mobileBtn = document.getElementById("mobile-theme-btn");
+  const mobileModeLabel = document.querySelector(".mobile-theme-toggle .theme-mode-name");
+
+  // Determine initial theme: localStorage -> system preference -> default 'light'
+  const savedTheme = localStorage.getItem("careon_theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+
+  function applyThemeDom(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("careon_theme", theme);
+
+    if (mobileModeLabel) {
+      mobileModeLabel.textContent = theme === "dark" ? "Telemetry ICU" : "Day Clinic";
+    }
+
+    // Notify 3D Hologram heart of theme change if active
+    if (typeof window.__updateThreeTheme === "function") {
+      window.__updateThreeTheme(theme);
+    }
+  }
+
+  // Set initial theme without animation
+  applyThemeDom(initialTheme);
+
+  function toggleThemeWithTransition(e) {
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+    const targetTheme = currentTheme === "dark" ? "light" : "dark";
+
+    // Check if View Transition API is supported and not reduced-motion
+    const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!document.startViewTransition || prefersReducedMotion) {
+      applyThemeDom(targetTheme);
+      return;
+    }
+
+    // Get click origin coordinates
+    let x = window.innerWidth / 2;
+    let y = window.innerHeight / 2;
+    if (e && typeof e.clientX === "number" && typeof e.clientY === "number" && (e.clientX !== 0 || e.clientY !== 0)) {
+      x = e.clientX;
+      y = e.clientY;
+    }
+
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const transition = document.startViewTransition(() => {
+      applyThemeDom(targetTheme);
+    });
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 550,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          pseudoElement: "::view-transition-new(root)",
+        }
+      );
+    });
+  }
+
+  [headerBtn, dockBtn, mobileBtn].forEach((btn) => {
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        toggleThemeWithTransition(e);
+      });
+    }
+  });
+
+  // Listen to system OS theme changes if user hasn't explicitly set a preference
+  if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      if (!localStorage.getItem("careon_theme")) {
+        applyThemeDom(e.matches ? "dark" : "light");
+      }
+    });
+  }
+}
+
+/**
+ * 18. Interactive Three.js Holographic Beating Heart with Dual-Pulse Telemetry
+ */
+let setHeartTelemetryBpm = null;
+
+function initThreeHeartTelemetry() {
+  const canvas = document.getElementById("three-heart-canvas");
+  const container = document.getElementById("heart-pins-container");
+  if (!canvas || !container || typeof THREE === "undefined") return;
+
+  // Scene setup
+  const scene = new THREE.Scene();
+
+  const width = container.clientWidth || 360;
+  const height = container.clientHeight || 420;
+
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+  camera.position.set(0, 0, 7.5);
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    alpha: true,
+    antialias: true,
+    powerPreference: "high-performance",
+  });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+  // Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+  scene.add(ambientLight);
+
+  const dirLight1 = new THREE.DirectionalLight(0x00f0ff, 1.2);
+  dirLight1.position.set(5, 5, 5);
+  scene.add(dirLight1);
+
+  const dirLight2 = new THREE.DirectionalLight(0x10b981, 1.0);
+  dirLight2.position.set(-5, -5, 3);
+  scene.add(dirLight2);
+
+  // Group to contain all heart components
+  const heartGroup = new THREE.Group();
+  scene.add(heartGroup);
+
+  // Build Parametric 3D Heart Geometry
+  function create3DHeartGeometry() {
+    const geom = new THREE.BufferGeometry();
+    const positions = [];
+    const indices = [];
+    const uSteps = 42;
+    const vSteps = 42;
+
+    for (let i = 0; i <= uSteps; i++) {
+      const u = -Math.PI + (2 * Math.PI * i) / uSteps;
+      for (let j = 0; j <= vSteps; j++) {
+        const v = (Math.PI * j) / vSteps;
+
+        // Realistic cardioid heart parametric formulation
+        const sinU = Math.sin(u);
+        const cosU = Math.cos(u);
+        const sinV = Math.sin(v);
+        const cosV = Math.cos(v);
+
+        // x: lateral width, y: apex (bottom) to lobes (top), z: anterior/posterior depth
+        const x = 1.6 * (sinU * sinU * sinU) * Math.sin(v);
+        const y = (1.3 * cosU - 0.5 * Math.cos(2 * u) - 0.2 * Math.cos(3 * u) - 0.1 * Math.cos(4 * u)) * Math.sin(v);
+        const z = 1.0 * cosV * Math.sin(u * 0.5);
+
+        positions.push(x, y, z);
+      }
+    }
+
+    for (let i = 0; i < uSteps; i++) {
+      for (let j = 0; j < vSteps; j++) {
+        const a = i * (vSteps + 1) + j;
+        const b = (i + 1) * (vSteps + 1) + j;
+        const c = (i + 1) * (vSteps + 1) + (j + 1);
+        const d = i * (vSteps + 1) + (j + 1);
+        indices.push(a, b, d);
+        indices.push(b, c, d);
+      }
+    }
+
+    geom.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    geom.setIndex(indices);
+    geom.computeVertexNormals();
+    geom.center();
+    return geom;
+  }
+
+  const heartGeometry = create3DHeartGeometry();
+
+  // 1. Holographic Wireframe Layer
+  const wireframeMaterial = new THREE.MeshBasicMaterial({
+    color: 0x00f0ff,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.65,
+  });
+  const wireframeMesh = new THREE.Mesh(heartGeometry, wireframeMaterial);
+  heartGroup.add(wireframeMesh);
+
+  // 2. Translucent Inner Core Mesh
+  const coreMaterial = new THREE.MeshLambertMaterial({
+    color: 0x059669,
+    emissive: 0x044e39,
+    transparent: true,
+    opacity: 0.28,
+    side: THREE.DoubleSide,
+  });
+  const coreMesh = new THREE.Mesh(heartGeometry, coreMaterial);
+  coreMesh.scale.set(0.96, 0.96, 0.96);
+  heartGroup.add(coreMesh);
+
+  // 3. Floating Arterial Particle Swarm
+  const particleCount = 650;
+  const particleGeometry = new THREE.BufferGeometry();
+  const particlePositions = new Float32Array(particleCount * 3);
+  const particleAngles = [];
+
+  for (let i = 0; i < particleCount; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const radius = 1.3 + Math.random() * 1.5;
+    const yOffset = (Math.random() - 0.45) * 2.8;
+    const zOffset = (Math.random() - 0.5) * 1.8;
+
+    particlePositions[i * 3] = Math.cos(angle) * radius;
+    particlePositions[i * 3 + 1] = yOffset;
+    particlePositions[i * 3 + 2] = Math.sin(angle) * radius * 0.6 + zOffset;
+
+    particleAngles.push({ angle, radius, speed: 0.005 + Math.random() * 0.01, y: yOffset, z: zOffset });
+  }
+
+  particleGeometry.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
+
+  const particleMaterial = new THREE.PointsMaterial({
+    color: 0x38bdf8,
+    size: 0.055,
+    transparent: true,
+    opacity: 0.75,
+    blending: THREE.AdditiveBlending,
+  });
+  const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+  heartGroup.add(particleSystem);
+
+  // 4. Ventricle & Aorta Telemetry Pulse Nodes
+  const nodeGeom = new THREE.SphereGeometry(0.12, 16, 16);
+  const nodeMat = new THREE.MeshBasicMaterial({ color: 0x10b981 });
+  const ventricleNode = new THREE.Mesh(nodeGeom, nodeMat);
+  ventricleNode.position.set(-0.4, -0.2, 0.5);
+  heartGroup.add(ventricleNode);
+
+  const aortaNode = new THREE.Mesh(nodeGeom, new THREE.MeshBasicMaterial({ color: 0x38bdf8 }));
+  aortaNode.position.set(0.3, 0.9, 0.3);
+  heartGroup.add(aortaNode);
+
+  // Initial Heart Orientation and Position
+  heartGroup.rotation.x = 0.2;
+  heartGroup.rotation.y = -0.3;
+  heartGroup.position.set(0, 0.1, 0);
+
+  // Theme synchronization callback
+  window.__updateThreeTheme = function (theme) {
+    if (theme === "dark") {
+      wireframeMaterial.color.setHex(0x00f0ff);
+      wireframeMaterial.opacity = 0.8;
+      coreMaterial.color.setHex(0x065f46);
+      coreMaterial.emissive.setHex(0x064e3b);
+      coreMaterial.opacity = 0.35;
+      particleMaterial.color.setHex(0x38bdf8);
+      dirLight1.color.setHex(0x00f0ff);
+      dirLight2.color.setHex(0x10b981);
+    } else {
+      wireframeMaterial.color.setHex(0x0d9488);
+      wireframeMaterial.opacity = 0.55;
+      coreMaterial.color.setHex(0x10b981);
+      coreMaterial.emissive.setHex(0x065f46);
+      coreMaterial.opacity = 0.2;
+      particleMaterial.color.setHex(0x0284c7);
+      dirLight1.color.setHex(0x0d9488);
+      dirLight2.color.setHex(0x059669);
+    }
+  };
+
+  // Set theme colors on launch
+  const initialTheme = document.documentElement.getAttribute("data-theme") || "light";
+  window.__updateThreeTheme(initialTheme);
+
+  // Telemetry Heartbeat Dynamics
+  let currentBpm = 74;
+  setHeartTelemetryBpm = function (bpm) {
+    currentBpm = bpm;
+  };
+
+  // Mouse / Touch Drag Orbit Interaction
+  let isDragging = false;
+  let previousMousePosition = { x: 0, y: 0 };
+  let targetRotationX = 0.2;
+  let targetRotationY = -0.3;
+
+  function onPointerDown(e) {
+    isDragging = true;
+    const clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const clientY = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    previousMousePosition = { x: clientX, y: clientY };
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging) return;
+    const clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const clientY = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    const deltaX = clientX - previousMousePosition.x;
+    const deltaY = clientY - previousMousePosition.y;
+
+    targetRotationY += deltaX * 0.008;
+    targetRotationX += deltaY * 0.008;
+
+    // Clamp X rotation to avoid flipping upside down
+    targetRotationX = Math.max(-1.1, Math.min(1.1, targetRotationX));
+
+    previousMousePosition = { x: clientX, y: clientY };
+  }
+
+  function onPointerUp() {
+    isDragging = false;
+  }
+
+  canvas.addEventListener("mousedown", onPointerDown);
+  window.addEventListener("mousemove", onPointerMove);
+  window.addEventListener("mouseup", onPointerUp);
+
+  canvas.addEventListener("touchstart", onPointerDown, { passive: true });
+  window.addEventListener("touchmove", onPointerMove, { passive: true });
+  window.addEventListener("touchend", onPointerUp);
+
+  // Resize handling
+  function onResize() {
+    if (!container || !renderer || !camera) return;
+    const w = container.clientWidth || 360;
+    const h = container.clientHeight || 420;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  }
+
+  window.addEventListener("resize", onResize);
+  if (typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(onResize).observe(container);
+  }
+
+  // Animation Loop with Physiological "Lub-Dub" Dual Pulse
+  let clock = new THREE.Clock();
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    const elapsedTime = clock.getElapsedTime();
+
+    // Human heartbeat dual pulse formula (Systole + Diastole)
+    const frequency = currentBpm / 60; // beats per second
+    const cycle = (elapsedTime * frequency) % 1;
+
+    // Pulse 1: Ventricular contraction (Lub)
+    const p1 = Math.exp(-32 * Math.pow(cycle - 0.16, 2));
+    // Pulse 2: Atrial/ventricular rebound (Dub)
+    const p2 = 0.58 * Math.exp(-38 * Math.pow(cycle - 0.38, 2));
+    const pulseStrength = (p1 + p2) * 0.16;
+
+    // Apply pulse scale to heart geometry
+    const scale = 1.0 + pulseStrength;
+    wireframeMesh.scale.set(scale, scale, scale);
+    coreMesh.scale.set(scale * 0.96, scale * 0.96, scale * 0.96);
+
+    // Pulse glow nodes
+    const nodeScale = 1.0 + pulseStrength * 1.8;
+    ventricleNode.scale.set(nodeScale, nodeScale, nodeScale);
+    aortaNode.scale.set(nodeScale, nodeScale, nodeScale);
+
+    // Orbit drift and inertia damping
+    if (!isDragging) {
+      targetRotationY += 0.003; // Gentle idle rotation
+    }
+    heartGroup.rotation.y += (targetRotationY - heartGroup.rotation.y) * 0.08;
+    heartGroup.rotation.x += (targetRotationX - heartGroup.rotation.x) * 0.08;
+
+    // Animate arterial particle swarm
+    const positions = particleGeometry.attributes.position.array;
+    for (let i = 0; i < particleCount; i++) {
+      const p = particleAngles[i];
+      p.angle += p.speed * (currentBpm / 74);
+      positions[i * 3] = Math.cos(p.angle) * p.radius * (1 + pulseStrength * 0.3);
+      positions[i * 3 + 2] = Math.sin(p.angle) * p.radius * 0.65 + p.z;
+    }
+    particleGeometry.attributes.position.needsUpdate = true;
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+}
+
+/**
+ * 19. 3D Perspective Tilt Micro-Interactions on Interactive Badges & Cards
+ */
+function init3DTiltEffects() {
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  // Floating badges, companion note, and telemetry bento cards
+  const tiltElements = document.querySelectorAll(
+    ".floating-badge, .companion-note-card, .bento-card, .service-card"
+  );
+
+  tiltElements.forEach((el) => {
+    el.classList.add("tilt-card-active");
+
+    let isHovering = false;
+
+    el.addEventListener("mouseenter", () => {
+      isHovering = true;
+    });
+
+    el.addEventListener("mousemove", (e) => {
+      if (!isHovering) return;
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calculate rotation (max ±6.5 deg)
+      const rotateX = ((y - centerY) / centerY) * -6.5;
+      const rotateY = ((x - centerX) / centerX) * 6.5;
+
+      el.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+    });
+
+    el.addEventListener("mouseleave", () => {
+      isHovering = false;
+      el.style.transform = "";
+    });
+  });
+}
+
+/**
+ * 20. GSAP Kinetic Typography Entrance for Hero Headline
+ */
+function initKineticTypography() {
+  if (typeof gsap === "undefined") return;
+
+  const words = document.querySelectorAll(".hero-title .kinetic-word");
+  if (!words.length) return;
+
+  // Staggered slide up & fade in
+  gsap.from(words, {
+    yPercent: 120,
+    opacity: 0,
+    stagger: 0.07,
+    duration: 0.85,
+    ease: "power3.out",
+    delay: 0.15,
+    clearProps: "all",
+  });
+}
+
 
